@@ -9,6 +9,7 @@ const accent = "#F3EBDD";
 const navigation = [
     { label: "Home", href: "/" },
     { label: "Mountain Biking", href: "/mountain-biking" },
+    { label: "Gravel Biking", href: "/gravel-biking-morocco" },
     { label: "Ski Touring", href: "/ski-touring" },
     { label: "Journal", href: "/journal" },
     { label: "About", href: "/about" },
@@ -22,6 +23,7 @@ export default function SiteHeader() {
             <div className="relative flex items-center justify-between px-6 py-6 md:px-10 lg:px-14">
 
                 {/* BRAND */}
+
                 <Link
                     href="/"
                     aria-label="Ride The Atlas"
@@ -32,12 +34,13 @@ export default function SiteHeader() {
                 </Link>
 
                 {/* DESKTOP NAVIGATION */}
-                <nav className="hidden items-center gap-8 lg:flex">
+
+                <nav className="hidden items-center gap-7 lg:flex">
                     {navigation.map((item) => (
                         <Link
                             key={item.href}
                             href={item.href}
-                            className="group relative text-[10px] font-semibold uppercase tracking-[0.2em] text-white/80 transition-colors duration-300 hover:text-[#F3EBDD]"
+                            className="group relative text-[10px] font-semibold uppercase tracking-[0.18em] text-white/80 transition-colors duration-300 hover:text-[#F3EBDD]"
                         >
                             {item.label}
 
@@ -49,18 +52,24 @@ export default function SiteHeader() {
                     ))}
 
                     {/* CONTACT */}
+
                     <Link
                         href="/contact"
-                        className="ml-3 border border-white/50 px-6 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-white transition-all duration-300 hover:border-[#F3EBDD] hover:bg-[#F3EBDD] hover:text-black"
+                        className="ml-2 border border-white/50 px-6 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-white transition-all duration-300 hover:border-[#F3EBDD] hover:bg-[#F3EBDD] hover:text-black"
                     >
                         Contact
                     </Link>
                 </nav>
 
                 {/* MOBILE MENU BUTTON */}
+
                 <button
                     type="button"
-                    aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+                    aria-label={
+                        menuOpen
+                            ? "Close navigation menu"
+                            : "Open navigation menu"
+                    }
                     aria-expanded={menuOpen}
                     onClick={() => setMenuOpen(!menuOpen)}
                     className="border border-white/50 px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.25em] text-white transition-all duration-300 hover:border-[#F3EBDD] hover:text-[#F3EBDD] lg:hidden"
@@ -70,6 +79,7 @@ export default function SiteHeader() {
             </div>
 
             {/* MOBILE NAVIGATION */}
+
             <div
                 className={`absolute inset-x-0 top-full border-t border-white/10 bg-black/95 backdrop-blur-md transition-all duration-300 lg:hidden ${menuOpen
                         ? "visible translate-y-0 opacity-100"
@@ -77,7 +87,9 @@ export default function SiteHeader() {
                     }`}
             >
                 <nav className="px-6 py-8 md:px-10">
+
                     <div className="flex flex-col">
+
                         {navigation.map((item, index) => (
                             <Link
                                 key={item.href}
@@ -100,9 +112,11 @@ export default function SiteHeader() {
                             <span>Contact</span>
                             <span className="text-lg">→</span>
                         </Link>
+
                     </div>
+
                 </nav>
             </div>
         </header>
     );
-}   
+}

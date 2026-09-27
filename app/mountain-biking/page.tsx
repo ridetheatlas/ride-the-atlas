@@ -3,6 +3,7 @@ import Link from "next/link";
 import SiteFooter from "@/components/site-footer";
 import SiteHeader from "@/components/site-header";
 
+
 export default function MountainBikingPage() {
     return (
         <>
@@ -18,7 +19,7 @@ export default function MountainBikingPage() {
 
                         <Image
                             src="/images/mtb/bikers-riding-on-ridge.jpeg"
-                            alt="Mountain biker riding singletrack in the Moroccan Atlas"
+                            alt="Mountain bikers riding through the High Atlas Mountains of Morocco"
                             fill
                             priority
                             sizes="100vw"
@@ -59,6 +60,12 @@ export default function MountainBikingPage() {
                                     Biking
                                 </h1>
 
+                                <p className="mt-6 max-w-md text-xs leading-6 text-white/60 md:text-sm md:leading-7">
+                                    Mountain biking journeys across Morocco&apos;s High Atlas,
+                                    from remote valleys and mountain trails to high-altitude
+                                    landscapes.
+                                </p>
+
                             </div>
 
                         </div>
@@ -79,7 +86,7 @@ export default function MountainBikingPage() {
                         >
                             Explore
 
-                            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/30 text-sm text-[#F3EBDD] transition-all duration-300 group-hover:border-[#F3EBDD] group-hover:translate-y-1">
+                            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/30 text-sm text-[#F3EBDD] transition-all duration-300 group-hover:translate-y-1 group-hover:border-[#F3EBDD]">
                                 ↓
                             </span>
                         </Link>
@@ -130,282 +137,410 @@ export default function MountainBikingPage() {
                 </section>
                 {/* RIDING OPTIONS */}
 
-                <section className="px-6 py-24 md:px-10 md:py-32 lg:px-14">
-
+                <section
+                    id="riding"
+                    className="px-6 py-24 md:px-10 md:py-32 lg:px-14"
+                >
                     <div className="mx-auto max-w-7xl">
 
-                        <div className="mb-14 grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
+                        {/* SECTION HEADER */}
+
+                        <div className="mb-16 grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
 
                             <div>
+
                                 <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-[#F3EBDD]">
                                     Mountain Biking
                                 </p>
+
                             </div>
 
                             <div>
-                                <h2 className="max-w-4xl text-4xl font-semibold uppercase leading-[0.9] tracking-[-0.05em] text-white sm:text-5xl md:text-6xl lg:text-[5.5rem]">
-                                    Choose your
+
+                                <h2 className="max-w-4xl text-4xl font-semibold uppercase leading-[0.9] tracking-[-0.05em] text-white sm:text-5xl md:text-6xl">
+                                    Ride The
                                     <br />
-                                    way into the Atlas.
+                                    Atlas.
                                 </h2>
+
                             </div>
 
                         </div>
 
-                        <div className="grid gap-5 md:grid-cols-2">
+                        {/* EASTERN HIGH ATLAS */}
 
-                            {/* EASTERN HIGH ATLAS */}
+                        <div>
 
-                            <Link
-                                href="/mountain-biking/eastern-high-atlas"
-                                className="group relative overflow-hidden"
-                            >
+                            <div className="mb-6 flex items-center justify-between border-b border-white/10 pb-4">
 
-                                <div className="relative aspect-[4/5] overflow-hidden">
+                                <div>
+                                    <p className="text-[9px] font-semibold uppercase tracking-[0.35em] text-[#F3EBDD]">
+                                        Eastern High Atlas
+                                    </p>
 
-                                    <Image
-                                        src="/images/mtb/bikers-riding-on-ridge.jpeg"
-                                        alt="Mountain bikers riding through the Eastern High Atlas in Morocco"
-                                        fill
-                                        sizes="(max-width: 768px) 100vw, 50vw"
-                                        className="object-cover transition-transform duration-700 group-hover:scale-105"
-                                    />
+                                    <p className="mt-2 text-[9px] uppercase tracking-[0.2em] text-white/35">
+                                        Toubkal Massif · Morocco
+                                    </p>
+                                </div>
 
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                                <p className="hidden text-[8px] font-semibold uppercase tracking-[0.3em] text-white/25 md:block">
+                                    Mountain Biking
+                                </p>
 
-                                    <div className="absolute inset-x-0 bottom-0 p-7 md:p-9">
+                            </div>
 
-                                        <div className="flex items-end justify-between gap-6">
+                            <div className="grid gap-5 md:grid-cols-3">
 
-                                            <div>
+                                {/* 8 DAYS */}
 
-                                                <p className="text-[9px] font-semibold uppercase tracking-[0.35em] text-[#F3EBDD]">
-                                                    01 · 8 DAYS
+                                <Link
+                                    href="/mountain-biking/8-day-mountain-biking-eastern-high-atlas-morocco"
+                                    className="group relative overflow-hidden"
+                                >
+                                    <div className="relative aspect-[4/5] overflow-hidden">
+
+                                        <Image
+                                            src="/images/mtb/bikers-riding-on-ridge.jpeg"
+                                            alt="Mountain bikers riding through the Eastern High Atlas and Toubkal Massif in Morocco"
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, 33vw"
+                                            className="object-cover transition-transform duration-1000 group-hover:scale-[1.04]"
+                                        />
+
+                                        <div className="absolute inset-0 bg-black/10" />
+
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent" />
+
+                                        <div className="absolute inset-x-0 top-0 p-6">
+
+                                            <div className="flex items-center justify-between">
+
+                                                <p className="text-[9px] font-semibold uppercase tracking-[0.3em] text-[#F3EBDD]">
+                                                    8 Days
                                                 </p>
 
-                                                <h3 className="mt-4 text-4xl font-semibold uppercase leading-[0.9] tracking-[-0.04em] text-white md:text-5xl">
-                                                    Eastern
-                                                    <br />
-                                                    High Atlas
-                                                </h3>
+                                                <span className="flex h-9 w-9 items-center justify-center border border-white/30 text-sm text-white transition-all duration-300 group-hover:border-[#F3EBDD] group-hover:bg-[#F3EBDD] group-hover:text-black">
+                                                    ↗
+                                                </span>
 
                                             </div>
 
-                                            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/35 text-lg text-[#F3EBDD] transition-all duration-300 group-hover:border-[#F3EBDD] group-hover:bg-[#F3EBDD] group-hover:text-black">
-                                                ↗
-                                            </span>
-
                                         </div>
 
-                                        <div className="mt-7 border-t border-white/20 pt-5">
+                                        <div className="absolute inset-x-0 bottom-0 p-6">
 
-                                            <p className="max-w-md text-xs leading-6 text-white/60">
-                                                An 8-day mountain biking journey through the Eastern High
-                                                Atlas.
-                                            </p>
+                                            <h3 className="text-3xl font-semibold uppercase leading-[0.9] tracking-[-0.04em] text-white">
+                                                Eastern High Atlas
+                                                <br />
+                                                &amp; Toubkal
+                                            </h3>
 
-                                            <p className="mt-5 text-[9px] font-semibold uppercase tracking-[0.3em] text-white/45 transition-colors duration-300 group-hover:text-[#F3EBDD]">
-                                                View tour
-                                            </p>
+                                            <div className="mt-6 border-t border-white/20 pt-4">
+
+                                                <div className="flex flex-wrap gap-x-5 gap-y-3">
+
+                                                    <p className="text-[8px] font-semibold uppercase tracking-[0.2em] text-white/55">
+                                                        Challenging
+                                                    </p>
+
+                                                    <p className="text-[8px] font-semibold uppercase tracking-[0.2em] text-[#F3EBDD]">
+                                                        MTB / eMTB
+                                                    </p>
+
+                                                </div>
+
+                                            </div>
 
                                         </div>
 
                                     </div>
+                                </Link>
 
-                                </div>
+                                {/* 6 DAYS */}
 
-                            </Link>
+                                <Link
+                                    href="/mountain-biking/6-day-mountain-biking-eastern-high-atlas-morocco"
+                                    className="group relative overflow-hidden"
+                                >
+                                    <div className="relative aspect-[4/5] overflow-hidden">
 
-                            {/* TOUBKAL MASSIF */}
+                                        <Image
+                                            src="/images/mtb/group-bikers-picture.jpeg"
+                                            alt="Mountain biking journey in the Eastern High Atlas of Morocco"
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, 33vw"
+                                            className="object-cover transition-transform duration-1000 group-hover:scale-[1.04]"
+                                        />
 
-                            <Link
-                                href="/mountain-biking/toubkal-massif"
-                                className="group relative overflow-hidden"
-                            >
+                                        <div className="absolute inset-0 bg-black/10" />
 
-                                <div className="relative aspect-[4/5] overflow-hidden">
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent" />
 
-                                    <Image
-                                        src="/images/mtb/rider-singletrack-atlas.jpeg"
-                                        alt="Mountain biker riding singletrack in the Toubkal Massif of Morocco"
-                                        fill
-                                        sizes="(max-width: 768px) 100vw, 50vw"
-                                        className="object-cover transition-transform duration-700 group-hover:scale-105"
-                                    />
+                                        <div className="absolute inset-x-0 top-0 p-6">
 
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                                            <div className="flex items-center justify-between">
 
-                                    <div className="absolute inset-x-0 bottom-0 p-7 md:p-9">
-
-                                        <div className="flex items-end justify-between gap-6">
-
-                                            <div>
-
-                                                <p className="text-[9px] font-semibold uppercase tracking-[0.35em] text-[#F3EBDD]">
-                                                    02 · SINGLETRACK
+                                                <p className="text-[9px] font-semibold uppercase tracking-[0.3em] text-[#F3EBDD]">
+                                                    6 Days
                                                 </p>
 
-                                                <h3 className="mt-4 text-4xl font-semibold uppercase leading-[0.9] tracking-[-0.04em] text-white md:text-5xl">
-                                                    Toubkal
-                                                    <br />
-                                                    Massif
-                                                </h3>
+                                                <span className="flex h-9 w-9 items-center justify-center border border-white/30 text-sm text-white transition-all duration-300 group-hover:border-[#F3EBDD] group-hover:bg-[#F3EBDD] group-hover:text-black">
+                                                    ↗
+                                                </span>
 
                                             </div>
 
-                                            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/35 text-lg text-[#F3EBDD] transition-all duration-300 group-hover:border-[#F3EBDD] group-hover:bg-[#F3EBDD] group-hover:text-black">
-                                                ↗
-                                            </span>
-
                                         </div>
 
-                                        <div className="mt-7 border-t border-white/20 pt-5">
+                                        <div className="absolute inset-x-0 bottom-0 p-6">
 
-                                            <p className="max-w-md text-xs leading-6 text-white/60">
-                                                Singletracks, high passes and mountain riding around the
-                                                Toubkal Massif.
-                                            </p>
+                                            <h3 className="text-3xl font-semibold uppercase leading-[0.9] tracking-[-0.04em] text-white">
+                                                Eastern High Atlas
+                                                <br />
+                                                6-Day Journey
+                                            </h3>
 
-                                            <p className="mt-5 text-[9px] font-semibold uppercase tracking-[0.3em] text-white/45 transition-colors duration-300 group-hover:text-[#F3EBDD]">
-                                                View tour
-                                            </p>
+                                            <div className="mt-6 border-t border-white/20 pt-4">
+
+                                                <div className="flex flex-wrap gap-x-5 gap-y-3">
+
+                                                    <p className="text-[8px] font-semibold uppercase tracking-[0.2em] text-white/55">
+                                                        Challenging
+                                                    </p>
+
+                                                    <p className="text-[8px] font-semibold uppercase tracking-[0.2em] text-[#F3EBDD]">
+                                                        MTB / eMTB
+                                                    </p>
+
+                                                </div>
+
+                                            </div>
 
                                         </div>
 
                                     </div>
+                                </Link>
 
-                                </div>
+                                {/* 4 DAYS */}
 
-                            </Link>
+                                <Link
+                                    href="/mountain-biking/4-day-mountain-biking-eastern-high-atlas-morocco"
+                                    className="group relative overflow-hidden"
+                                >
+                                    <div className="relative aspect-[4/5] overflow-hidden">
 
-                            {/* SAGHRO */}
+                                        <Image
+                                            src="/images/mtb/singletrack-two-riders.jpeg"
+                                            alt="Mountain biking singletrack in the Eastern High Atlas of Morocco"
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, 33vw"
+                                            className="object-cover transition-transform duration-1000 group-hover:scale-[1.04]"
+                                        />
 
-                            <Link
-                                href="/mountain-biking/saghro"
-                                className="group relative overflow-hidden"
-                            >
+                                        <div className="absolute inset-0 bg-black/10" />
 
-                                <div className="relative aspect-[4/5] overflow-hidden">
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent" />
 
-                                    <Image
-                                        src="/images/mtb/two-riders-green-landcape-singletrack.jpeg"
-                                        alt="Mountain bikers riding through the Saghro Mountains in Morocco"
-                                        fill
-                                        sizes="(max-width: 768px) 100vw, 50vw"
-                                        className="object-cover transition-transform duration-700 group-hover:scale-105"
-                                    />
+                                        <div className="absolute inset-x-0 top-0 p-6">
 
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                                            <div className="flex items-center justify-between">
 
-                                    <div className="absolute inset-x-0 bottom-0 p-7 md:p-9">
-
-                                        <div className="flex items-end justify-between gap-6">
-
-                                            <div>
-
-                                                <p className="text-[9px] font-semibold uppercase tracking-[0.35em] text-[#F3EBDD]">
-                                                    03 · 8 DAYS
+                                                <p className="text-[9px] font-semibold uppercase tracking-[0.3em] text-[#F3EBDD]">
+                                                    4 Days
                                                 </p>
 
-                                                <h3 className="mt-4 text-4xl font-semibold uppercase leading-[0.9] tracking-[-0.04em] text-white md:text-5xl">
-                                                    Saghro
-                                                    <br />
-                                                    Mountains
-                                                </h3>
+                                                <span className="flex h-9 w-9 items-center justify-center border border-white/30 text-sm text-white transition-all duration-300 group-hover:border-[#F3EBDD] group-hover:bg-[#F3EBDD] group-hover:text-black">
+                                                    ↗
+                                                </span>
 
                                             </div>
 
-                                            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/35 text-lg text-[#F3EBDD] transition-all duration-300 group-hover:border-[#F3EBDD] group-hover:bg-[#F3EBDD] group-hover:text-black">
-                                                ↗
-                                            </span>
-
                                         </div>
 
-                                        <div className="mt-7 border-t border-white/20 pt-5">
+                                        <div className="absolute inset-x-0 bottom-0 p-6">
 
-                                            <p className="max-w-md text-xs leading-6 text-white/60">
-                                                An 8-day mountain biking journey through the volcanic
-                                                landscapes of the Saghro.
-                                            </p>
+                                            <h3 className="text-3xl font-semibold uppercase leading-[0.9] tracking-[-0.04em] text-white">
+                                                Eastern High Atlas
+                                                <br />
+                                                4-Day Journey
+                                            </h3>
 
-                                            <p className="mt-5 text-[9px] font-semibold uppercase tracking-[0.3em] text-white/45 transition-colors duration-300 group-hover:text-[#F3EBDD]">
-                                                View tour
-                                            </p>
+                                            <div className="mt-6 border-t border-white/20 pt-4">
+
+                                                <div className="flex flex-wrap gap-x-5 gap-y-3">
+
+                                                    <p className="text-[8px] font-semibold uppercase tracking-[0.2em] text-white/55">
+                                                        Moderate
+                                                    </p>
+
+                                                    <p className="text-[8px] font-semibold uppercase tracking-[0.2em] text-[#F3EBDD]">
+                                                        MTB / eMTB
+                                                    </p>
+
+                                                </div>
+
+                                            </div>
 
                                         </div>
 
                                     </div>
+                                </Link>
 
+                            </div>
+
+                        </div>
+
+                        {/* OTHER REGIONS */}
+
+                        <div className="mt-20">
+
+                            <div className="mb-6 flex items-center justify-between border-b border-white/10 pb-4">
+
+                                <div>
+                                    <p className="text-[9px] font-semibold uppercase tracking-[0.35em] text-[#F3EBDD]">
+                                        Other Atlas Regions
+                                    </p>
+
+                                    <p className="mt-2 text-[9px] uppercase tracking-[0.2em] text-white/35">
+                                        Different landscapes · Different rides
+                                    </p>
                                 </div>
 
-                            </Link>
+                            </div>
 
-                            {/* GRAVEL */}
+                            <div className="grid gap-5 md:grid-cols-2">
 
-                            <Link
-                                href="/gravel"
-                                className="group relative overflow-hidden"
-                            >
+                                {/* HAPPY VALLEY */}
 
-                                <div className="relative aspect-[4/5] overflow-hidden">
+                                <Link
+                                    href="/mountain-biking/8-day-mountain-biking-happy-valley-morocco"
+                                    className="group relative overflow-hidden"
+                                >
+                                    <div className="relative aspect-[4/5] overflow-hidden">
 
-                                    <Image
-                                        src="/images/mtb/gravel-bike-morocco-atlas-mountains.jpeg"
-                                        alt="Gravel cyclist riding through the Atlas Mountains in Morocco"
-                                        fill
-                                        sizes="(max-width: 768px) 100vw, 50vw"
-                                        className="object-cover transition-transform duration-700 group-hover:scale-105"
-                                    />
+                                        <Image
+                                            src="/images/mtb/two-riders-green-landcape-singletrack.jpeg"
+                                            alt="Mountain bikers riding through the Happy Valley in the Central High Atlas of Morocco"
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, 50vw"
+                                            className="object-cover transition-transform duration-1000 group-hover:scale-[1.04]"
+                                        />
 
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent" />
 
-                                    <div className="absolute inset-x-0 bottom-0 p-7 md:p-9">
+                                        <div className="absolute inset-x-0 top-0 p-6">
 
-                                        <div className="flex items-end justify-between gap-6">
+                                            <div className="flex items-center justify-between">
 
-                                            <div>
-
-                                                <p className="text-[9px] font-semibold uppercase tracking-[0.35em] text-[#F3EBDD]">
-                                                    04 · GRAVEL
+                                                <p className="text-[9px] font-semibold uppercase tracking-[0.3em] text-[#F3EBDD]">
+                                                    8 Days
                                                 </p>
 
-                                                <h3 className="mt-4 text-4xl font-semibold uppercase leading-[0.9] tracking-[-0.04em] text-white md:text-5xl">
-                                                    Gravel
-                                                    <br />
-                                                    Bike Trips
-                                                </h3>
+                                                <span className="flex h-9 w-9 items-center justify-center border border-white/30 text-sm text-white transition-all duration-300 group-hover:border-[#F3EBDD] group-hover:bg-[#F3EBDD] group-hover:text-black">
+                                                    ↗
+                                                </span>
 
                                             </div>
 
-                                            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/35 text-lg text-[#F3EBDD] transition-all duration-300 group-hover:border-[#F3EBDD] group-hover:bg-[#F3EBDD] group-hover:text-black">
-                                                ↗
-                                            </span>
-
                                         </div>
 
-                                        <div className="mt-7 border-t border-white/20 pt-5">
+                                        <div className="absolute inset-x-0 bottom-0 p-6">
 
-                                            <p className="max-w-md text-xs leading-6 text-white/60">
-                                                Remote roads, high passes and long days through the Moroccan
-                                                Atlas.
-                                            </p>
+                                            <h3 className="text-3xl font-semibold uppercase leading-[0.9] tracking-[-0.04em] text-white md:text-4xl">
+                                                Happy Valley
+                                                <br />
+                                                Central High Atlas
+                                            </h3>
 
-                                            <p className="mt-5 text-[9px] font-semibold uppercase tracking-[0.3em] text-white/45 transition-colors duration-300 group-hover:text-[#F3EBDD]">
-                                                Explore gravel trips
-                                            </p>
+                                            <div className="mt-6 border-t border-white/20 pt-4">
+
+                                                <div className="flex flex-wrap gap-x-5 gap-y-3">
+
+                                                    <p className="text-[8px] font-semibold uppercase tracking-[0.2em] text-white/55">
+                                                        Challenging
+                                                    </p>
+
+                                                    <p className="text-[8px] font-semibold uppercase tracking-[0.2em] text-[#F3EBDD]">
+                                                        MTB / eMTB
+                                                    </p>
+
+                                                </div>
+
+                                            </div>
 
                                         </div>
 
                                     </div>
+                                </Link>
 
-                                </div>
+                                {/* SAGHRO */}
 
-                            </Link>
+                                <Link
+                                    href="/mountain-biking/8-day-mountain-biking-saghro-mountains-morocco"
+                                    className="group relative overflow-hidden"
+                                >
+                                    <div className="relative aspect-[4/5] overflow-hidden">
+
+                                        <Image
+                                            src="/images/mtb/rider-singletrack-atlas.jpeg"
+                                            alt="Mountain biker riding through the Saghro Mountains in Morocco"
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, 50vw"
+                                            className="object-cover transition-transform duration-1000 group-hover:scale-[1.04]"
+                                        />
+
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent" />
+
+                                        <div className="absolute inset-x-0 top-0 p-6">
+
+                                            <div className="flex items-center justify-between">
+
+                                                <p className="text-[9px] font-semibold uppercase tracking-[0.3em] text-[#F3EBDD]">
+                                                    8 Days
+                                                </p>
+
+                                                <span className="flex h-9 w-9 items-center justify-center border border-white/30 text-sm text-white transition-all duration-300 group-hover:border-[#F3EBDD] group-hover:bg-[#F3EBDD] group-hover:text-black">
+                                                    ↗
+                                                </span>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div className="absolute inset-x-0 bottom-0 p-6">
+
+                                            <h3 className="text-3xl font-semibold uppercase leading-[0.9] tracking-[-0.04em] text-white md:text-4xl">
+                                                Saghro
+                                                <br />
+                                                Mountains
+                                            </h3>
+
+                                            <div className="mt-6 border-t border-white/20 pt-4">
+
+                                                <div className="flex flex-wrap gap-x-5 gap-y-3">
+
+                                                    <p className="text-[8px] font-semibold uppercase tracking-[0.2em] text-white/55">
+                                                        Challenging
+                                                    </p>
+
+                                                    <p className="text-[8px] font-semibold uppercase tracking-[0.2em] text-[#F3EBDD]">
+                                                        MTB / eMTB
+                                                    </p>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </Link>
+
+                            </div>
 
                         </div>
 
                     </div>
-
                 </section>
                 {/* THE ATLAS BY BIKE */}
 

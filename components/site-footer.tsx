@@ -5,6 +5,7 @@ const accent = "#F3EBDD";
 
 const navigation = [
   { label: "Mountain Biking", href: "/mountain-biking" },
+  { label: "Gravel Biking", href: "/gravel-biking-morocco" },
   { label: "Ski Touring", href: "/ski-touring" },
   { label: "Journal", href: "/journal" },
   { label: "About", href: "/about" },
@@ -17,7 +18,9 @@ export default function SiteFooter() {
       <div className="px-6 md:px-10 lg:px-14">
 
         {/* BRAND STATEMENT */}
+
         <div className="border-b border-white/10 py-20 md:py-28 lg:py-32">
+
           <div className="mx-auto max-w-7xl">
 
             <p
@@ -34,14 +37,17 @@ export default function SiteFooter() {
             </h2>
 
           </div>
+
         </div>
 
         {/* MAIN FOOTER */}
+
         <div className="mx-auto max-w-7xl py-16 md:py-20 lg:py-24">
 
-          <div className="grid gap-16 lg:grid-cols-[1.5fr_0.7fr_1fr]">
+          <div className="grid gap-16 lg:grid-cols-[1.5fr_0.8fr_1fr]">
 
             {/* BRAND */}
+
             <div>
 
               <Link
@@ -53,8 +59,8 @@ export default function SiteFooter() {
               </Link>
 
               <p className="mt-7 max-w-sm text-sm leading-7 text-white/45">
-                Mountain biking and ski touring across
-                Morocco&apos;s High Atlas.
+                Mountain biking, gravel biking and ski
+                touring across Morocco&apos;s High Atlas.
               </p>
 
               <p className="mt-6 text-[9px] font-semibold uppercase tracking-[0.3em] text-white/30">
@@ -64,6 +70,7 @@ export default function SiteFooter() {
             </div>
 
             {/* EXPLORE */}
+
             <div>
 
               <p
@@ -97,6 +104,7 @@ export default function SiteFooter() {
             </div>
 
             {/* CONTACT */}
+
             <div>
 
               <p
@@ -126,6 +134,7 @@ export default function SiteFooter() {
           </div>
 
           {/* FOOTER BASELINE */}
+
           <div className="mt-20 flex flex-col gap-4 border-t border-white/10 pt-6 text-[8px] font-medium uppercase tracking-[0.25em] text-white/30 md:flex-row md:items-center md:justify-between">
 
             <p>
