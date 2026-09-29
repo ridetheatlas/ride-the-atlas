@@ -9,300 +9,317 @@ export default function Home() {
     <>
       <SiteHeader />
 
-      <main className="bg-black text-white">
+      <main className="bg-[#171715] text-white">
 
-        {/* Hero */}
+        {/* HERO */}
 
-        <section className="relative h-screen min-h-[680px] overflow-hidden bg-black">
+        <section className="relative h-[100svh] min-h-[650px] overflow-hidden bg-[#171715]">
 
-          {/*Image*/}
-
+          {/* BACKGROUND VIDEO */}
           <div className="absolute inset-0">
-
-            <Image
-              src="/images/general/atlas-mountains.jpeg"
-              alt="Atlas mountain range in Morocco"
-              fill
-              priority
-              sizes="100vw"
-              className="scale-[1.03] object-cover object-center"
-            />
-
-            {/* Cinematic contrast */}
-
-            <div className="absolute inset-0 bg-black/20" />
-
-            <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/35 to-transparent" />
-
-            <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-black/85" />
-
-            {/* Very subtle film grain */}
-            <div
-              className="absolute inset-0 opacity-[0.045]"
-              style={{
-                backgroundImage:
-                  "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E\")",
-              }}
-            />
-
-          </div>
-
-
-          {/* =================================================
-      SMALL TOP LABEL
-  ================================================= */}
-
-          <div className="absolute left-6 top-32 z-20 md:left-10 md:top-36 lg:left-14">
-
-            <p className="text-[9px] font-semibold uppercase tracking-[0.42em] text-white/75">
-              Moroccan Atlas
-            </p>
-
-          </div>
-
-
-          {/* =================================================
-      MAIN BRAND
-  ================================================= */}
-
-          <div className="absolute left-6 top-1/2 z-20 -translate-y-[38%] md:left-10 lg:left-14">
-
-            <div className="flex items-stretch gap-5 md:gap-7">
-
-              {/* Vertical accent */}
-              <span className="w-px shrink-0 bg-[#F3EBDD]" />
-
-              <div>
-
-                <p className="mb-5 text-[9px] font-semibold uppercase tracking-[0.42em] text-[#F3EBDD]">
-                  Ride The Atlas | Mountain Biking & Ski Touring in Morocco
-                </p>
-
-                <h1 className="max-w-4xl text-[3.6rem] font-semibold uppercase leading-[0.86] tracking-[-0.065em] text-white sm:text-[4.8rem] md:text-[6.2rem] lg:text-[7.2rem]">
-                  Ride The
-                  <br />
-                  Atlas
-                </h1>
-
-                <p className="mt-7 max-w-md text-[10px] font-medium uppercase leading-6 tracking-[0.3em] text-white/55">
-                  Mountain adventures
-                  <br />
-                  across Morocco's High Atlas
-                </p>
-
-              </div>
-
-            </div>
-
-          </div>
-
-
-          {/* =================================================
-      BOTTOM INFORMATION
-  ================================================= */}
-
-          <div className="absolute bottom-8 left-6 right-6 z-20 flex items-end justify-between md:left-10 md:right-10 lg:left-14 lg:right-14">
-
-            <p className="text-[8px] uppercase tracking-[0.35em] text-white/40">
-              High Atlas · Morocco
-            </p>
-
-
-            <Link
-              href="#journeys"
-              className="group flex items-center gap-4 text-[9px] font-semibold uppercase tracking-[0.35em] text-white/70 transition-colors duration-300 hover:text-[#F3EBDD]"
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              poster="/images/general/atlas-mountains.jpeg"
+              aria-hidden="true"
+              className="absolute inset-0 h-full w-full object-cover object-center"
             >
-              Explore
+              <source src="/videos/hero-video.mp4" type="video/mp4" />
+            </video>
 
-              <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/30 text-sm text-[#F3EBDD] transition-all duration-300 group-hover:border-[#F3EBDD] group-hover:translate-y-1">
-                ↓
-              </span>
-            </Link>
-
+            {/* VIDEO TREATMENT */}
+            <div className="absolute inset-0 bg-black/10" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/20" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
           </div>
 
-        </section>
+          {/* TOP LOCATION LABEL */}
+          <div className="absolute left-6 right-6 top-32 z-20 flex items-center justify-between md:left-10 md:right-10 md:top-36 lg:left-14 lg:right-14">
+            <p className="flex items-center gap-3 text-[9px] font-semibold uppercase tracking-[0.3em] text-white/80">
+              <span className="h-px w-7 bg-[#E56A2E]" />
+              Moroccan High Atlas
+            </p>
 
+            <p className="hidden text-[9px] uppercase tracking-[0.3em] text-white/60 sm:block">
+              31° North · Morocco
+            </p>
+          </div>
 
-        {/* ABOUT RIDE THE ATLAS */}
+          {/* BOTTOM CONTENT */}
+          <div className="hero-reveal absolute inset-x-0 bottom-0 z-20 px-6 pb-8 md:px-10 md:pb-10 lg:px-14 lg:pb-12">
+            <div className="mx-auto max-w-[1600px]">
 
-        <section className="px-6 py-24 md:px-10 md:py-32 lg:px-14">
+              <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
 
-          <div className="mx-auto max-w-7xl">
+                {/* BRAND */}
+                <div>
+                  <p className="mb-4 text-[9px] font-semibold uppercase tracking-[0.35em] text-[#E56A2E]">
+                    By Bike · By Ski
+                  </p>
 
-            <div className="grid gap-10 lg:grid-cols-[0.55fr_1.45fr]">
+                  <h1 className="text-[clamp(3rem,7vw,6.5rem)] font-semibold uppercase leading-[0.85] tracking-[-0.075em] text-white">
+                    RIDE THE
+                    <br />
+                    ATLAS<span className="text-[#E56A2E]">.</span>
+                  </h1>
 
-              <div className="pt-2">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-[#F3EBDD]">
-                  About Ride The Atlas
-                </p>
-              </div>
-
-              <div>
-
-                <h2 className="max-w-5xl text-4xl font-semibold uppercase leading-[0.9] tracking-[-0.05em] text-white sm:text-5xl md:text-6xl lg:text-[5.8rem]">
-                  One mountain range.
-                  <br />
-                  Two ways to explore it.
-                </h2>
-
-                <div className="mt-8 max-w-2xl">
-                  <p className="text-sm leading-7 text-white/55 md:text-base md:leading-8">
-                    Ride The Atlas is about experiencing Morocco through its
-                    mountains — moving across them by bike in the dry seasons
-                    and by ski when winter transforms the high peaks.
+                  <p className="mt-5 text-[9px] font-medium uppercase tracking-[0.25em] text-white/70">
+                    Explore the Moroccan mountains
                   </p>
                 </div>
 
+                {/* SINGLE EXPLORE LINK */}
+                <Link
+                  href="#journeys"
+                  className="group flex w-fit items-center gap-4 pb-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-white transition-colors hover:text-[#E56A2E]"
+                >
+                  Explore
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/60 text-lg transition-all duration-300 group-hover:translate-y-1 group-hover:border-[#E56A2E]">
+                    ↓
+                  </span>
+                </Link>
+
+              </div>
+
+              {/* BOTTOM LOCATION */}
+              <div className="mt-8">
+                <p className="text-[8px] font-medium uppercase tracking-[0.25em] text-white/55">
+                  High Atlas Mountains · Morocco
+                </p>
               </div>
 
             </div>
+          </div>
+        </section>
+
+        {/* ABOUT RIDE THE ATLAS */}
+
+        <section
+          id="about"
+          className="overflow-hidden bg-[#F3EBDD] px-6 py-24 text-[#171715] md:px-10 md:py-32 lg:px-14"
+        >
+          <div className="mx-auto max-w-7xl">
+
+            {/* SECTION INTRO */}
+
+            <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
+
+              <div className="flex flex-col justify-between">
+                <div>
+                  <p className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.35em] text-[#B85A2A]">
+                    <span className="h-px w-8 bg-[#B85A2A]" />
+                    About Ride The Atlas
+                  </p>
+
+                  <p className="mt-8 max-w-[190px] text-xs uppercase leading-6 tracking-[0.16em] text-[#171715]/50">
+                    A family connection to the mountains of Morocco.
+                  </p>
+                </div>
+
+                <p className="mt-12 hidden text-[9px] uppercase tracking-[0.3em] text-[#171715]/40 lg:block">
+                  Isouktan Family · High Atlas
+                </p>
+              </div>
 
 
-            <div className="mt-16 grid gap-5 md:mt-20 md:grid-cols-2">
+              <div>
+                <h2 className="max-w-5xl text-[clamp(3rem,7vw,6.8rem)] font-semibold uppercase leading-[0.84] tracking-[-0.065em]">
+                  Born in the Atlas.
+                  <br />
+                  <span className="text-[#B85A2A]">Built to explore.</span>
+                </h2>
 
-              <div className="group relative overflow-hidden">
+                <div className="mt-10 grid gap-7 border-t border-[#171715]/20 pt-7 md:grid-cols-2 md:gap-10">
 
-                <div className="relative aspect-[4/5] overflow-hidden">
+                  <p className="text-sm leading-7 text-[#171715]/75 md:text-base md:leading-8">
+                    Ride The Atlas was founded by Radouane and his brothers, from the
+                    Isouktan family, whose roots are in Morocco’s High Atlas Mountains.
+                    The mountains are more than a landscape to us — they are part of
+                    our family story and the place that shaped our connection to
+                    outdoor life.
+                  </p>
+
+                  <p className="text-sm leading-7 text-[#171715]/75 md:text-base md:leading-8">
+                    From this connection grew a company dedicated to exploring Morocco
+                    by mountain bike and ski. We bring these two passions together,
+                    sharing the trails, valleys, villages and high mountain terrain
+                    that make the Atlas such a distinctive place to discover.
+                  </p>
+
+                </div>
+              </div>
+            </div>
+
+
+            {/* ACTIVITY INTRO */}
+
+            <div className="mt-24 flex flex-col gap-5 border-t border-[#171715]/20 pt-7 md:mt-32 md:flex-row md:items-end md:justify-between">
+
+              <div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-[#B85A2A]">
+                  Two ways to explore
+                </p>
+
+                <h3 className="mt-4 max-w-2xl text-3xl font-semibold uppercase leading-[0.9] tracking-[-0.05em] md:text-5xl">
+                  One mountain range.
+                  <br />
+                  Different ways to experience it.
+                </h3>
+              </div>
+
+              <p className="max-w-xs text-sm leading-7 text-[#171715]/60 md:pb-1">
+                From the trails of the warmer months to the snow-covered peaks of
+                winter, discover the Atlas through the seasons.
+              </p>
+            </div>
+
+
+            {/* ACTIVITY CARDS */}
+
+            <div className="mt-10 grid gap-4 md:grid-cols-2">
+
+              {/* MOUNTAIN BIKING */}
+
+              <Link
+                href="/mountain-biking"
+                className="group relative block overflow-hidden bg-[#171715]"
+              >
+                <div className="relative aspect-[4/5] overflow-hidden md:aspect-[4/4.5]">
 
                   <Image
                     src="/images/mtb/bikers-riding-on-ridge.jpeg"
                     alt="Mountain bikers riding a ridge in the Moroccan Atlas"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent" />
 
-                  <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
+                  {/* CARD TOP */}
 
-                    <div className="mb-6 flex h-11 w-11 items-center justify-center border border-white/30">
+                  <div className="absolute left-6 right-6 top-6 flex items-center justify-between md:left-8 md:right-8 md:top-8">
+                    <span className="text-[9px] font-semibold uppercase tracking-[0.3em] text-white/75">
+                      01 / Mountain Biking
+                    </span>
 
-                      <svg
-                        viewBox="0 0 48 48"
-                        fill="none"
-                        aria-hidden="true"
-                        className="h-6 w-6"
-                      >
-                        <circle cx="12" cy="35" r="7" stroke="#F3EBDD" strokeWidth="2" />
-                        <circle cx="36" cy="35" r="7" stroke="#F3EBDD" strokeWidth="2" />
-                        <path
-                          d="M12 35L20 20L27 35L36 35L26 21H20"
-                          stroke="#F3EBDD"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                        <path
-                          d="M20 20L24 16H29"
-                          stroke="#F3EBDD"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                        />
-                      </svg>
-
-                    </div>
-
-                    <p className="text-[9px] font-semibold uppercase tracking-[0.35em] text-[#F3EBDD]">
-                      Mountain Biking
-                    </p>
-
-                    <h3 className="mt-2 text-3xl font-semibold uppercase tracking-[-0.03em] text-white md:text-4xl">
-                      Ride the dry mountains.
-                    </h3>
-
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/50 text-white transition-all duration-300 group-hover:border-[#E56A2E] group-hover:bg-[#E56A2E]">
+                      <span className="transition-transform duration-300 group-hover:translate-x-0.5">
+                        ↗
+                      </span>
+                    </span>
                   </div>
 
+                  {/* CARD CONTENT */}
+
+                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+
+                    <p className="text-[9px] font-semibold uppercase tracking-[0.35em] text-[#E56A2E]">
+                      Explore by bike
+                    </p>
+
+                    <h4 className="mt-4 max-w-lg text-4xl font-semibold uppercase leading-[0.88] tracking-[-0.05em] text-white md:text-5xl">
+                      Ride the trails.
+                      <br />
+                      Discover the valleys.
+                    </h4>
+
+                    <div className="mt-7 flex items-center justify-between border-t border-white/30 pt-5">
+                      <p className="text-[9px] uppercase tracking-[0.25em] text-white/65">
+                        Mountain Biking · Morocco
+                      </p>
+
+                      <span className="text-[9px] font-semibold uppercase tracking-[0.25em] text-white transition-colors group-hover:text-[#E56A2E]">
+                        Discover
+                      </span>
+                    </div>
+
+                  </div>
                 </div>
+              </Link>
 
-              </div>
 
+              {/* SKI TOURING */}
 
-              <div className="group relative overflow-hidden">
-
-                <div className="relative aspect-[4/5] overflow-hidden">
+              <Link
+                href="/ski-touring"
+                className="group relative block overflow-hidden bg-[#171715]"
+              >
+                <div className="relative aspect-[4/5] overflow-hidden md:aspect-[4/4.5]">
 
                   <Image
                     src="/images/ski/ski-descent-bouignouane.jpeg"
                     alt="Ski tourer descending a mountain in the Moroccan Atlas"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent" />
 
-                  <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
+                  {/* CARD TOP */}
 
-                    <div className="mb-6 flex h-11 w-11 items-center justify-center border border-white/30">
+                  <div className="absolute left-6 right-6 top-6 flex items-center justify-between md:left-8 md:right-8 md:top-8">
+                    <span className="text-[9px] font-semibold uppercase tracking-[0.3em] text-white/75">
+                      02 / Ski Touring
+                    </span>
 
-                      <svg
-                        viewBox="0 0 48 48"
-                        fill="none"
-                        aria-hidden="true"
-                        className="h-6 w-6"
-                      >
-                        <path
-                          d="M15 9V39"
-                          stroke="#F3EBDD"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                        />
-                        <path
-                          d="M33 9V39"
-                          stroke="#F3EBDD"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                        />
-                        <path
-                          d="M10 34L38 40"
-                          stroke="#F3EBDD"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                        />
-                        <path
-                          d="M17 27L29 22L34 13"
-                          stroke="#F3EBDD"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-
-                    </div>
-
-                    <p className="text-[9px] font-semibold uppercase tracking-[0.35em] text-[#F3EBDD]">
-                      Ski Touring
-                    </p>
-
-                    <h3 className="mt-2 text-3xl font-semibold uppercase tracking-[-0.03em] text-white md:text-4xl">
-                      Follow the winter lines.
-                    </h3>
-
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/50 text-white transition-all duration-300 group-hover:border-[#E56A2E] group-hover:bg-[#E56A2E]">
+                      <span className="transition-transform duration-300 group-hover:translate-x-0.5">
+                        ↗
+                      </span>
+                    </span>
                   </div>
 
-                </div>
+                  {/* CARD CONTENT */}
 
-              </div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+
+                    <p className="text-[9px] font-semibold uppercase tracking-[0.35em] text-[#E56A2E]">
+                      Explore by ski
+                    </p>
+
+                    <h4 className="mt-4 max-w-lg text-4xl font-semibold uppercase leading-[0.88] tracking-[-0.05em] text-white md:text-5xl">
+                      Follow the winter.
+                      <br />
+                      Find your line.
+                    </h4>
+
+                    <div className="mt-7 flex items-center justify-between border-t border-white/30 pt-5">
+                      <p className="text-[9px] uppercase tracking-[0.25em] text-white/65">
+                        Ski Touring · Morocco
+                      </p>
+
+                      <span className="text-[9px] font-semibold uppercase tracking-[0.25em] text-white transition-colors group-hover:text-[#E56A2E]">
+                        Discover
+                      </span>
+                    </div>
+
+                  </div>
+                </div>
+              </Link>
 
             </div>
 
 
-            <div className="mt-8 flex flex-col gap-4 border-t border-white/10 pt-6 md:flex-row md:items-center md:justify-between">
+            {/* CLOSING LINE */}
 
-              <p className="text-[9px] font-semibold uppercase tracking-[0.35em] text-white/30">
-                By Bike · By Ski
+            <div className="mt-8 flex flex-col gap-4 border-t border-[#171715]/20 pt-6 sm:flex-row sm:items-center sm:justify-between">
+
+              <p className="text-[9px] font-semibold uppercase tracking-[0.3em] text-[#171715]/50">
+                Isouktan Family · Moroccan High Atlas
               </p>
 
-              <p className="text-[9px] uppercase tracking-[0.28em] text-white/30">
-                Moroccan Atlas · Morocco
+              <p className="text-[9px] uppercase tracking-[0.3em] text-[#171715]/50">
+                By Bike <span className="px-2 text-[#E56A2E]">/</span> By Ski
               </p>
 
             </div>
 
           </div>
-
         </section>
 
 
@@ -310,37 +327,34 @@ export default function Home() {
 
         <section
           id="journeys"
-          className="px-6 py-24 md:px-10 md:py-32 lg:px-14"
+          className="bg-[#171715] px-6 py-24 text-white md:px-10 md:py-32 lg:px-14"
         >
           <div className="mx-auto max-w-7xl">
 
             {/* SECTION HEADER */}
 
-            <div className="mb-12 flex items-end justify-between">
-
+            <div className="mb-12 grid gap-8 border-b border-white/15 pb-8 md:grid-cols-[1fr_auto] md:items-end">
               <div>
-
-                <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-[#F3EBDD]">
+                <p className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.35em] text-[#E56A2E]">
+                  <span className="h-px w-8 bg-[#E56A2E]" />
                   Explore The Atlas
                 </p>
 
-                <h2 className="mt-4 max-w-3xl text-4xl font-semibold uppercase leading-[0.92] tracking-[-0.045em] text-white md:text-6xl">
-                  Choose your way
+                <h2 className="mt-6 max-w-4xl text-[clamp(2.8rem,6vw,5.8rem)] font-semibold uppercase leading-[0.86] tracking-[-0.06em]">
+                  Find your way
                   <br />
                   into the mountains.
                 </h2>
-
               </div>
 
-              <p className="hidden max-w-xs text-right text-[10px] uppercase leading-6 tracking-[0.25em] text-white/30 md:block">
-                By bike.
-                <br />
-                By ski.
+              <p className="max-w-xs text-sm leading-7 text-white/50 md:pb-1 md:text-right">
+                Three ways to experience Morocco’s mountain landscapes.
+                Choose the journey that moves you.
               </p>
-
             </div>
 
-            {/* DISCIPLINES */}
+
+            {/* ACTIVITY GRID */}
 
             <div className="grid gap-5 md:grid-cols-2">
 
@@ -348,9 +362,8 @@ export default function Home() {
 
               <Link
                 href="/mountain-biking"
-                className="group relative overflow-hidden"
+                className="group relative block overflow-hidden border border-white/10 bg-[#242421] transition-colors duration-300 hover:border-[#E56A2E]"
               >
-
                 <div className="relative aspect-[4/5] overflow-hidden">
 
                   <Image
@@ -358,56 +371,67 @@ export default function Home() {
                     alt="Mountain biker riding singletrack in the Moroccan Atlas"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/15 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/25 to-transparent" />
+                  <div className="absolute inset-0 bg-[#171715]/10 transition-colors duration-500 group-hover:bg-transparent" />
 
-                  <div className="absolute inset-x-0 bottom-0 p-7 md:p-9">
+                  {/* TOP */}
 
-                    <div className="flex items-end justify-between gap-5">
+                  <div className="absolute left-6 right-6 top-6 flex items-center justify-between md:left-8 md:right-8 md:top-8">
+                    <span className="bg-[#E56A2E] px-3 py-2 text-[9px] font-bold uppercase tracking-[0.2em] text-white">
+                      01 / By Bike
+                    </span>
 
-                      <div>
+                    <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#E56A2E] text-xl text-white transition-transform duration-300 group-hover:rotate-45">
+                      ↗
+                    </span>
+                  </div>
 
-                        <p className="text-[9px] font-semibold uppercase tracking-[0.35em] text-[#F3EBDD]">
-                          01 · BY BIKE
-                        </p>
+                  {/* BOTTOM */}
 
-                        <h3 className="mt-3 text-3xl font-semibold uppercase leading-[0.9] tracking-[-0.04em] text-white md:text-4xl">
-                          Mountain
-                          <br />
-                          Biking
-                        </h3>
+                  <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
 
-                      </div>
+                    <div className="mb-4 h-1 w-14 bg-[#E56A2E] transition-all duration-500 group-hover:w-24" />
 
-                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/40 text-xl text-[#F3EBDD] transition-all duration-300 group-hover:border-[#F3EBDD] group-hover:bg-[#F3EBDD] group-hover:text-black">
-                        ↗
+                    <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#E56A2E]">
+                      Mountain Biking
+                    </p>
+
+                    <h3 className="mt-3 text-3xl font-semibold uppercase leading-[0.9] tracking-[-0.045em] md:text-4xl">
+                      Ride beyond
+                      <br />
+                      the ordinary.
+                    </h3>
+
+                    <p className="mt-5 max-w-sm text-sm leading-6 text-white/70">
+                      Explore mountain trails, remote tracks and traditional
+                      villages across the Atlas.
+                    </p>
+
+                    <div className="mt-7 flex items-center justify-between gap-4 border-t border-white/25 pt-5">
+                      <span className="text-[8px] uppercase tracking-[0.28em] text-white/50">
+                        High Atlas · Morocco
                       </span>
 
-                    </div>
-
-                    <div className="mt-6 border-t border-white/20 pt-4">
-
-                      <p className="text-[8px] font-semibold uppercase tracking-[0.3em] text-white/40">
-                        High Atlas · Morocco
-                      </p>
-
+                      <span className="inline-flex shrink-0 items-center gap-2 bg-[#E56A2E] px-4 py-3 text-[9px] font-bold uppercase tracking-[0.18em] text-white transition-colors duration-300 group-hover:bg-white group-hover:text-[#171715]">
+                        Explore biking
+                        <span className="text-sm">↗</span>
+                      </span>
                     </div>
 
                   </div>
-
                 </div>
-
               </Link>
+
 
               {/* SKI TOURING */}
 
               <Link
                 href="/ski-touring"
-                className="group relative overflow-hidden"
+                className="group relative block overflow-hidden border border-white/10 bg-[#242421] transition-colors duration-300 hover:border-[#E56A2E]"
               >
-
                 <div className="relative aspect-[4/5] overflow-hidden">
 
                   <Image
@@ -415,272 +439,306 @@ export default function Home() {
                     alt="Ski tourers on a summit in the Moroccan Atlas"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/15 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/25 to-transparent" />
+                  <div className="absolute inset-0 bg-[#171715]/10 transition-colors duration-500 group-hover:bg-transparent" />
 
-                  <div className="absolute inset-x-0 bottom-0 p-7 md:p-9">
+                  {/* TOP */}
 
-                    <div className="flex items-end justify-between gap-5">
+                  <div className="absolute left-6 right-6 top-6 flex items-center justify-between md:left-8 md:right-8 md:top-8">
+                    <span className="bg-[#E56A2E] px-3 py-2 text-[9px] font-bold uppercase tracking-[0.2em] text-white">
+                      02 / By Ski
+                    </span>
 
-                      <div>
+                    <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#E56A2E] text-xl text-white transition-transform duration-300 group-hover:rotate-45">
+                      ↗
+                    </span>
+                  </div>
 
-                        <p className="text-[9px] font-semibold uppercase tracking-[0.35em] text-[#F3EBDD]">
-                          02 · BY SKI
-                        </p>
+                  {/* BOTTOM */}
 
-                        <h3 className="mt-3 text-3xl font-semibold uppercase leading-[0.9] tracking-[-0.04em] text-white md:text-4xl">
-                          Ski
-                          <br />
-                          Touring
-                        </h3>
+                  <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
 
-                      </div>
+                    <div className="mb-4 h-1 w-14 bg-[#E56A2E] transition-all duration-500 group-hover:w-24" />
 
-                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/40 text-xl text-[#F3EBDD] transition-all duration-300 group-hover:border-[#F3EBDD] group-hover:bg-[#F3EBDD] group-hover:text-black">
-                        ↗
+                    <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#E56A2E]">
+                      Ski Touring
+                    </p>
+
+                    <h3 className="mt-3 text-3xl font-semibold uppercase leading-[0.9] tracking-[-0.045em] md:text-4xl">
+                      Into the
+                      <br />
+                      winter mountains.
+                    </h3>
+
+                    <p className="mt-5 max-w-sm text-sm leading-6 text-white/70">
+                      Climb into the high mountains and discover the Atlas
+                      on skis when winter brings snow to its peaks.
+                    </p>
+
+                    <div className="mt-7 flex items-center justify-between gap-4 border-t border-white/25 pt-5">
+                      <span className="text-[8px] uppercase tracking-[0.28em] text-white/50">
+                        High Atlas · Winter
                       </span>
 
-                    </div>
-
-                    <div className="mt-6 border-t border-white/20 pt-4">
-
-                      <p className="text-[8px] font-semibold uppercase tracking-[0.3em] text-white/40">
-                        High Atlas · Winter · Morocco
-                      </p>
-
+                      <span className="inline-flex shrink-0 items-center gap-2 bg-[#E56A2E] px-4 py-3 text-[9px] font-bold uppercase tracking-[0.18em] text-white transition-colors duration-300 group-hover:bg-white group-hover:text-[#171715]">
+                        Explore skiing
+                        <span className="text-sm">↗</span>
+                      </span>
                     </div>
 
                   </div>
-
                 </div>
-
               </Link>
+
 
               {/* GRAVEL BIKING */}
 
               <Link
                 href="/gravel-biking-morocco"
-                className="group relative overflow-hidden md:col-span-2"
+                className="group relative block overflow-hidden border border-white/10 bg-[#242421] transition-colors duration-300 hover:border-[#E56A2E] md:col-span-2"
               >
-
-                <div className="relative aspect-[16/7] min-h-[420px] overflow-hidden md:min-h-[480px]">
+                <div className="relative min-h-[560px] overflow-hidden md:min-h-[540px]">
 
                   <Image
                     src="/images/mtb/gravel-bike-morocco-atlas-mountains.jpeg"
                     alt="Gravel cyclist riding through the Atlas Mountains in Morocco"
                     fill
                     sizes="100vw"
-                    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                   />
 
-                  <div className="absolute inset-0 bg-black/15" />
+                  <div className="absolute inset-0 bg-black/25" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/35 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+                  {/* TOP */}
 
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent" />
-
-                  <div className="absolute left-7 top-7 md:left-10 md:top-10">
-
-                    <span className="border border-white/30 bg-black/20 px-4 py-3 text-[8px] font-semibold uppercase tracking-[0.3em] text-white backdrop-blur-sm">
-                      Gravel Biking
+                  <div className="absolute left-6 right-6 top-6 flex items-center justify-between md:left-10 md:right-10 md:top-8">
+                    <span className="bg-[#E56A2E] px-3 py-2 text-[9px] font-bold uppercase tracking-[0.2em] text-white">
+                      03 / By Gravel
                     </span>
 
+                    <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#E56A2E] text-xl text-white transition-transform duration-300 group-hover:rotate-45">
+                      ↗
+                    </span>
                   </div>
 
-                  <div className="absolute inset-x-0 bottom-0 p-7 md:p-10 lg:p-12">
+                  {/* CONTENT */}
 
-                    <div className="flex max-w-5xl flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 lg:p-12">
 
-                      <div>
+                    <div className="max-w-3xl">
 
-                        <p className="text-[9px] font-semibold uppercase tracking-[0.35em] text-[#F3EBDD]">
-                          03 · BY GRAVEL
-                        </p>
+                      <div className="mb-5 h-1 w-16 bg-[#E56A2E] transition-all duration-500 group-hover:w-28" />
 
-                        <h3 className="mt-3 text-4xl font-semibold uppercase leading-[0.9] tracking-[-0.04em] text-white sm:text-5xl md:text-6xl">
-                          Gravel Biking
-                          <br />
-                          In Morocco
-                        </h3>
+                      <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#E56A2E]">
+                        Gravel Biking
+                      </p>
 
-                        <p className="mt-6 max-w-xl text-sm leading-7 text-white/60 md:text-base md:leading-8">
-                          Explore Morocco by gravel bike,
-                          from remote roads and high passes
-                          to the landscapes of the Atlas.
-                        </p>
+                      <h3 className="mt-4 text-4xl font-semibold uppercase leading-[0.88] tracking-[-0.055em] sm:text-5xl md:text-7xl">
+                        Take the
+                        <br />
+                        longer way.
+                      </h3>
 
-                      </div>
+                      <p className="mt-6 max-w-lg text-sm leading-7 text-white/75 md:text-base md:leading-8">
+                        Explore Morocco by gravel bike, from remote roads and
+                        high passes to the wide-open landscapes of the Atlas.
+                      </p>
 
-                      <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-white/40 text-xl text-[#F3EBDD] transition-all duration-300 group-hover:border-[#F3EBDD] group-hover:bg-[#F3EBDD] group-hover:text-black">
-                        ↗
+                    </div>
+
+                    <div className="mt-9 flex flex-col gap-5 border-t border-white/25 pt-5 sm:flex-row sm:items-center sm:justify-between">
+
+                      <p className="text-[8px] uppercase tracking-[0.28em] text-white/55">
+                        Gravel · Atlas · Morocco
+                      </p>
+
+                      <span className="inline-flex w-fit items-center gap-2 bg-[#E56A2E] px-5 py-3.5 text-[9px] font-bold uppercase tracking-[0.18em] text-white transition-colors duration-300 group-hover:bg-white group-hover:text-[#171715]">
+                        Explore gravel biking
+                        <span className="text-sm">↗</span>
                       </span>
 
                     </div>
 
-                    <div className="mt-8 flex items-center justify-between border-t border-white/20 pt-5">
-
-                      <p className="text-[8px] font-semibold uppercase tracking-[0.3em] text-white/40">
-                        Gravel · Atlas · Morocco
-                      </p>
-
-                      <p className="text-[9px] font-semibold uppercase tracking-[0.3em] text-white/50 transition-colors duration-300 group-hover:text-[#F3EBDD]">
-                        Explore gravel biking →
-                      </p>
-
-                    </div>
-
                   </div>
-
                 </div>
-
               </Link>
 
             </div>
-
           </div>
         </section>
         {/* THE FOUNDER */}
 
-        <section className="px-6 py-24 md:px-10 md:py-32 lg:px-14">
-
+        <section className="overflow-hidden bg-[#F3EBDD] px-6 py-24 text-[#171715] md:px-10 md:py-32 lg:px-14">
           <div className="mx-auto max-w-7xl">
 
-            <div className="grid gap-12 lg:grid-cols-[0.55fr_1.45fr]">
+            <div className="grid gap-12 lg:grid-cols-[0.55fr_1.45fr] lg:gap-16">
 
-              <div className="pt-2">
+              {/* SECTION LABEL */}
 
-                <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-[#F3EBDD]">
-                  The Founder
-                </p>
-
+              <div className="flex items-start justify-between lg:block">
+                <div>
+                  <p className="pt-2 text-[10px] font-bold uppercase tracking-[0.35em] text-[#B85A2A]">
+                    The Founder
+                  </p>
+                  <span className="mt-4 block h-1 w-14 bg-[#E56A2E]" />
+                </div>
               </div>
 
 
+              {/* CONTENT */}
+
               <div>
 
-                <h2 className="max-w-5xl text-4xl font-semibold uppercase leading-[0.9] tracking-[-0.05em] text-white md:text-6xl lg:text-[5.5rem]">
-                  Built from a
-                  <br />
-                  love of mountains.
-                </h2>
+                <div className="max-w-5xl">
+                  <h2 className="text-4xl font-semibold uppercase leading-[0.92] tracking-[-0.05em] text-[#171715] md:text-6xl lg:text-[5.5rem]">
+                    Built from a
+                    <br />
+                    love of mountains.
+                  </h2>
 
-                <p className="mt-8 max-w-2xl text-sm leading-7 text-white/55 md:text-base md:leading-8">
-                  Ride The Atlas was created by Radouane to share a different
-                  way of experiencing Morocco — through movement, exploration
-                  and time spent in the mountains.
-                </p>
+                  <p className="mt-8 max-w-2xl text-sm leading-7 text-[#171715]/70 md:text-base md:leading-8">
+                    Ride The Atlas was created by Radouane to share a different
+                    way of experiencing Morocco — through movement, exploration
+                    and time spent in the mountains.
+                  </p>
+                </div>
 
+
+                {/* FOUNDER PHOTOGRAPHS */}
 
                 <div className="mt-12 grid gap-5 md:grid-cols-2">
 
-                  {/* BIKE */}
+                  {/* BY BIKE */}
 
                   <div className="group">
-
-                    <div className="relative aspect-[4/5] overflow-hidden">
+                    <div className="relative aspect-[4/5] overflow-hidden bg-[#171715]/10">
 
                       <Image
                         src="/images/mtb/radouane-bike.jpeg"
                         alt="Radouane riding a mountain bike in the Moroccan Atlas"
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                       />
 
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
 
-                      <div className="absolute bottom-0 left-0 p-6">
+                      {/* ORANGE TOP MARKER */}
 
-                        <p className="text-[9px] font-semibold uppercase tracking-[0.35em] text-[#F3EBDD]">
-                          By Bike
-                        </p>
-
-                        <p className="mt-2 text-xl font-semibold uppercase tracking-[-0.02em] text-white">
-                          Radouane
-                        </p>
-
+                      <div className="absolute left-5 top-5 flex items-center gap-2">
+                        <span className="h-2 w-2 bg-[#E56A2E]" />
+                        <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-white">
+                          01 / 02
+                        </span>
                       </div>
 
-                    </div>
+                      {/* CARD CAPTION */}
 
+                      <div className="absolute bottom-0 left-0 right-0 p-6 md:p-7">
+                        <span className="inline-block bg-[#E56A2E] px-3 py-2 text-[9px] font-bold uppercase tracking-[0.25em] text-white">
+                          By Bike
+                        </span>
+
+                        <p className="mt-3 text-2xl font-semibold uppercase tracking-[-0.03em] text-white">
+                          Radouane
+                        </p>
+                      </div>
+
+                      {/* ORANGE EDGE */}
+
+                      <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#E56A2E] transition-all duration-500 group-hover:w-full" />
+                    </div>
                   </div>
 
 
-                  {/* SKI */}
+                  {/* BY SKI */}
 
                   <div className="group">
-
-                    <div className="relative aspect-[4/5] overflow-hidden">
+                    <div className="relative aspect-[4/5] overflow-hidden bg-[#171715]/10">
 
                       <Image
                         src="/images/ski/radouane-on-skis.jpeg"
                         alt="Radouane ski touring in the Moroccan Atlas"
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                       />
 
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
 
-                      <div className="absolute bottom-0 left-0 p-6">
+                      {/* ORANGE TOP MARKER */}
 
-                        <p className="text-[9px] font-semibold uppercase tracking-[0.35em] text-[#F3EBDD]">
-                          By Ski
-                        </p>
-
-                        <p className="mt-2 text-xl font-semibold uppercase tracking-[-0.02em] text-white">
-                          Radouane
-                        </p>
-
+                      <div className="absolute left-5 top-5 flex items-center gap-2">
+                        <span className="h-2 w-2 bg-[#E56A2E]" />
+                        <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-white">
+                          02 / 02
+                        </span>
                       </div>
 
-                    </div>
+                      {/* CARD CAPTION */}
 
+                      <div className="absolute bottom-0 left-0 right-0 p-6 md:p-7">
+                        <span className="inline-block bg-[#E56A2E] px-3 py-2 text-[9px] font-bold uppercase tracking-[0.25em] text-white">
+                          By Ski
+                        </span>
+
+                        <p className="mt-3 text-2xl font-semibold uppercase tracking-[-0.03em] text-white">
+                          Radouane
+                        </p>
+                      </div>
+
+                      {/* ORANGE EDGE */}
+
+                      <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#E56A2E] transition-all duration-500 group-hover:w-full" />
+                    </div>
                   </div>
 
                 </div>
 
 
-                <div className="mt-8 flex items-center justify-between border-t border-white/10 pt-6">
+                {/* FOOTER LINK */}
 
-                  <p className="text-[9px] uppercase tracking-[0.3em] text-white/30">
+                <div className="mt-8 flex flex-col gap-5 border-t border-[#171715]/15 pt-6 sm:flex-row sm:items-center sm:justify-between">
+
+                  <p className="text-[9px] font-semibold uppercase tracking-[0.3em] text-[#171715]/50">
                     Radouane · Founder
                   </p>
 
                   <Link
                     href="/about"
-                    className="text-[9px] font-semibold uppercase tracking-[0.3em] text-white/50 transition-colors duration-300 hover:text-[#F3EBDD]"
+                    className="group inline-flex w-fit items-center gap-4 bg-[#E56A2E] px-5 py-4 text-[9px] font-bold uppercase tracking-[0.25em] text-white transition-colors duration-300 hover:bg-[#171715]"
                   >
-                    More about the project →
+                    More about the project
+                    <span className="text-base transition-transform duration-300 group-hover:translate-x-1">
+                      →
+                    </span>
                   </Link>
 
                 </div>
 
               </div>
-
             </div>
-
           </div>
-
         </section>
         {/* STORIES */}
 
-        <section className="px-6 py-24 md:px-10 md:py-32 lg:px-14">
-
+        <section className="bg-[#171715] px-6 py-24 md:px-10 md:py-32 lg:px-14">
           <div className="mx-auto max-w-7xl">
 
             {/* HEADER */}
 
-            <div className="mb-14 grid gap-8 lg:grid-cols-[0.55fr_1.45fr] lg:items-end">
+            <div className="mb-14 grid gap-8 border-b border-white/15 pb-8 lg:grid-cols-[0.55fr_1.45fr] lg:items-end">
 
               <div>
-
-                <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-[#F3EBDD]">
+                <p className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.35em] text-[#E56A2E]">
+                  <span className="h-px w-8 bg-[#E56A2E]" />
                   From The Atlas
                 </p>
-
               </div>
 
               <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
@@ -693,54 +751,64 @@ export default function Home() {
 
                 <Link
                   href="/journal"
-                  className="hidden shrink-0 pb-1 text-[9px] font-semibold uppercase tracking-[0.3em] text-white/45 transition-colors duration-300 hover:text-[#F3EBDD] md:block"
+                  className="group hidden shrink-0 items-center gap-3 pb-1 text-[9px] font-bold uppercase tracking-[0.3em] text-white md:inline-flex"
                 >
-                  Explore the journal →
+                  <span className="h-2 w-2 bg-[#E56A2E]" />
+                  Explore the journal
+                  <span className="text-base text-[#E56A2E] transition-transform duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
                 </Link>
 
               </div>
-
             </div>
 
 
-            {/* STORIES */}
+            {/* STORIES GRID */}
 
             <div className="grid gap-6 lg:grid-cols-2">
 
               {/* MOUNTAIN BIKING STORY */}
 
-              <Link
-                href="/journal"
-                className="group"
-              >
+              <Link href="/journal" className="group block">
 
-                <article>
+                <article className="h-full">
 
-                  <div className="relative aspect-[4/3] overflow-hidden">
+                  {/* IMAGE */}
+
+                  <div className="relative aspect-[4/3] overflow-hidden bg-[#242421]">
 
                     <Image
                       src="/images/mtb/singletrack-two-riders.jpeg"
                       alt="Mountain bikers riding through the Moroccan Atlas"
                       fill
                       sizes="(max-width: 1024px) 100vw, 50vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
 
                     <div className="absolute inset-0 bg-black/10" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
 
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
+                    {/* TOP LABEL */}
 
                     <div className="absolute left-6 top-6 md:left-8 md:top-8">
-
-                      <span className="border border-white/30 bg-black/20 px-3 py-2 text-[8px] font-semibold uppercase tracking-[0.3em] text-white backdrop-blur-sm">
+                      <span className="inline-flex items-center gap-2 bg-[#E56A2E] px-3 py-2 text-[8px] font-bold uppercase tracking-[0.25em] text-white">
+                        <span className="h-1.5 w-1.5 bg-white" />
                         Mountain Biking
                       </span>
-
                     </div>
 
-                    <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8">
+                    {/* STORY NUMBER */}
 
-                      <p className="text-[9px] font-semibold uppercase tracking-[0.35em] text-[#F3EBDD]">
+                    <span className="absolute right-6 top-6 text-[9px] font-bold uppercase tracking-[0.25em] text-white/80 md:right-8 md:top-8">
+                      01 / 02
+                    </span>
+
+                    {/* IMAGE TITLE */}
+
+                    <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+
+                      <p className="text-[9px] font-bold uppercase tracking-[0.35em] text-[#E56A2E]">
                         Atlas · Morocco
                       </p>
 
@@ -750,71 +818,82 @@ export default function Home() {
                         Adventures in Morocco
                       </h3>
 
-                    </div>
+                      <div className="mt-6 h-1 w-12 bg-[#E56A2E] transition-all duration-500 group-hover:w-24" />
 
+                    </div>
                   </div>
 
 
-                  <div className="border-x border-b border-white/10 p-6 md:p-8">
+                  {/* STORY DESCRIPTION */}
 
-                    <p className="max-w-2xl text-sm leading-7 text-white/55 md:text-base md:leading-8">
+                  <div className="border-x border-b border-white/10 p-6 transition-colors duration-300 group-hover:border-[#E56A2E]/50 md:p-8">
+
+                    <p className="max-w-2xl text-sm leading-7 text-white/60 md:text-base md:leading-8">
                       From remote Amazigh villages and green valleys to oasis and
                       desert landscapes, discover the Moroccan Atlas by mountain bike.
                     </p>
 
-                    <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-5">
+                    <div className="mt-6 flex items-center justify-between gap-4 border-t border-white/10 pt-5">
 
-                      <p className="text-[8px] font-semibold uppercase tracking-[0.3em] text-white/35">
+                      <p className="text-[8px] font-semibold uppercase tracking-[0.3em] text-white/40">
                         Singletrack · Villages · High Atlas
                       </p>
 
-                      <span className="text-lg text-[#F3EBDD] transition-transform duration-300 group-hover:translate-x-1">
-                        →
+                      <span className="inline-flex shrink-0 items-center gap-2 text-[9px] font-bold uppercase tracking-[0.2em] text-[#E56A2E]">
+                        Read story
+                        <span className="text-base transition-transform duration-300 group-hover:translate-x-1">
+                          →
+                        </span>
                       </span>
 
                     </div>
-
                   </div>
 
                 </article>
-
               </Link>
 
 
               {/* SKI TOURING STORY */}
 
-              <Link
-                href="/journal"
-                className="group"
-              >
+              <Link href="/journal" className="group block">
 
-                <article>
+                <article className="h-full">
 
-                  <div className="relative aspect-[4/3] overflow-hidden">
+                  {/* IMAGE */}
+
+                  <div className="relative aspect-[4/3] overflow-hidden bg-[#242421]">
 
                     <Image
                       src="/images/ski/radouane-ski-descent-tizi-mazik.jpeg"
                       alt="Ski touring descent in the high mountains of Morocco"
                       fill
                       sizes="(max-width: 1024px) 100vw, 50vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
 
                     <div className="absolute inset-0 bg-black/10" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
 
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                    {/* TOP LABEL */}
 
                     <div className="absolute left-6 top-6 md:left-8 md:top-8">
-
-                      <span className="border border-white/30 bg-black/20 px-3 py-2 text-[8px] font-semibold uppercase tracking-[0.3em] text-white backdrop-blur-sm">
+                      <span className="inline-flex items-center gap-2 bg-[#E56A2E] px-3 py-2 text-[8px] font-bold uppercase tracking-[0.25em] text-white">
+                        <span className="h-1.5 w-1.5 bg-white" />
                         Ski Touring
                       </span>
-
                     </div>
 
-                    <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8">
+                    {/* STORY NUMBER */}
 
-                      <p className="text-[9px] font-semibold uppercase tracking-[0.35em] text-[#F3EBDD]">
+                    <span className="absolute right-6 top-6 text-[9px] font-bold uppercase tracking-[0.25em] text-white/80 md:right-8 md:top-8">
+                      02 / 02
+                    </span>
+
+                    {/* IMAGE TITLE */}
+
+                    <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+
+                      <p className="text-[9px] font-bold uppercase tracking-[0.35em] text-[#E56A2E]">
                         Winter · High Atlas
                       </p>
 
@@ -824,34 +903,38 @@ export default function Home() {
                         Morocco&apos;s High Mountains
                       </h3>
 
-                    </div>
+                      <div className="mt-6 h-1 w-12 bg-[#E56A2E] transition-all duration-500 group-hover:w-24" />
 
+                    </div>
                   </div>
 
 
-                  <div className="border-x border-b border-white/10 p-6 md:p-8">
+                  {/* STORY DESCRIPTION */}
 
-                    <p className="max-w-2xl text-sm leading-7 text-white/55 md:text-base md:leading-8">
+                  <div className="border-x border-b border-white/10 p-6 transition-colors duration-300 group-hover:border-[#E56A2E]/50 md:p-8">
+
+                    <p className="max-w-2xl text-sm leading-7 text-white/60 md:text-base md:leading-8">
                       Couloirs, high summits and winter lines across the Toubkal and
                       M&apos;Goun massifs, exploring a different side of the Atlas on skis.
                     </p>
 
-                    <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-5">
+                    <div className="mt-6 flex items-center justify-between gap-4 border-t border-white/10 pt-5">
 
-                      <p className="text-[8px] font-semibold uppercase tracking-[0.3em] text-white/35">
+                      <p className="text-[8px] font-semibold uppercase tracking-[0.3em] text-white/40">
                         Toubkal · M&apos;Goun · Couloirs
                       </p>
 
-                      <span className="text-lg text-[#F3EBDD] transition-transform duration-300 group-hover:translate-x-1">
-                        →
+                      <span className="inline-flex shrink-0 items-center gap-2 text-[9px] font-bold uppercase tracking-[0.2em] text-[#E56A2E]">
+                        Read story
+                        <span className="text-base transition-transform duration-300 group-hover:translate-x-1">
+                          →
+                        </span>
                       </span>
 
                     </div>
-
                   </div>
 
                 </article>
-
               </Link>
 
             </div>
@@ -860,22 +943,20 @@ export default function Home() {
             {/* MOBILE JOURNAL LINK */}
 
             <div className="mt-8 md:hidden">
-
               <Link
                 href="/journal"
-                className="text-[9px] font-semibold uppercase tracking-[0.3em] text-white/45 transition-colors duration-300 hover:text-[#F3EBDD]"
+                className="inline-flex items-center gap-3 bg-[#E56A2E] px-5 py-4 text-[9px] font-bold uppercase tracking-[0.25em] text-white transition-colors duration-300 hover:bg-[#F3EBDD] hover:text-[#171715]"
               >
-                Explore the journal →
+                Explore the journal
+                <span className="text-base">→</span>
               </Link>
-
             </div>
 
           </div>
-
         </section>
         {/* FINAL CTA */}
 
-        <section className="px-6 pb-20 md:px-10 md:pb-28 lg:px-14">
+        <section className="bg-[#171715] px-6 pb-20 md:px-10 md:pb-28 lg:px-14">
           <div className="mx-auto max-w-7xl">
 
             <div className="relative overflow-hidden bg-black">
@@ -892,11 +973,9 @@ export default function Home() {
                   className="object-cover object-center transition-transform duration-1000 hover:scale-[1.02]"
                 />
 
-                <div className="absolute inset-0 bg-black/25" />
-
+                <div className="absolute inset-0 bg-black/30" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent" />
-
-                <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/10 to-transparent" />
 
                 {/* CONTENT */}
 
@@ -907,13 +986,11 @@ export default function Home() {
                     <div className="max-w-5xl">
 
                       <div className="flex items-center gap-4">
+                        <span className="h-1 w-10 bg-[#E56A2E]" />
 
-                        <span className="h-px w-8 bg-[#F3EBDD]" />
-
-                        <p className="text-[9px] font-semibold uppercase tracking-[0.4em] text-[#F3EBDD]">
+                        <p className="text-[9px] font-bold uppercase tracking-[0.4em] text-[#E56A2E]">
                           Ride The Atlas
                         </p>
-
                       </div>
 
                       <h2 className="mt-6 max-w-4xl text-[2.7rem] font-semibold uppercase leading-[0.88] tracking-[-0.055em] text-white sm:text-5xl md:text-6xl lg:text-7xl">
@@ -924,7 +1001,7 @@ export default function Home() {
 
                       <div className="mt-7 flex flex-col gap-7 md:mt-8 md:flex-row md:items-end md:justify-between">
 
-                        <p className="max-w-sm text-[10px] font-medium uppercase leading-6 tracking-[0.22em] text-white/60">
+                        <p className="max-w-sm text-[10px] font-medium uppercase leading-6 tracking-[0.22em] text-white/70">
                           Mountain biking.
                           <br />
                           Gravel biking.
@@ -936,11 +1013,9 @@ export default function Home() {
 
                         <Link
                           href="/contact"
-                          className="group inline-flex w-fit items-center gap-5 border border-white/35 px-6 py-4 text-[9px] font-semibold uppercase tracking-[0.3em] text-white transition-all duration-300 hover:border-[#F3EBDD] hover:bg-[#F3EBDD] hover:text-black"
+                          className="group inline-flex w-fit items-center gap-5 bg-[#E56A2E] px-6 py-4 text-[9px] font-bold uppercase tracking-[0.3em] text-white transition-colors duration-300 hover:bg-[#F3EBDD] hover:text-[#171715]"
                         >
-                          <span>
-                            Start a conversation
-                          </span>
+                          <span>Start a conversation</span>
 
                           <span className="text-lg transition-transform duration-300 group-hover:translate-x-1">
                             →
@@ -950,12 +1025,15 @@ export default function Home() {
                       </div>
 
                     </div>
-
                   </div>
-
                 </div>
 
+                {/* ORANGE IMAGE ACCENT */}
+
+                <div className="absolute bottom-0 left-0 h-1.5 w-full bg-[#E56A2E]" />
+
               </div>
+
 
               {/* LOWER STATEMENT */}
 
@@ -963,21 +1041,19 @@ export default function Home() {
 
                 <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
 
-                  <p className="max-w-2xl text-xs leading-6 text-white/45 md:text-sm md:leading-7">
+                  <p className="max-w-2xl text-xs leading-6 text-white/55 md:text-sm md:leading-7">
                     Planning a ride, a ski traverse, or simply looking for
                     the next line through the Atlas?
                   </p>
 
-                  <p className="shrink-0 text-[8px] font-semibold uppercase tracking-[0.3em] text-white/25">
-                    By bike · By ski
+                  <p className="shrink-0 text-[8px] font-bold uppercase tracking-[0.3em] text-[#E56A2E]">
+                    By bike <span className="text-white/40">·</span> By ski
                   </p>
 
                 </div>
-
               </div>
 
             </div>
-
           </div>
         </section>
 
