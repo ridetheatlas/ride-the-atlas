@@ -12,22 +12,33 @@ export default function Home() {
       <main className="bg-[#171715] text-white">
 
         {/* HERO */}
-
         <section className="relative h-[100svh] min-h-[650px] overflow-hidden bg-[#171715]">
 
-          {/* BACKGROUND VIDEO */}
-          <div className="absolute inset-0">
+          {/* TWO ALTERNATING BACKGROUND VIDEOS */}
+          <div className="absolute inset-0 overflow-hidden">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              poster="/images/general/atlas-mountains.jpeg"
+              aria-hidden="true"
+              className="hero-bike-video absolute inset-0 h-full w-full object-cover object-center"
+            >
+              <source src="/videos/hero-video.mp4" type="video/mp4" />
+            </video>
+
             <video
               autoPlay
               muted
               loop
               playsInline
               preload="metadata"
-              poster="/images/general/atlas-mountains.jpeg"
               aria-hidden="true"
-              className="absolute inset-0 h-full w-full object-cover object-center"
+              className="hero-ski-video absolute inset-0 h-full w-full object-cover object-center"
             >
-              <source src="/videos/hero-video.mp4" type="video/mp4" />
+              <source src="/videos/hero-ski-video.mp4" type="video/mp4" />
             </video>
 
             {/* VIDEO TREATMENT */}
@@ -51,7 +62,6 @@ export default function Home() {
           {/* BOTTOM CONTENT */}
           <div className="hero-reveal absolute inset-x-0 bottom-0 z-20 px-6 pb-8 md:px-10 md:pb-10 lg:px-14 lg:pb-12">
             <div className="mx-auto max-w-[1600px]">
-
               <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
 
                 {/* BRAND */}
@@ -61,8 +71,7 @@ export default function Home() {
                   </p>
 
                   <h1 className="text-[clamp(3rem,7vw,6.5rem)] font-semibold uppercase leading-[0.85] tracking-[-0.075em] text-white">
-                    RIDE THE
-                    <br />
+                    RIDE THE<br />
                     ATLAS<span className="text-[#E56A2E]">.</span>
                   </h1>
 
@@ -71,17 +80,16 @@ export default function Home() {
                   </p>
                 </div>
 
-                {/* SINGLE EXPLORE LINK */}
+                {/* EXPLORE LINK */}
                 <Link
                   href="#journeys"
-                  className="group flex w-fit items-center gap-4 pb-2 text-[10px] font-semibold uppercase tracking-[0.25em] text-white transition-colors hover:text-[#E56A2E]"
+                  className="group inline-flex items-center gap-5 self-start border-b border-white/50 pb-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-white transition hover:border-[#E56A2E] hover:text-[#E56A2E] sm:self-auto"
                 >
-                  Explore
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/60 text-lg transition-all duration-300 group-hover:translate-y-1 group-hover:border-[#E56A2E]">
-                    ↓
+                  Explore the journeys
+                  <span className="text-lg transition-transform group-hover:translate-x-2">
+                    →
                   </span>
                 </Link>
-
               </div>
 
               {/* BOTTOM LOCATION */}
@@ -90,9 +98,43 @@ export default function Home() {
                   High Atlas Mountains · Morocco
                 </p>
               </div>
-
             </div>
           </div>
+
+          {/* VIDEO ALTERNATION */}
+          <style>{`
+    @keyframes heroBike {
+      0%, 44% { opacity: 1; }
+      50%, 94% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes heroSki {
+      0%, 44% { opacity: 0; }
+      50%, 94% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    .hero-bike-video {
+      animation: heroBike 20s ease-in-out infinite;
+    }
+
+    .hero-ski-video {
+      animation: heroSki 20s ease-in-out infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-bike-video {
+        animation: none;
+        opacity: 1;
+      }
+
+      .hero-ski-video {
+        animation: none;
+        opacity: 0;
+      }
+    }
+  `}</style>
         </section>
 
         {/* ABOUT RIDE THE ATLAS */}
