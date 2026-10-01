@@ -66,8 +66,18 @@ const highlights = [
             "Routes and objectives are adapted to snow coverage, weather, visibility and the group’s condition.",
     },
 ];
+type ItineraryDay = {
+    day: string;
+    title: string;
+    subtitle: string;
+    altitude: string;
+    description: string;
+    overnight: string;
+    image?: string;
+    imageAlt?: string;
+};
 
-const itinerary = [
+const itinerary: ItineraryDay[] = [
     {
         day: "01",
         title: "Marrakech to Imlil",
