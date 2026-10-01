@@ -3,1141 +3,561 @@ import Link from "next/link";
 import SiteFooter from "@/components/site-footer";
 import SiteHeader from "@/components/site-header";
 
-const sectionLinks = [
-    { label: "Atlas in winter", href: "#atlas-in-winter" },
-    { label: "Where we ski", href: "#where-we-ski" },
-    { label: "Winter tradition", href: "#winter-tradition" },
-    { label: "My story", href: "#my-story" },
-    { label: "Terrain", href: "#terrain" },
-    { label: "Expeditions", href: "#expeditions" },
-    { label: "FAQ", href: "#faq" },
+const sections = [
+    ["The terrain", "#terrain"],
+    ["Toubkal Refuge", "#toubkal-refuge"],
+    ["Tazaghart Refuge", "#tazaghart-refuge"],
+    ["Tacheddirt", "#tacheddirt"],
+    ["Aksoual", "#aksoual"],
+    ["Planning", "#planning"],
+    ["Expeditions", "#expeditions"],
 ];
 
-const mountainAreas = [
+const routeGroups = [
     {
+        id: "toubkal-refuge",
         number: "01",
-        category: "High Atlas · Ski mountaineering",
-        title: "Toubkal Massif",
-        description:
-            "High-altitude objectives around Morocco's highest summit, with approaches through the Toubkal massif and terrain shaped by the conditions of the day.",
-        tags: ["4,167 m", "Summits", "High passes"],
+        eyebrow: "Louis Neltner Refuge · 3,207 m",
+        title: "From the Toubkal Refuge",
+        intro:
+            "The upper basin of the Assif n’Aït Mizane gathers steep gullies, couloirs and high mountain passes beneath a group of 4,000-metre summits. The source guide describes the refuge as a base for ski objectives on the slopes of Toubkal, Ouanoukrim and Biiguinnoussene.",
         image: "/images/ski/skiers-on-toubkal-summit.jpeg",
         alt: "Skiers on a summit in the Moroccan High Atlas",
+        access: [
+            "The classic approach starts in Imlil (about 1,700 m) and climbs through Aremd and Sidi Chamharouch to the refuge.",
+            "The source gives approximately 1,500 m of ascent and five hours for the approach. In winter, snow can make the path difficult or impassable on foot; access and porter or mule support depend on conditions.",
+            "When snow cover is sufficient, the guide describes leaving the path near Irhzer n’Imouzzer and following the valley floor towards the refuge.",
+        ],
+        routes: [
+            {
+                name: "Tizi n’Ouagane",
+                stats: "3,750 m · +550 m · 1 h 45 min up",
+                level: "Good skiers",
+                text: "A high pass giving access towards the upper Agoundis valley and, to the south, the Tifnout via Tizi n’Zaout. The final slope steepens to around 35°. The source recommends ski crampons; a snow cornice may overhang the Agoundis side.",
+            },
+            {
+                name: "Tizi n’Ouanoums",
+                stats: "3,684 m · +500 m · 1 h 30 min up",
+                level: "Good skiers",
+                text: "A high pass on the classic walking route towards Lake Ifni. The source notes that this wind- and sun-exposed slope often has insufficient snow, and that crampons or ski crampons may be needed.",
+            },
+            {
+                name: "Amrharas n’Igliouia",
+                stats: "+700 m · about 2 h 30 min up",
+                level: "Good skiers",
+                text: "A broad glacial cirque reached through a narrow gorge. The guide describes several options from the upper basin: the Amguird col and Bou Imrhaz valley, the Akioud ridge, or the smaller Amrharas cols. The upper slopes can be sun-exposed; an early descent is advised in spring.",
+            },
+            {
+                name: "Tizi n’Bou Imrhaz",
+                stats: "3,965 m · +760 m · about 3 h up",
+                level: "Good to very good skiers",
+                text: "Also called Tizi n’Ouanoukrim in the source. The route follows the Assif Mizane before climbing broad ledges or a steep, narrow couloir of roughly 150 m to a high plateau. The source praises the Bou Imrhaz bowl as one of the finest descents in the valley.",
+            },
+            {
+                name: "Toubkal via Ikhibi Sud",
+                stats: "4,167 m · +900 m · about 3 h up",
+                level: "Very good skiers",
+                text: "The south gully rises directly above the refuge, with slopes around 35° and rocky barriers below the summit cirque. The source calls for crampons or ski crampons on the ascent and rope, ice axe and crampons when the ridge is icy.",
+            },
+            {
+                name: "Toubkal via Ikhibi Nord",
+                stats: "4,167 m · +1,000 m · about 4 h up",
+                level: "Very good skiers",
+                text: "From the refuge, the route descends the Assif Mizane to the gully, then climbs towards the North Col (about 3,950 m) between Toubkal and Imouzzer. Skis are left before the final ridge ascent.",
+            },
+            {
+                name: "Ras n’Ouanoukrim, north couloir",
+                stats: "4,083 m · +900 m · about 3 h 30 min up",
+                level: "Very good skiers",
+                text: "A narrow, straight couloir on the north-east face, described in the source as around 350 m high with an average angle of 35°. It leads into the Bou Imrhaz bowl. The source suggests April and May, subject to conditions.",
+            },
+            {
+                name: "Afella n’Ouanoukrim",
+                stats: "4,015 m in the source · about 4 h up",
+                level: "Very good skiers",
+                text: "The described line climbs the Aougdal Bou Tiouna ravine on the south-east side. Steep steps and ledges lead to the upper slopes; skis are left before following the north ridge to the rounded summit. The source notes that this is an uncommon and more involved itinerary.",
+            },
+            {
+                name: "Clochetons of Ouanoukrim",
+                stats: "3,963 m in the source · +763 m",
+                level: "Alpine experience",
+                text: "The Irhzer Ikhelloun gully ends in a narrow, steep couloir (around 40°) below the south breach. The source warns of major avalanche activity in this ravine after heavy snowfall. The summit ridge has rocky steps; rope, ice axe and crampons are specified.",
+            },
+            {
+                name: "Tizi n’Tadat",
+                stats: "about 3,800 m · +600 m · about 2 h up",
+                level: "Good skiers",
+                text: "A gully above the refuge, with a narrow and irregular lower section often filled with blocks and avalanche debris. The source describes the upper slopes at around 30° and identifies this pass as a direct link between the Toubkal and Tazaghart refuges.",
+            },
+            {
+                name: "Biiguinnoussene",
+                stats: "4,002 m in the source · +800 m · about 3 h up",
+                level: "Very good skiers",
+                text: "The source describes an ascent to the north shoulder, or a longer approach from Tizi n’Tadat through the Assif Timellilt cirque. In good snow, the north bowl offers a major descent and a possible continuation to Tazaghart Refuge or a return towards Imlil via Tizi Mzic.",
+            },
+        ],
     },
     {
+        id: "tazaghart-refuge",
         number: "02",
-        category: "High Atlas · Remote touring",
-        title: "Tachedirt & Likemt",
-        description:
-            "Quieter valleys, high passes and demanding winter objectives around Tachedirt, Likemt and Bouignouane.",
-        tags: ["Tizi Likemt", "Bouignouane", "Couloirs"],
-        image: "/images/ski/ski-descent-bouignouane.jpeg",
-        alt: "Ski descent in the Bouignouane area of the High Atlas",
+        eyebrow: "Jacques de Lépiney Refuge · 3,000 m",
+        title: "From Tazaghart Refuge",
+        intro:
+            "Above the Azzadene valley, the refuge sits beneath the Tazaghart plateau in a dramatic mountain cirque. The source highlights the contrast between the plateau, the long north–south Ouanoukrim ridge and the coloured villages far below.",
+        image: "/images/ski/bouignouane-skiers-skinning-up.jpeg",
+        alt: "Skiers climbing a snow-covered slope in the High Atlas",
+        access: [
+            "The source describes an approach via Tizi n’Mzic (2,490 m) and the Azib Tamsoult summer settlements, with the final climb passing the Irhoulidene waterfalls.",
+            "With moderate snow and no recent snowfall, mules may carry equipment as far as Azib Tamsoult. The source notes a possible 1.5–2 hour wait there while the muleteer contacts the refuge guardian.",
+            "After heavy or recent snowfall, mule access may stop lower down. The path below the waterfalls crosses steep, exposed ledges; the source says it may be better to remove skis for this section.",
+        ],
+        routes: [
+            {
+                name: "Aougdal n’Bouidarene",
+                stats: "about 900 m descent",
+                level: "Intermediate to good skiers",
+                text: "The refuge’s home bowl lies below the north face of Tazaghart. The source describes a broad north-facing slope, then the left bank opposite the refuge and finally the stream bed, with the exact line depending on snow cover.",
+            },
+            {
+                name: "Assif Timellilt / north bowl of Biiguinnoussene",
+                stats: "about 1,000–1,200 m descent · 8 h tour noted",
+                level: "Good skiers",
+                text: "From above the waterfall, the route climbs towards the west couloir of Biiguinnoussene. The source warns that an obvious first couloir ends blindly against the Adad ridge. An icy passage may require an ice axe and crampons; a narrow section can sometimes be blocked by a small icefall.",
+            },
+            {
+                name: "Arhzane cirque",
+                stats: "Route and vertical vary",
+                level: "Very good skiers",
+                text: "A more committing area for the Afella n’Ouanoukrim, the Tazaghart plateau, couloirs and traverses. The source places these objectives in the very-good-skier category and describes the refuge as a base in a striking high cirque.",
+            },
+            {
+                name: "Tazaghart plateau and couloirs",
+                stats: "Exact line-dependent elevation",
+                level: "Very good skiers / alpinists",
+                text: "The source groups the plateau, couloirs and traverse among the advanced objectives from this refuge. It does not give one universal descent line or a single vertical drop for the whole area.",
+            },
+        ],
     },
     {
+        id: "tacheddirt",
         number: "03",
-        category: "High Atlas · Technical terrain",
-        title: "Tazaghart",
-        description:
-            "Steeper terrain, natural couloirs and challenging ski-mountaineering objectives for experienced teams when conditions allow.",
-        tags: ["Couloirs", "Steep slopes", "Advanced"],
-        image: "/images/ski/radouane-couloir-skis-on-pack.jpeg",
-        alt: "Ski equipment carried for a couloir objective in the High Atlas",
-    },
-    {
-        number: "04",
-        category: "Central High Atlas · Expedition",
-        title: "M'Goun Massif",
-        description:
-            "Remote valleys, broad winter landscapes and high ridges suited to longer ski journeys away from the busiest routes.",
-        tags: ["Remote valleys", "High ridges", "Multi-day"],
+        eyebrow: "Tacheddirt · village about 2,300 m",
+        title: "From Tacheddirt and the Imenane Valley",
+        intro:
+            "Tacheddirt opens a different side of the massif: the north-facing valleys beneath Aksoual, Likemt and Iguenouane. The source describes long ski lines, village-to-village journeys and a mix of high cols, bowls and couloirs.",
         image: "/images/ski/ski-descent-bouignouane.jpeg",
-        alt: "Winter mountain terrain in the Moroccan Atlas",
+        alt: "Ski descent in the Tacheddirt and High Atlas area",
+        access: [
+            "The source describes Tacheddirt as a base at the entrance to the village, with views towards Aksoual and the snowfields of Likemt and Iguenouane.",
+            "A link from Oukaïmeden to Tacheddirt via Tizi n’Ou Addi (also written Tizi n’Eddi) is described as a three-hour crossing, with about 300 m ascent and 600 m descent. The source cautions that the west-facing side is often too sparsely covered for skiing.",
+            "The source also describes a longer traverse around Angour linking Tacheddirt and Oukaïmeden, with village stops possible. It is a full mountain journey, not simply a piste-to-piste connection.",
+        ],
+        routes: [
+            {
+                name: "Tizi Likemt",
+                stats: "3,555 m · +1,300 m · about 4 h up",
+                level: "Good skiers",
+                text: "From the village, the route crosses the Assif Imenane and climbs the Irhzer n’Likemt. The upper slope steepens to around 35° and is often wind-affected or hard; the source says the final part is commonly completed on crampons. In good winter coverage, the descent may reach the Assif Imenane.",
+            },
+            {
+                name: "Iguenouane via Amazer Meggoren",
+                stats: "3,882 m · +1,500 m · about 5 h up",
+                level: "Very good skiers",
+                text: "The route crosses the Assif Imenane and climbs towards the Amazer Meggoren waterfall before traversing beneath the Iguenouane towers. The upper cirque rises on a broad slope of around 35°. The source describes this as an exceptional long descent, but stresses how dramatically snow quality can vary.",
+            },
+            {
+                name: "Tizi n’Tigourzatine",
+                stats: "+1,100 m · about 4 h up",
+                level: "Good skiers",
+                text: "The source gives two approaches: via Irhzer Nou Ahior, or from Tizi n’Tacheddirt (around 3,200 m; about 5 h). It notes that the lower west-facing section is often less well covered than neighbouring lines.",
+            },
+            {
+                name: "Tour of Angour / Tacheddirt–Oukaïmeden",
+                stats: "+2,100 m ascent · about 1,200 m ski descent · 8 h",
+                level: "Fit, experienced mountain travellers",
+                text: "From Tizi n’Tacheddirt, the itinerary skis east into the Assif Ibbassene and returns via Tizi n’Itbir below the north side of Angour, or via Jbel Ouhattar. The source gives the pass as 3,200–3,230 m depending on the map and suggests splitting the long day into village stages.",
+            },
+        ],
     },
     {
-        number: "05",
-        category: "Middle Atlas · Winter exploration",
-        title: "Bouiblane",
-        description:
-            "A lesser-known winter mountain area offering quieter terrain when snow coverage and mountain conditions align.",
-        tags: ["Winter exploration", "Quiet terrain", "Conditions-led"],
-        image: "/images/ski/skiers-close-to-bouignouane-summit.jpeg",
-        alt: "Skiers approaching a summit in the Atlas Mountains",
-    },
-    {
-        number: "06",
-        category: "Atlas Mountains · Traverse",
-        title: "Erdouz Traverse",
-        description:
-            "A longer ski journey linking changing terrain, high passes and remote Atlas landscapes.",
-        tags: ["Traverse", "High passes", "Exploration"],
-        image: "/images/ski/radouane-ski-descent-tizi-mazik.jpeg",
-        alt: "Ski touring descent in the Moroccan High Atlas",
+        id: "aksoual",
+        number: "04",
+        eyebrow: "Aksoual · north-facing couloirs",
+        title: "Aksoual and Azrou n’Tamadôt",
+        intro:
+            "The source devotes a separate section to the couloirs of Aksoual and the west-facing slopes of Azrou n’Tamadôt. These are serious mountain routes where snow quality, sun exposure, avalanche debris and rocky barriers shape the line.",
+        image: "/images/ski/radouane-couloir-skis-on-pack.jpeg",
+        alt: "Ski touring equipment carried for a steep couloir in the Atlas",
+        access: [
+            "For Irhzer n’Temda, the source describes an approach from Tacheddirt across the Imenane valley and past Azib Amguedoul, then up the Assif Tirgad.",
+            "The lower couloir is given at about 2,450 m and the Arhzane col at about 3,600 m, with around 3.5 hours for that section. The source describes a steepening upper section reaching roughly 45° and says crampons are necessary.",
+        ],
+        routes: [
+            {
+                name: "Irhzer n’Temda",
+                stats: "about 1,150 m vertical · average 35°",
+                level: "Experienced alpinists / very good skiers",
+                text: "A long, straight couloir visible from Tacheddirt. The source warns of avalanche debris in the lower section and a steep, narrow finish. It describes the descent as magnificent but conditions-sensitive, especially where sun-softened snow may sit over hard or icy layers.",
+            },
+            {
+                name: "Aksoual summit",
+                stats: "3,910–3,912 m in the source",
+                level: "Very good skiers",
+                text: "The source describes reaching the summit from the Arhzane breach after passing the Aksoual towers. It distinguishes the towers (3,842 m) from the Aksoual summit (3,912 m); these are separate points and should not be conflated.",
+            },
+            {
+                name: "West side of Azrou n’Tamadôt",
+                stats: "Snow basin around 3,000 m",
+                level: "Experienced skiers",
+                text: "A broad west-facing cirque above the Aremd rockslide, with two snow zones separated by rocky steps. The source recommends an early descent because the slope warms quickly. In good coverage, snow tongues may lead towards Assif n’Imserdane and Aremd.",
+            },
+            {
+                name: "Oukks n’Idane towers",
+                stats: "3,813 m in the source",
+                level: "Very good skiers / alpinists",
+                text: "The source proposes following the Azrou n’Tamadôt ridge to the towers, then making a descending traverse on a 35–40° slope above a large rock band. It describes the shaded aspect as holding powder longer, but this is a serious exposed line.",
+            },
+            {
+                name: "North face of Aksoual",
+                stats: "3,910 m summit · +1,400 m · about 4 h 30 min up",
+                level: "Alpine route for excellent skiers",
+                text: "The source describes a complex ascent through gullies, short rocky steps and couloirs, including sections around 40°. The descent follows the ascent route. This should be treated as an alpine objective, not a standard touring descent.",
+            },
+        ],
     },
 ];
 
-const terrainCards = [
+const faqs = [
     {
-        number: "01",
-        title: "High passes",
-        label: "Ascent",
-        description:
-            "Long climbs through winter valleys toward high passes and mountain crossings.",
-        tags: ["Skinning", "Navigation", "Endurance"],
-        image: "/images/ski/skiers-close-to-bouignouane-summit.jpeg",
-        alt: "Skiers approaching a high mountain summit",
+        q: "Are these current, fixed itineraries?",
+        a: "No. These are route descriptions drawn from the supplied French source. They are not a promise that a line is currently in condition. Snow cover, wind, temperature, visibility, avalanche hazard and the team’s ability determine what is appropriate on the day.",
     },
     {
-        number: "02",
-        title: "Summit objectives",
-        label: "Objective",
-        description:
-            "High summits such as Toubkal and other Atlas objectives, where ascent and descent become one continuous mountain journey.",
-        tags: ["Altitude", "Exposure", "Descent"],
-        image: "/images/ski/skiers-on-toubkal-summit.jpeg",
-        alt: "Skiers on a summit in the High Atlas",
+        q: "Why do some elevations differ from modern maps?",
+        a: "The source is an older guide and some summit or pass figures differ from contemporary references. We have retained source figures where they identify the route, and labelled uncertain or source-specific figures. Confirm exact points against a current topographic map before publishing a trip plan.",
     },
     {
-        number: "03",
-        title: "Natural couloirs",
-        label: "Technical",
-        description:
-            "Steeper lines and natural couloirs for experienced skiers when snow stability and conditions allow.",
-        tags: ["Steep", "Technical", "Advanced"],
-        image: "/images/ski/radouane-couloir-skis-on-pack.jpeg",
-        alt: "Ski touring equipment prepared for technical mountain terrain",
+        q: "What do the ascent times and vertical figures mean?",
+        a: "They are the figures stated in the source for particular route descriptions, not guaranteed timings. They do not include every transition, rest, snow condition or descent. Actual time depends on the route chosen and the group.",
     },
     {
-        number: "04",
-        title: "Long descents",
-        label: "The reward",
-        description:
-            "When conditions align, the reward is a continuous descent through changing snow, terrain and altitude.",
-        tags: ["Flow", "Terrain", "Earned"],
-        image: "/images/ski/radouane-ski-descent-tizi-mazik.jpeg",
-        alt: "Ski descent in the Moroccan High Atlas",
+        q: "What level is required?",
+        a: "The source separates good skiers from very good skiers and, for some couloirs, experienced mountaineers. Steepness, exposure, avalanche terrain, icy passages and the need to carry skis or use crampons can make a route substantially more serious than its distance suggests.",
+    },
+    {
+        q: "Can the route change during the trip?",
+        a: "Yes. A route may be changed, shortened or abandoned if conditions or the team do not support it. A summit or descent is never more important than sound mountain decisions.",
+    },
+    {
+        q: "What equipment is mentioned in the source?",
+        a: "Depending on the line, the source mentions ski crampons, crampons, an ice axe and a rope. It also describes sections where skis may need to be carried. This is not a complete modern equipment list; the final kit should be set after a route and conditions assessment.",
     },
 ];
 
 const expeditions = [
     {
         number: "01",
-        type: "High Atlas · 8 day expedition",
-        title: "Toubkal & Tachedirt",
+        duration: "8 days",
+        label: "High Atlas · Classic ski mountaineering",
+        title: "Tacheddirt & Toubkal",
         level: "Intermediate",
-        terrain: "Ski mountaineering",
+        terrain: "High passes · Summit objectives · Long descents",
         description:
-            "An eight-day journey linking the Tachedirt and Toubkal areas through high passes, summit objectives and long winter descents.",
+            "The established eight-day journey linking the Tacheddirt and Toubkal areas through high passes, summit objectives and long winter descents.",
         image: "/images/ski/radouane-ski-descent-tizi-mazik.jpeg",
-        alt: "Ski touring descent in the Toubkal area",
+        alt: "Ski touring descent in the Toubkal area of Morocco",
         href: "/ski-touring/tachedirt-toubkal",
+        action: "Explore the 8-day expedition",
     },
     {
         number: "02",
-        type: "Technical · 8 day expedition",
-        title: "Tazaghart Traverse",
-        level: "Advanced",
-        terrain: "Couloirs",
+        duration: "6 days",
+        label: "Imenane Valley · Ski touring",
+        title: "Tacheddirt Ski Touring",
+        level: "Good to very good skiers",
+        terrain: "High passes · North-facing bowls · Valley touring",
         description:
-            "An advanced traverse through Tazaghart and the Toubkal region, combining steep terrain, high passes and technical couloir objectives.",
-        image: "/images/ski/radouane-couloir-skis-on-pack.jpeg",
-        alt: "Ski equipment prepared for a technical couloir objective",
-        href: "/ski-touring/high-route-couloirs",
+            "A six-day ski-touring journey based around Tacheddirt and the Imenane Valley, with objectives selected from the surrounding passes and mountain terrain according to conditions.",
+        image: "/images/ski/ski-descent-bouignouane.jpeg",
+        alt: "Ski descent in the Tacheddirt area of the High Atlas",
+        href: "/ski-touring/tacheddirt-ski-touring",
+        action: "Explore the 6-day expedition",
     },
     {
         number: "03",
-        type: "Expedition · 8 day journey",
-        title: "M'Goun Ski Expedition",
-        level: "Intermediate",
-        terrain: "Remote",
+        duration: "6 days",
+        label: "Toubkal Massif · High route",
+        title: "Tazaghart & Toubkal High Route Expedition",
+        level: "Advanced ski mountaineering",
+        terrain: "High traverses · Refuge-to-refuge travel · Couloirs",
         description:
-            "An exploratory journey into the M'Goun Massif, linking remote valleys, high ridges and expansive winter terrain away from the busiest routes.",
-        image: "/images/ski/ski-descent-bouignouane.jpeg",
-        alt: "Ski touring in remote Atlas mountain terrain",
-        href: "/ski-touring/mgoun",
+            "A six-day high-mountain expedition linking the Tazaghart and Toubkal sectors. The route is planned around suitable snow, safe passage between the valleys and the team’s experience; specific summits and descents are not guaranteed.",
+        image: "/images/ski/radouane-couloir-skis-on-pack.jpeg",
+        alt: "Ski touring equipment prepared for a technical High Atlas route",
+        href: "/ski-touring/tazaghart-toubkal-high-route",
+        action: "Explore the 6-day expedition",
     },
 ];
 
-const faqs = [
-    {
-        question: "When is the best time for ski touring in Morocco?",
-        answer:
-            "Ski touring depends on snowfall, snow coverage, temperature and weather. The suitable period and objectives can vary from one winter to another, so the final plan should be discussed in relation to current mountain conditions.",
-    },
-    {
-        question: "Where do you ski tour in Morocco?",
-        answer:
-            "The main areas described here include the Toubkal Massif, Tachedirt, Likemt, Bouignouane, Tazaghart, M'Goun, Bouiblane and Erdouz. The choice of terrain depends on the objective, the team and the conditions.",
-    },
-    {
-        question: "Do I need previous ski touring experience?",
-        answer:
-            "The experience required depends on the expedition. The Tazaghart traverse is presented for advanced skiers, while the Toubkal and Tachedirt and M'Goun journeys are described as intermediate. Get in touch to discuss your actual touring and skiing experience before choosing.",
-    },
-    {
-        question: "What level of fitness is required?",
-        answer:
-            "Ski touring involves climbing under your own power, often at altitude and over demanding mountain terrain. Your fitness should match the length, elevation and technical character of the chosen objective. We can discuss the expedition that best fits your experience.",
-    },
-    {
-        question: "What equipment do I need?",
-        answer:
-            "The equipment required depends on the route and conditions, including the touring setup and appropriate mountain safety equipment. Contact us before your trip so the equipment list can be matched to the planned objective.",
-    },
-    {
-        question: "Are the routes fixed?",
-        answer:
-            "No. Ski touring objectives in the Atlas are conditions-dependent. Snow coverage, temperature, avalanche risk, weather, visibility and terrain all influence which routes are suitable. The final objective may change to match the mountain on the day.",
-    },
-    {
-        question: "What happens if conditions are poor?",
-        answer:
-            "The mountain comes first. If snowpack, weather, visibility or other conditions do not support the planned objective, the route may change. A particular summit or descent is never the priority over choosing appropriate terrain for the conditions and team.",
-    },
-    {
-        question: "How do I choose the right expedition?",
-        answer:
-            "Start with your ski touring experience, fitness, preferred terrain and the kind of journey you want. The expedition descriptions offer a starting point; contact us to discuss your experience, dates and current mountain conditions.",
-    },
-];
+function RouteCard({ route }: { route: (typeof routeGroups)[number]["routes"][number] }) {
+    return (
+        <article className="border-t border-white/15 py-7 first:border-t-0">
+            <div className="grid gap-4 md:grid-cols-[0.75fr_1.25fr] md:gap-10">
+                <div>
+                    <p className="text-[9px] font-semibold uppercase tracking-[0.25em] text-[#E56A2E]">
+                        {route.level}
+                    </p>
+                    <h4 className="mt-3 text-xl font-semibold uppercase leading-tight tracking-[-0.035em] text-[#F3EBDD]">
+                        {route.name}
+                    </h4>
+                    <p className="mt-3 text-[10px] uppercase leading-5 tracking-[0.12em] text-white/45">
+                        {route.stats}
+                    </p>
+                </div>
+                <p className="text-sm leading-7 text-white/60">{route.text}</p>
+            </div>
+        </article>
+    );
+}
 
 export default function SkiTouringPage() {
     return (
         <>
             <SiteHeader />
-
-            <main className="bg-black text-white">
-                {/* SKI TOURING HERO */}
-                <section className="relative isolate min-h-[760px] overflow-hidden bg-[#17212A] text-[#F3EBDD] lg:min-h-[850px]">
+            <main className="bg-[#101310] text-[#F3EBDD]">
+                <section className="relative isolate min-h-[760px] overflow-hidden bg-[#17212A] lg:min-h-[850px]">
                     <Image
                         src="/images/ski/radouane-ski-descent-tizi-mazik.jpeg"
-                        alt="Radouane skiing in the High Atlas Mountains"
+                        alt="Ski touring descent in the Moroccan High Atlas"
                         fill
                         priority
                         sizes="100vw"
                         className="object-cover object-center"
                     />
-
-                    {/* Subtle overlays */}
-                    <div className="absolute inset-0 bg-[#101820]/20" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#101820]/80 via-[#101820]/35 to-transparent" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#101820]/45 via-transparent to-[#101820]/15" />
-
-                    {/* Top line */}
+                    <div className="absolute inset-0 bg-black/25" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/35 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/15" />
                     <div className="absolute left-6 right-6 top-28 z-10 flex items-center justify-between md:left-12 md:right-12">
                         <div className="flex items-center gap-5">
-                            <span className="text-[10px] uppercase tracking-[0.35em] text-white/90">
-                                Ride The Atlas
-                            </span>
+                            <span className="text-[10px] uppercase tracking-[0.35em]">Ride The Atlas</span>
                             <span className="h-px w-12 bg-[#E56A2E]" />
                         </div>
-
-                        <span className="text-[10px] uppercase tracking-[0.3em] text-white/80">
-                            Morocco / High Atlas
-                        </span>
+                        <span className="text-[10px] uppercase tracking-[0.3em] text-white/75">Morocco / High Atlas</span>
                     </div>
-
-                    {/* Main content */}
-                    <div className="relative z-10 mx-auto flex min-h-[760px] max-w-[1600px] items-center px-6 pb-16 pt-44 md:px-12 lg:min-h-[850px]">
-                        <div className="max-w-2xl">
-                            <p className="mb-6 text-xs uppercase tracking-[0.35em] text-[#E56A2E]">
-                                01 / Winter in Morocco
-                            </p>
-
+                    <div className="relative z-10 mx-auto flex min-h-[760px] max-w-[1600px] items-end px-6 pb-20 pt-44 md:px-12 lg:min-h-[850px] lg:pb-28">
+                        <div className="max-w-4xl">
+                            <p className="mb-6 text-xs uppercase tracking-[0.35em] text-[#E56A2E]">Winter mountain journeys · Morocco</p>
                             <h1 className="font-serif text-7xl font-normal leading-[0.82] tracking-[-0.055em] sm:text-8xl md:text-9xl lg:text-[10rem]">
                                 Ski
                                 <br />
                                 Touring
                             </h1>
-
-                            <p className="mt-10 max-w-md text-sm leading-6 text-white/85 md:text-base">
-                                High-altitude journeys across the Atlas Mountains.
+                            <p className="mt-9 max-w-xl text-sm leading-7 text-white/80 md:text-base">
+                                High passes, summit bowls and natural couloirs in the Moroccan High Atlas —
+                                explored on skis, with the mountain conditions setting the route.
                             </p>
-
-                            <Link
-                                href="#expeditions"
-                                className="group mt-10 inline-flex items-center gap-6"
-                            >
-                                <span className="grid h-12 w-12 place-items-center rounded-full border border-[#E56A2E] text-xl transition-colors group-hover:bg-[#E56A2E] group-hover:text-[#17212A]">
-                                    →
-                                </span>
-                                <span className="text-[11px] font-medium uppercase tracking-[0.25em] text-white">
-                                    Explore expeditions
-                                </span>
-                            </Link>
+                            <div className="mt-9 flex flex-wrap gap-4">
+                                <Link href="#terrain" className="bg-[#E56A2E] px-6 py-4 text-[9px] font-semibold uppercase tracking-[0.22em] text-black transition hover:bg-[#F3EBDD]">
+                                    Explore the terrain
+                                </Link>
+                                <Link href="#planning" className="border border-white/50 px-6 py-4 text-[9px] font-semibold uppercase tracking-[0.22em] text-white transition hover:border-[#E56A2E] hover:text-[#E56A2E]">
+                                    Plan an expedition
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </section>
 
-                {/* SECTION NAVIGATION */}
-                <nav className="sticky top-0 z-40 border-y border-white/10 bg-black/95 backdrop-blur-md">
-                    <div className="mx-auto flex max-w-7xl items-center gap-7 overflow-x-auto px-6 py-4 md:px-10 lg:px-14">
-                        <span className="shrink-0 text-[8px] font-semibold uppercase tracking-[0.3em] text-[#E56A2E]">
-                            Ski / 01
-                        </span>
-                        {sectionLinks.map((item) => (
-                            <a
-                                key={item.href}
-                                href={item.href}
-                                className="shrink-0 text-[8px] font-semibold uppercase tracking-[0.22em] text-white/50 transition-colors hover:text-white"
-                            >
-                                {item.label}
+                <nav className="sticky top-0 z-40 border-y border-white/10 bg-[#101310]/95 backdrop-blur">
+                    <div className="mx-auto flex max-w-7xl gap-7 overflow-x-auto px-6 py-4 md:px-10 lg:px-14">
+                        {sections.map(([label, href]) => (
+                            <a key={href} href={href} className="shrink-0 text-[8px] font-semibold uppercase tracking-[0.2em] text-white/55 transition hover:text-[#E56A2E]">
+                                {label}
                             </a>
                         ))}
                     </div>
                 </nav>
 
-                {/* ATLAS IN WINTER */}
-                <section
-                    id="atlas-in-winter"
-                    className="scroll-mt-20 px-6 py-24 md:px-10 md:py-32 lg:px-14"
-                >
+                <section id="terrain" className="scroll-mt-20 px-6 py-24 md:px-10 md:py-32 lg:px-14">
                     <div className="mx-auto max-w-7xl">
-                        <div className="grid gap-10 lg:grid-cols-[0.55fr_1.45fr]">
-                            <div className="pt-2">
-                                <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-[#E56A2E]">
-                                    02 / Mountain environment
-                                </p>
-                                <p className="mt-5 max-w-[180px] text-[9px] uppercase leading-6 tracking-[0.2em] text-white/35">
-                                    High Atlas Mountains
-                                    <br />
-                                    Winter ski terrain
-                                </p>
-                            </div>
-
-                            <div>
-                                <h2 className="max-w-5xl text-4xl font-semibold uppercase leading-[0.88] tracking-[-0.055em] text-white sm:text-5xl md:text-6xl lg:text-[5.8rem]">
-                                    The Atlas
-                                    <br />
-                                    in winter.
-                                </h2>
-                                <p className="mt-8 max-w-3xl text-sm leading-7 text-white/60 md:text-base md:leading-8">
-                                    In winter, the Atlas becomes a completely different
-                                    mountain environment — shaped by altitude, snowfall,
-                                    temperature and terrain.
-                                </p>
-                                <p className="mt-5 max-w-3xl text-sm leading-7 text-white/60 md:text-base md:leading-8">
-                                    Ski touring in Morocco means climbing the mountain under
-                                    your own power and choosing the descent according to the
-                                    conditions. There are no prepared pistes guiding the experience.
-                                </p>
-                                <p className="mt-5 max-w-3xl text-sm leading-7 text-white/60 md:text-base md:leading-8">
-                                    From the high terrain of the Toubkal Massif to the valleys
-                                    around Tachedirt, Likemt and Bouignouane, the Atlas offers
-                                    a wide range of winter objectives. Further into the range,
-                                    Tazaghart, M&apos;Goun, Bouiblane and Erdouz open the door
-                                    to longer, quieter and more exploratory ski journeys.
-                                </p>
-
-                                <div className="mt-14 grid grid-cols-2 gap-6 border-t border-white/15 pt-7 sm:grid-cols-3">
-                                    <div>
-                                        <p className="text-[8px] uppercase tracking-[0.3em] text-white/40">
-                                            Highest point
-                                        </p>
-                                        <p className="mt-3 text-3xl font-semibold tracking-tight">
-                                            4,167 <span className="text-sm text-white/45">m</span>
-                                        </p>
-                                        <p className="mt-1 text-[8px] uppercase tracking-[0.25em] text-white/40">
-                                            Toubkal
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <p className="text-[8px] uppercase tracking-[0.3em] text-white/40">
-                                            Region
-                                        </p>
-                                        <p className="mt-3 text-2xl font-semibold tracking-tight">
-                                            High Atlas
-                                        </p>
-                                        <p className="mt-1 text-[8px] uppercase tracking-[0.25em] text-white/40">
-                                            Morocco
-                                        </p>
-                                    </div>
-                                    <div className="col-span-2 sm:col-span-1">
-                                        <p className="text-[8px] uppercase tracking-[0.3em] text-white/40">
-                                            Terrain
-                                        </p>
-                                        <p className="mt-3 text-2xl font-semibold tracking-tight">
-                                            Alpine
-                                        </p>
-                                        <p className="mt-1 text-[8px] uppercase tracking-[0.25em] text-white/40">
-                                            Conditions-led
-                                        </p>
-                                    </div>
-                                </div>
+                        <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-[#E56A2E]">01 / Read the range</p>
+                        <div className="mt-8 grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+                            <h2 className="font-serif text-5xl leading-[0.95] tracking-[-0.04em] sm:text-6xl md:text-7xl">A mountain range.<br />Many ways through.</h2>
+                            <div className="max-w-3xl space-y-5 text-sm leading-7 text-white/60 md:text-base md:leading-8">
+                                <p>The supplied guide focuses on four connected ski-touring areas: the Toubkal Refuge, Tazaghart Refuge, Tacheddirt and the Aksoual–Azrou n’Tamadôt sector. Together they offer high passes, summit routes, broad bowls, couloirs and longer traverses.</p>
+                                <p>Its most useful detail is not simply a list of peaks. It describes how the terrain changes: sunny and wind-exposed slopes can lose their snow, shaded aspects may preserve better snow, gullies can collect avalanche debris, and some upper sections require crampons or carrying skis.</p>
+                                <p>Route information is indicative. Conditions in the High Atlas change throughout the winter, so routes, timings and difficulty can vary. Every expedition is planned according to the snowpack, weather and the group’s experience.</p>
                             </div>
                         </div>
-
-                        <div className="mt-20 grid gap-px bg-white/10 md:grid-cols-3">
+                        <div className="mt-14 grid gap-px bg-white/15 sm:grid-cols-3">
                             {[
-                                {
-                                    number: "01",
-                                    title: "Earn your turns",
-                                    description:
-                                        "Touring skis take us beyond conventional ski areas, allowing long approaches toward high passes, ridges and summit objectives.",
-                                    tags: "Skin · Climb · Transition",
-                                },
-                                {
-                                    number: "02",
-                                    title: "Read the snow",
-                                    description:
-                                        "Open slopes, high passes, ridges and natural couloirs create different objectives as snow coverage, stability and weather change.",
-                                    tags: "Snow · Aspect · Stability",
-                                },
-                                {
-                                    number: "03",
-                                    title: "Beyond the resort",
-                                    description:
-                                        "Much of the Atlas experience lies away from ski infrastructure, in quiet valleys and remote mountain terrain.",
-                                    tags: "Remote · Wild · Alpine",
-                                },
-                            ].map((item) => (
-                                <div key={item.number} className="bg-black p-7 md:p-9">
-                                    <p className="text-[9px] font-semibold tracking-[0.3em] text-[#E56A2E]">
-                                        {item.number}
-                                    </p>
-                                    <h3 className="mt-8 text-2xl font-semibold uppercase tracking-[-0.04em]">
-                                        {item.title}
-                                    </h3>
-                                    <p className="mt-5 min-h-[96px] text-xs leading-6 text-white/50">
-                                        {item.description}
-                                    </p>
-                                    <p className="mt-7 border-t border-white/10 pt-5 text-[8px] uppercase tracking-[0.22em] text-white/35">
-                                        {item.tags}
-                                    </p>
+                                ["4,167 m", "Toubkal · highest summit in the source"],
+                                ["3,207 m", "Louis Neltner Refuge"],
+                                ["3,000 m", "Jacques de Lépiney Refuge"],
+                            ].map(([value, label]) => (
+                                <div key={value} className="bg-[#101310] p-7 md:p-9">
+                                    <p className="font-serif text-4xl text-[#E56A2E] md:text-5xl">{value}</p>
+                                    <p className="mt-4 text-[9px] uppercase leading-5 tracking-[0.18em] text-white/45">{label}</p>
                                 </div>
                             ))}
                         </div>
                     </div>
                 </section>
 
-                {/* WHERE WE SKI */}
-                <section
-                    id="where-we-ski"
-                    className="scroll-mt-20 bg-[#F3EBDD] px-6 py-24 text-[#20231F] md:px-10 md:py-32 lg:px-14"
-                >
-                    <div className="mx-auto max-w-7xl">
-                        <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
-                            <div>
-                                <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-[#C65A2C]">
-                                    03 / The mountains
-                                </p>
-                                <p className="mt-5 max-w-[180px] text-[9px] uppercase leading-6 tracking-[0.2em] text-[#20231F]/45">
-                                    Six landscapes
-                                    <br />
-                                    One winter range
-                                </p>
-                            </div>
-                            <div>
-                                <h2 className="max-w-4xl text-4xl font-semibold uppercase leading-[0.88] tracking-[-0.055em] sm:text-5xl md:text-6xl lg:text-[5.5rem]">
-                                    Where
-                                    <br />
-                                    we ski.
-                                </h2>
-                                <p className="mt-7 max-w-2xl text-sm leading-7 text-[#20231F]/65 md:text-base md:leading-8">
-                                    The Atlas is not one mountain. It is a network of ranges,
-                                    valleys, passes and summits — each revealing a different
-                                    side of winter.
-                                </p>
-                                <p className="mt-4 max-w-2xl text-sm leading-7 text-[#20231F]/65 md:text-base md:leading-8">
-                                    We choose the terrain according to the objective, snow
-                                    conditions, experience of the team and the type of ski
-                                    journey you are looking for.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-                            {mountainAreas.map((area) => (
-                                <article
-                                    key={area.number}
-                                    className="group border border-[#20231F]/15"
-                                >
-                                    <div className="relative aspect-[4/3] overflow-hidden bg-[#20231F]/10">
-                                        <Image
-                                            src={area.image}
-                                            alt={area.alt}
-                                            fill
-                                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                            className="object-cover transition-transform duration-700 group-hover:scale-105"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent" />
-                                        <span className="absolute left-5 top-5 text-[9px] font-semibold tracking-[0.3em] text-white">
-                                            {area.number}
-                                        </span>
-                                    </div>
-                                    <div className="p-6 md:p-7">
-                                        <p className="text-[8px] font-semibold uppercase tracking-[0.25em] text-[#C65A2C]">
-                                            {area.category}
-                                        </p>
-                                        <h3 className="mt-4 text-2xl font-semibold uppercase leading-[0.95] tracking-[-0.04em]">
-                                            {area.title}
-                                        </h3>
-                                        <p className="mt-4 min-h-[96px] text-xs leading-6 text-[#20231F]/65">
-                                            {area.description}
-                                        </p>
-                                        <div className="mt-6 flex flex-wrap gap-2 border-t border-[#20231F]/15 pt-5">
-                                            {area.tags.map((tag) => (
-                                                <span
-                                                    key={tag}
-                                                    className="border border-[#20231F]/20 px-3 py-2 text-[7px] font-semibold uppercase tracking-[0.18em] text-[#20231F]/65"
-                                                >
-                                                    {tag}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </div>
-                                </article>
-                            ))}
-                        </div>
-
-                        <div className="mt-14 grid gap-6 border-t border-[#20231F]/20 pt-8 md:grid-cols-[0.7fr_1.3fr]">
-                            <p className="text-[9px] font-semibold uppercase tracking-[0.3em] text-[#C65A2C]">
-                                Field note / Conditions
-                            </p>
-                            <div>
-                                <h3 className="text-2xl font-semibold uppercase tracking-[-0.04em]">
-                                    Mountain first.
-                                    <br />
-                                    Route second.
-                                </h3>
-                                <p className="mt-5 max-w-2xl text-sm leading-7 text-[#20231F]/65">
-                                    Ski touring objectives in Morocco are conditions-dependent.
-                                    Snow coverage, temperature, avalanche risk, weather,
-                                    visibility and terrain determine which routes are suitable.
-                                    The final objective may change to match the mountain on the day.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* WINTER TRADITION */}
-                <section
-                    id="winter-tradition"
-                    className="scroll-mt-20 px-6 py-24 md:px-10 md:py-32 lg:px-14"
-                >
-                    <div className="mx-auto max-w-7xl">
-                        <div className="grid gap-12 lg:grid-cols-[0.55fr_1.45fr]">
-                            <div>
-                                <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-[#E56A2E]">
-                                    04 / A winter tradition
-                                </p>
-                                <p className="mt-5 max-w-[180px] text-[9px] uppercase leading-6 tracking-[0.2em] text-white/35">
-                                    Oukaïmeden
-                                    <br />
-                                    High Atlas
-                                </p>
-                            </div>
-                            <div>
-                                <h2 className="max-w-5xl text-4xl font-semibold uppercase leading-[0.88] tracking-[-0.055em] sm:text-5xl md:text-6xl lg:text-[5.5rem]">
-                                    Skiing
-                                    <br />
-                                    has history.
-                                </h2>
-                                <p className="mt-8 max-w-3xl text-sm leading-7 text-white/60 md:text-base md:leading-8">
-                                    Long before modern ski touring became a niche mountain
-                                    sport, winter mountaineers were already exploring the
-                                    snow-covered Atlas.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="mt-16 grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-                            <div className="relative min-h-[360px] overflow-hidden md:min-h-[520px]">
-                                <Image
-                                    src="/images/ski/radouane-on-skis.jpeg"
-                                    alt="Skier in the Moroccan High Atlas"
-                                    fill
-                                    sizes="(max-width: 1024px) 100vw, 50vw"
-                                    className="object-cover"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
-                                <div className="absolute bottom-6 left-6">
-                                    <p className="text-[8px] uppercase tracking-[0.3em] text-white/60">
-                                        Atlas winter / Ski heritage
-                                    </p>
-                                    <p className="mt-2 text-lg font-semibold uppercase tracking-[-0.02em]">
-                                        A mountain before us.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="flex flex-col justify-between border border-white/15 p-7 md:p-10">
+                {routeGroups.map((group) => (
+                    <section id={group.id} key={group.id} className="scroll-mt-20 border-t border-white/10 px-6 py-24 md:px-10 md:py-32 lg:px-14">
+                        <div className="mx-auto max-w-7xl">
+                            <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
                                 <div>
-                                    <p className="text-[9px] font-semibold uppercase tracking-[0.3em] text-[#E56A2E]">
-                                        The Atlas winter archive
-                                    </p>
-                                    <h3 className="mt-6 text-3xl font-semibold uppercase leading-[0.95] tracking-[-0.045em] md:text-4xl">
-                                        The mountains
-                                        <br />
-                                        were already
-                                        <br />
-                                        being skied.
-                                    </h3>
-                                    <p className="mt-7 text-sm leading-7 text-white/55">
-                                        Skiing in the Atlas has a history that reaches back
-                                        generations. European alpinists, particularly from
-                                        France, began exploring the High Atlas in the early
-                                        twentieth century, bringing alpine techniques and
-                                        winter exploration into the mountains.
-                                    </p>
-                                    <p className="mt-5 text-sm leading-7 text-white/55">
-                                        The Toubkal Refuge became an important base for
-                                        mountaineers moving through the massif, and skiing
-                                        gradually became part of the winter mountain culture
-                                        around Toubkal and Oukaïmeden.
-                                    </p>
-                                    <p className="mt-5 text-sm leading-7 text-white/55">
-                                        Moroccan mountain guides were part of this story too.
-                                        Knowledge, techniques and experience were passed from
-                                        one generation to another, through local experience,
-                                        contact with visiting alpinists and opportunities for
-                                        mountain training abroad.
-                                    </p>
-                                </div>
-
-                                <div className="mt-10 grid grid-cols-3 gap-4 border-t border-white/15 pt-6">
-                                    <div>
-                                        <p className="text-xl font-semibold text-[#E56A2E]">1930s</p>
-                                        <p className="mt-2 text-[8px] uppercase leading-5 tracking-[0.15em] text-white/45">
-                                            Early alpine exploration
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <p className="text-xl font-semibold text-[#E56A2E]">1966</p>
-                                        <p className="mt-2 text-[8px] uppercase leading-5 tracking-[0.15em] text-white/45">
-                                            Winter archive
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <p className="text-xl font-semibold text-[#E56A2E]">Today</p>
-                                        <p className="mt-2 text-[8px] uppercase leading-5 tracking-[0.15em] text-white/45">
-                                            A new generation
-                                        </p>
+                                    <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-[#E56A2E]">{group.number} / {group.eyebrow}</p>
+                                    <h2 className="mt-7 font-serif text-5xl leading-[0.95] tracking-[-0.04em] sm:text-6xl">{group.title}</h2>
+                                    <p className="mt-7 max-w-xl text-sm leading-7 text-white/60">{group.intro}</p>
+                                    <div className="relative mt-10 aspect-[4/5] overflow-hidden bg-white/5">
+                                        <Image src={group.image} alt={group.alt} fill sizes="(max-width: 1024px) 100vw, 40vw" className="object-cover" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/35 to-transparent" />
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div className="mt-14 grid gap-8 border-t border-white/15 pt-8 md:grid-cols-[0.7fr_1.3fr]">
-                            <p className="text-[9px] font-semibold uppercase tracking-[0.3em] text-[#E56A2E]">
-                                The mountain community
-                            </p>
-                            <div>
-                                <h3 className="text-2xl font-semibold uppercase tracking-[-0.04em]">
-                                    Passed on.
-                                </h3>
-                                <p className="mt-5 max-w-3xl text-sm leading-7 text-white/55">
-                                    The history of skiing in the Atlas is not only a story of
-                                    visiting alpinists. Moroccan mountain guides, muleteers
-                                    and local communities have supported access to the high
-                                    mountains for generations, while some guides developed
-                                    their own alpine and ski skills through contact with
-                                    international mountaineering communities and training
-                                    opportunities.
-                                </p>
-                                <div className="mt-7 flex flex-wrap gap-3">
-                                    {["Mountain guides", "Local knowledge", "Alpine exchange", "Next generation"].map(
-                                        (tag) => (
-                                            <span
-                                                key={tag}
-                                                className="border border-white/20 px-4 py-3 text-[8px] font-semibold uppercase tracking-[0.2em] text-white/55"
-                                            >
-                                                {tag}
-                                            </span>
-                                        )
-                                    )}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* MY STORY */}
-                <section
-                    id="my-story"
-                    className="scroll-mt-20 bg-[#20231F] px-6 py-24 md:px-10 md:py-32 lg:px-14"
-                >
-                    <div className="mx-auto max-w-7xl">
-                        <div className="grid gap-10 lg:grid-cols-[0.55fr_1.45fr]">
-                            <div>
-                                <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-[#E56A2E]">
-                                    05 / The story
-                                </p>
-                                <p className="mt-5 max-w-[180px] text-[9px] uppercase leading-6 tracking-[0.2em] text-white/40">
-                                    Ski with Radouane
-                                    <br />
-                                    Atlas / Winter
-                                </p>
-                            </div>
-                            <div>
-                                <h2 className="max-w-5xl text-4xl font-semibold uppercase leading-[0.88] tracking-[-0.055em] sm:text-5xl md:text-6xl lg:text-[5.5rem]">
-                                    Before the
-                                    <br />
-                                    touring skis.
-                                </h2>
-                                <p className="mt-8 max-w-3xl text-lg leading-8 text-white/75 md:text-xl md:leading-9">
-                                    “I didn&apos;t grow up with ski touring equipment. I grew
-                                    up watching people ski the mountains — and wanting to try.”
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="mt-16 grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-                            <div className="relative min-h-[440px] overflow-hidden">
-                                <Image
-                                    src="/images/ski/radouane-on-skis.jpeg"
-                                    alt="Radouane on skis in the Moroccan Atlas"
-                                    fill
-                                    sizes="(max-width: 1024px) 100vw, 45vw"
-                                    className="object-cover"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/65 to-transparent" />
-                                <div className="absolute bottom-6 left-6">
-                                    <p className="text-[8px] uppercase tracking-[0.3em] text-white/65">
-                                        A personal journey
-                                    </p>
-                                    <p className="mt-2 text-xl font-semibold uppercase">
-                                        Carry the skis.
-                                        <br />
-                                        Climb the mountain.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="flex flex-col justify-center">
-                                <p className="text-[9px] font-semibold uppercase tracking-[0.3em] text-[#E56A2E]">
-                                    From carrying skis to skiing the Atlas
-                                </p>
-                                <h3 className="mt-5 text-3xl font-semibold uppercase leading-[0.95] tracking-[-0.045em] md:text-4xl">
-                                    First came
-                                    <br />
-                                    the curiosity.
-                                </h3>
-                                <p className="mt-7 text-sm leading-7 text-white/60">
-                                    I learned and practised skiing on my own, little by little.
-                                    Before I had proper ski touring equipment, I would
-                                    sometimes carry skis uphill for hours just to get a chance
-                                    to ski back down.
-                                </p>
-                                <p className="mt-5 text-sm leading-7 text-white/60">
-                                    I also spent time skiing at Oukaïmeden — around fifteen
-                                    times before the resort eventually closed. But I became
-                                    especially fascinated by something beyond the pistes.
-                                </p>
-                                <p className="mt-5 text-sm leading-7 text-white/60">
-                                    I would see ski tourers from Europe arriving in the Atlas,
-                                    climbing with their skis and heading into the mountains.
-                                    I watched them, asked questions, and sometimes asked for
-                                    a chance to try.
-                                </p>
-                                <p className="mt-5 text-sm leading-7 text-white/60">
-                                    With time, I got access to touring skis and equipment and
-                                    was able to practise more. The climbs became longer, the
-                                    terrain more interesting, and skiing in the mountains
-                                    became something I wanted to keep learning.
-                                </p>
-
-                                <div className="mt-10 grid grid-cols-2 gap-5 border-t border-white/15 pt-7 sm:grid-cols-4">
-                                    {[
-                                        ["01", "Watch"],
-                                        ["02", "Carry"],
-                                        ["03", "Practise"],
-                                        ["04", "Explore"],
-                                    ].map(([number, title]) => (
-                                        <div key={number}>
-                                            <p className="text-[9px] font-semibold tracking-[0.3em] text-[#E56A2E]">
-                                                {number}
-                                            </p>
-                                            <p className="mt-3 text-sm font-semibold uppercase tracking-[0.05em]">
-                                                {title}
-                                            </p>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="mt-20 grid gap-10 border-t border-white/15 pt-10 lg:grid-cols-[0.8fr_1.2fr]">
-                            <div>
-                                <p className="text-[9px] font-semibold uppercase tracking-[0.3em] text-[#E56A2E]">
-                                    A dream
-                                </p>
-                                <h3 className="mt-5 text-3xl font-semibold uppercase leading-[0.95] tracking-[-0.045em] md:text-4xl">
-                                    One day,
-                                    <br />
-                                    Switzerland.
-                                </h3>
-                            </div>
-                            <div>
-                                <p className="text-sm leading-7 text-white/60">
-                                    Becoming a ski instructor in Switzerland has always been
-                                    a dream of mine. I have never been there, and I have never
-                                    worked as a ski instructor. It is simply a dream that has
-                                    stayed with me.
-                                </p>
-                                <p className="mt-5 text-sm leading-7 text-white/60">
-                                    For now, my mountains are here. I continue to learn,
-                                    practise and explore in Morocco — and to share the Atlas
-                                    with people who want to discover it on skis.
-                                </p>
-                                <p className="mt-8 border-l border-[#E56A2E] pl-5 text-sm font-medium leading-7 text-white/80">
-                                    No perfect beginning.
-                                    <br />
-                                    No fixed path.
-                                    <br />
-                                    Just a love for the mountains.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* TERRAIN & TECHNIQUE */}
-                <section
-                    id="terrain"
-                    className="scroll-mt-20 px-6 py-24 md:px-10 md:py-32 lg:px-14"
-                >
-                    <div className="mx-auto max-w-7xl">
-                        <div className="grid gap-10 lg:grid-cols-[0.55fr_1.45fr]">
-                            <div>
-                                <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-[#E56A2E]">
-                                    06 / Terrain & technique
-                                </p>
-                            </div>
-                            <div>
-                                <h2 className="max-w-5xl text-4xl font-semibold uppercase leading-[0.88] tracking-[-0.055em] sm:text-5xl md:text-6xl lg:text-[5.5rem]">
-                                    Earn
-                                    <br />
-                                    the descent.
-                                </h2>
-                                <p className="mt-8 max-w-3xl text-sm leading-7 text-white/60 md:text-base md:leading-8">
-                                    Ski touring in the Atlas is about moving through mountain
-                                    terrain — climbing first, reading the snow, then choosing
-                                    the descent.
-                                </p>
-                                <p className="mt-5 max-w-3xl text-sm leading-7 text-white/60 md:text-base md:leading-8">
-                                    The terrain changes constantly with altitude, aspect,
-                                    snowfall and weather. A single day can move from a gentle
-                                    approach to a high pass, summit ridge or technical couloir.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className="mt-16 grid gap-5 md:grid-cols-2">
-                            {terrainCards.map((card) => (
-                                <article
-                                    key={card.number}
-                                    className="group grid overflow-hidden border border-white/15 sm:grid-cols-[0.9fr_1.1fr]"
-                                >
-                                    <div className="relative min-h-[260px] overflow-hidden">
-                                        <Image
-                                            src={card.image}
-                                            alt={card.alt}
-                                            fill
-                                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                                            className="object-cover transition-transform duration-700 group-hover:scale-105"
-                                        />
-                                    </div>
-                                    <div className="flex flex-col justify-between p-6 md:p-7">
-                                        <div>
-                                            <div className="flex items-center justify-between">
-                                                <p className="text-[8px] font-semibold uppercase tracking-[0.3em] text-[#E56A2E]">
-                                                    {card.number} / {card.label}
-                                                </p>
-                                                <span className="text-xs text-white/35">↗</span>
-                                            </div>
-                                            <h3 className="mt-6 text-2xl font-semibold uppercase leading-[0.95] tracking-[-0.04em]">
-                                                {card.title}
-                                            </h3>
-                                            <p className="mt-4 text-xs leading-6 text-white/50">
-                                                {card.description}
-                                            </p>
-                                        </div>
-                                        <div className="mt-7 flex flex-wrap gap-2 border-t border-white/15 pt-5">
-                                            {card.tags.map((tag) => (
-                                                <span
-                                                    key={tag}
-                                                    className="text-[7px] font-semibold uppercase tracking-[0.2em] text-white/40"
-                                                >
-                                                    {tag}
-                                                </span>
+                                <div>
+                                    <div className="border border-white/15 p-6 md:p-8">
+                                        <p className="text-[9px] font-semibold uppercase tracking-[0.3em] text-[#E56A2E]">Approach & mountain context</p>
+                                        <ul className="mt-6 space-y-4">
+                                            {group.access.map((item) => (
+                                                <li key={item} className="flex gap-4 text-sm leading-7 text-white/60">
+                                                    <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-[#E56A2E]" />
+                                                    <span>{item}</span>
+                                                </li>
                                             ))}
+                                        </ul>
+                                    </div>
+                                    <div className="mt-10">
+                                        <div className="mb-5 flex items-end justify-between gap-5">
+                                            <div>
+                                                <p className="text-[9px] font-semibold uppercase tracking-[0.3em] text-[#E56A2E]">Selected lines</p>
+                                                <h3 className="mt-3 text-2xl font-semibold uppercase tracking-[-0.035em]">Routes & objectives</h3>
+                                            </div>
+                                            <span className="text-[9px] uppercase tracking-[0.2em] text-white/35">{group.routes.length} routes</span>
+                                        </div>
+                                        <div className="border-y border-white/15">
+                                            {group.routes.map((route) => <RouteCard key={route.name} route={route} />)}
                                         </div>
                                     </div>
-                                </article>
-                            ))}
-                        </div>
-
-                        <div className="mt-14 grid gap-8 border-t border-white/15 pt-8 md:grid-cols-[0.7fr_1.3fr]">
-                            <p className="text-[9px] font-semibold uppercase tracking-[0.3em] text-[#E56A2E]">
-                                Ski philosophy / No fixed line
-                            </p>
-                            <div>
-                                <h3 className="text-2xl font-semibold uppercase tracking-[-0.04em]">
-                                    Choose the line.
-                                    <br />
-                                    Read the mountain.
-                                </h3>
-                                <p className="mt-5 max-w-3xl text-sm leading-7 text-white/55">
-                                    We do not approach the Atlas with a predetermined descent
-                                    at all costs. The mountain decides. Snowpack, aspect, wind,
-                                    temperature, visibility and the ability of the team
-                                    determine which terrain is appropriate on the day.
-                                </p>
-                                <div className="mt-7 flex flex-wrap gap-3">
-                                    {["Snowpack", "Exposure", "Weather", "Mountain judgment"].map(
-                                        (tag) => (
-                                            <span
-                                                key={tag}
-                                                className="border border-white/20 px-4 py-3 text-[8px] font-semibold uppercase tracking-[0.2em] text-white/50"
-                                            >
-                                                {tag}
-                                            </span>
-                                        )
-                                    )}
                                 </div>
+                            </div>
+                        </div>
+                    </section>
+                ))}
+
+                <section id="planning" className="scroll-mt-20 bg-[#F3EBDD] px-6 py-24 text-[#20231F] md:px-10 md:py-32 lg:px-14">
+                    <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.7fr_1.3fr]">
+                        <div>
+                            <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-[#C65A2C]">05 / Before you go</p>
+                            <h2 className="mt-7 font-serif text-5xl leading-[0.95] tracking-[-0.04em] sm:text-6xl">Plan with<br />the mountain.</h2>
+                            <p className="mt-7 max-w-sm text-sm leading-7 text-[#20231F]/60">The old guide is valuable for understanding the terrain, but it cannot tell us what is safe or skiable today.</p>
+                            <Link href="/contact" className="mt-9 inline-flex items-center gap-5 bg-[#20231F] px-6 py-4 text-[9px] font-semibold uppercase tracking-[0.22em] text-[#F3EBDD] transition hover:bg-[#E56A2E] hover:text-black">Discuss a ski trip <span>→</span></Link>
+                        </div>
+                        <div className="space-y-10">
+                            <div>
+                                <h3 className="text-xl font-semibold uppercase tracking-[-0.03em]">Important route note</h3>
+                                <p className="mt-4 text-sm leading-7 text-[#20231F]/65">The French source is an older route guide. Some elevations differ from modern references, and OCR in the supplied copy contains damaged words and numbers. Figures marked “in the source” are retained as printed; ambiguous values are identified rather than silently corrected. Verify every objective, access point and elevation against current mapping and local conditions before using it for a trip.</p>
+                            </div>
+                            <div className="border-t border-[#20231F]/20 pt-8">
+                                <h3 className="text-xl font-semibold uppercase tracking-[-0.03em]">Mountain decisions</h3>
+                                <p className="mt-4 text-sm leading-7 text-[#20231F]/65">The source repeatedly flags avalanche-prone gullies, hard or wind-affected snow, sun-exposed slopes, cornices, rocky steps and passages where crampons, an ice axe or a rope may be necessary. Route choice must account for the snowpack, weather, visibility, terrain and the experience of the team.</p>
+                            </div>
+                            <div className="border-t border-[#20231F]/20 pt-8">
+                                <h3 className="text-xl font-semibold uppercase tracking-[-0.03em]">A note on the numbers</h3>
+                                <p className="mt-4 text-sm leading-7 text-[#20231F]/65">The source distinguishes summit elevation, pass elevation, route vertical gain and descent vertical. They are not interchangeable. For example, the Toubkal summit is listed at 4,167 m, while the Ikhibi South route is described as 900 m of ascent from the refuge. The Tacheddirt pass is given as 3,200–3,230 m depending on the map.</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                {/* EXPEDITIONS */}
-                <section
-                    id="expeditions"
-                    className="scroll-mt-20 bg-[#F3EBDD] px-6 py-24 text-[#20231F] md:px-10 md:py-32 lg:px-14"
-                >
+                <section className="px-6 py-24 md:px-10 md:py-32 lg:px-14">
                     <div className="mx-auto max-w-7xl">
-                        <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
+                        <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
                             <div>
-                                <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-[#C65A2C]">
-                                    07 / Ski expeditions
-                                </p>
-                                <p className="mt-5 max-w-[180px] text-[9px] uppercase leading-6 tracking-[0.2em] text-[#20231F]/45">
-                                    High Atlas
-                                    <br />
-                                    Morocco
-                                </p>
+                                <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-[#E56A2E]">06 / Questions</p>
+                                <h2 className="mt-7 font-serif text-5xl leading-[0.95] sm:text-6xl">Before the<br />first climb.</h2>
+                                <Link href="/contact" className="mt-8 inline-flex items-center gap-4 text-[9px] font-semibold uppercase tracking-[0.22em] text-[#E56A2E] hover:text-white">Ask about an expedition <span>→</span></Link>
                             </div>
-                            <div>
-                                <h2 className="max-w-4xl text-4xl font-semibold uppercase leading-[0.88] tracking-[-0.055em] sm:text-5xl md:text-6xl lg:text-[5.5rem]">
-                                    Choose your
-                                    <br />
-                                    expedition.
-                                </h2>
-                                <p className="mt-7 max-w-2xl text-sm leading-7 text-[#20231F]/65 md:text-base md:leading-8">
-                                    Three different ways to experience the winter Atlas —
-                                    from classic high-altitude objectives to technical
-                                    couloirs and remote ski expeditions.
-                                </p>
-                                <p className="mt-4 max-w-2xl text-sm leading-7 text-[#20231F]/65 md:text-base md:leading-8">
-                                    Each itinerary is shaped by terrain, snow conditions,
-                                    weather and the experience of the team. Routes may evolve
-                                    with the mountain.
-                                </p>
+                            <div className="border-t border-white/20">
+                                {faqs.map((faq, i) => (
+                                    <details key={faq.q} className="group border-b border-white/20">
+                                        <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-6">
+                                            <span className="flex gap-5">
+                                                <span className="pt-1 text-[9px] tracking-[0.2em] text-[#E56A2E]">{String(i + 1).padStart(2, "0")}</span>
+                                                <span className="text-sm font-medium leading-6 text-white/85 md:text-base">{faq.q}</span>
+                                            </span>
+                                            <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-white/25 text-sm transition group-open:rotate-45 group-open:border-[#E56A2E] group-open:bg-[#E56A2E] group-open:text-black">+</span>
+                                        </summary>
+                                        <p className="max-w-3xl pb-7 pl-10 text-sm leading-7 text-white/55">{faq.a}</p>
+                                    </details>
+                                ))}
                             </div>
                         </div>
+                    </div>
+                </section>
 
-                        <div className="mt-16 grid gap-5 lg:grid-cols-3">
+                <section id="expeditions" className="scroll-mt-20 border-t border-white/10 px-6 py-24 md:px-10 md:py-32 lg:px-14">
+                    <div className="mx-auto max-w-7xl">
+                        <div className="mb-14 grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
+                            <div>
+                                <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-[#E56A2E]">07 / Ski touring journeys</p>
+                                <h2 className="mt-6 font-serif text-5xl leading-[0.92] tracking-[-0.045em] sm:text-6xl">Choose your<br />expedition.</h2>
+                            </div>
+                            <p className="max-w-2xl text-sm leading-7 text-white/60 md:text-base md:leading-8">
+                                Three ways to explore the winter Atlas: the established Tacheddirt–Toubkal journey, a focused six-day tour in Tacheddirt, and a six-day high route linking Tazaghart and Toubkal. Every itinerary remains subject to snow, weather and the experience of the group.
+                            </p>
+                        </div>
+
+                        <div className="grid gap-5 lg:grid-cols-3">
                             {expeditions.map((trip) => (
-                                <Link
-                                    key={trip.number}
-                                    href={trip.href}
-                                    className="group block border border-[#20231F]/20"
-                                >
-                                    <div className="relative aspect-[4/5] overflow-hidden">
-                                        <Image
-                                            src={trip.image}
-                                            alt={trip.alt}
-                                            fill
-                                            sizes="(max-width: 1024px) 100vw, 33vw"
-                                            className="object-cover transition-transform duration-700 group-hover:scale-105"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/10 to-transparent" />
-                                        <p className="absolute left-6 top-6 text-[8px] font-semibold uppercase tracking-[0.3em] text-white">
-                                            {trip.number} / {trip.type}
-                                        </p>
-                                        <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
-                                            <p className="text-[8px] font-semibold uppercase tracking-[0.3em] text-[#F3EBDD]">
-                                                {trip.level}
-                                            </p>
-                                            <h3 className="mt-4 text-3xl font-semibold uppercase leading-[0.9] tracking-[-0.045em] text-white md:text-4xl">
-                                                {trip.title}
-                                            </h3>
-                                            <div className="mt-6 flex items-center justify-between border-t border-white/25 pt-5">
-                                                <span className="text-[8px] font-semibold uppercase tracking-[0.25em] text-white/60">
-                                                    {trip.terrain}
-                                                </span>
-                                                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/45 text-lg text-white transition-all group-hover:border-[#E56A2E] group-hover:bg-[#E56A2E] group-hover:text-black">
-                                                    ↗
-                                                </span>
+                                <Link key={trip.href} href={trip.href} className="group relative flex min-h-[560px] flex-col overflow-hidden border border-white/10 bg-[#171B17]">
+                                    <div className="absolute inset-0">
+                                        <Image src={trip.image} alt={trip.alt} fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/65 to-black/10" />
+                                    </div>
+                                    <div className="relative z-10 flex flex-1 flex-col justify-between p-7 md:p-8">
+                                        <div className="flex items-start justify-between gap-4">
+                                            <span className="text-[10px] font-semibold uppercase tracking-[0.3em] text-white/75">{trip.number} / {trip.label}</span>
+                                            <span className="shrink-0 border border-white/40 px-3 py-2 text-[9px] font-semibold uppercase tracking-[0.18em] text-white">{trip.duration}</span>
+                                        </div>
+                                        <div className="mt-24">
+                                            <p className="text-[9px] font-semibold uppercase tracking-[0.25em] text-[#E56A2E]">{trip.level}</p>
+                                            <h3 className="mt-4 max-w-sm text-3xl font-semibold uppercase leading-[0.95] tracking-[-0.045em] text-white md:text-4xl">{trip.title}</h3>
+                                            <p className="mt-5 text-[9px] font-semibold uppercase leading-5 tracking-[0.16em] text-white/55">{trip.terrain}</p>
+                                            <p className="mt-6 max-w-md text-sm leading-7 text-white/75">{trip.description}</p>
+                                            <div className="mt-8 flex items-center justify-between border-t border-white/25 pt-5">
+                                                <span className="text-[9px] font-semibold uppercase tracking-[0.2em] text-white">{trip.action}</span>
+                                                <span className="grid h-10 w-10 place-items-center rounded-full border border-white/50 text-lg text-white transition group-hover:border-[#E56A2E] group-hover:bg-[#E56A2E] group-hover:text-black">↗</span>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="p-6 md:p-7">
-                                        <p className="min-h-[96px] text-xs leading-6 text-[#20231F]/65">
-                                            {trip.description}
-                                        </p>
-                                        <p className="mt-5 border-t border-[#20231F]/15 pt-5 text-[8px] font-semibold uppercase tracking-[0.25em] text-[#C65A2C] transition-colors group-hover:text-[#20231F]">
-                                            View expedition <span className="ml-2">→</span>
-                                        </p>
                                     </div>
                                 </Link>
                             ))}
                         </div>
-
-                        <div className="mt-16 grid gap-8 border-t border-[#20231F]/20 pt-9 md:grid-cols-[1fr_auto] md:items-end">
-                            <div>
-                                <p className="text-[9px] font-semibold uppercase tracking-[0.3em] text-[#C65A2C]">
-                                    Private & custom
-                                </p>
-                                <h3 className="mt-5 text-3xl font-semibold uppercase leading-[0.95] tracking-[-0.045em] md:text-4xl">
-                                    Your mountain.
-                                    <br />
-                                    Your route.
-                                </h3>
-                                <p className="mt-5 max-w-2xl text-sm leading-7 text-[#20231F]/65">
-                                    Looking for another summit, a longer traverse or a private
-                                    ski-mountaineering objective? We can discuss an expedition
-                                    around your experience, dates, objectives and current
-                                    mountain conditions.
-                                </p>
-                            </div>
-                            <Link
-                                href="/contact"
-                                className="group inline-flex items-center justify-between gap-12 bg-[#20231F] px-7 py-5 text-[9px] font-semibold uppercase tracking-[0.25em] text-[#F3EBDD] transition-colors hover:bg-[#E56A2E] hover:text-black"
-                            >
-                                Contact us
-                                <span className="text-lg transition-transform group-hover:translate-x-1">
-                                    →
-                                </span>
-                            </Link>
-                        </div>
+                        <p className="mt-7 max-w-3xl text-xs leading-6 text-white/40">
+                            The two six-day journeys are expedition concepts; their day-by-day schedules, included services and final difficulty grades should be confirmed before those detail pages are published.
+                        </p>
                     </div>
                 </section>
 
-                {/* FAQ */}
-                <section
-                    id="faq"
-                    className="scroll-mt-20 px-6 py-24 md:px-10 md:py-32 lg:px-14"
-                >
-                    <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.7fr_1.3fr]">
-                        <div>
-                            <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-[#E56A2E]">
-                                08 / Ski touring Morocco
-                            </p>
-                            <h2 className="mt-7 text-4xl font-semibold uppercase leading-[0.88] tracking-[-0.055em] sm:text-5xl md:text-6xl">
-                                Frequently
-                                <br />
-                                asked
-                                <br />
-                                questions.
-                            </h2>
-                            <p className="mt-7 max-w-sm text-sm leading-7 text-white/50">
-                                Planning a ski touring expedition in the High Atlas? Here
-                                are answers to some of the questions we receive most often.
-                            </p>
-                            <Link
-                                href="/contact"
-                                className="mt-9 inline-flex items-center gap-4 text-[9px] font-semibold uppercase tracking-[0.25em] text-[#E56A2E] transition-colors hover:text-white"
-                            >
-                                Ask us a question
-                                <span className="text-base">→</span>
-                            </Link>
-                        </div>
-
-                        <div className="border-t border-white/20">
-                            {faqs.map((faq, index) => (
-                                <details
-                                    key={faq.question}
-                                    className="group border-b border-white/20"
-                                >
-                                    <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-6 marker:hidden">
-                                        <span className="flex items-start gap-5">
-                                            <span className="pt-1 text-[8px] font-semibold tracking-[0.25em] text-[#E56A2E]">
-                                                {String(index + 1).padStart(2, "0")}
-                                            </span>
-                                            <span className="text-sm font-medium leading-6 text-white/85 md:text-base">
-                                                {faq.question}
-                                            </span>
-                                        </span>
-                                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/25 text-sm text-white/70 transition-all group-open:rotate-45 group-open:border-[#E56A2E] group-open:bg-[#E56A2E] group-open:text-black">
-                                            +
-                                        </span>
-                                    </summary>
-                                    <div className="pb-7 pl-10 pr-12">
-                                        <p className="max-w-2xl text-xs leading-7 text-white/50 md:text-sm">
-                                            {faq.answer}
-                                        </p>
-                                    </div>
-                                </details>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                {/* FINAL CTA */}
                 <section className="px-6 pb-24 md:px-10 md:pb-32 lg:px-14">
-                    <div className="mx-auto max-w-7xl">
-                        <div className="relative min-h-[520px] overflow-hidden md:min-h-[620px]">
-                            <Image
-                                src="/images/ski/skiers-on-toubkal-summit.jpeg"
-                                alt="Skiers on a summit in the Moroccan High Atlas"
-                                fill
-                                sizes="100vw"
-                                className="object-cover object-center"
-                            />
-                            <div className="absolute inset-0 bg-black/25" />
-                            <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/20 to-transparent" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
-
-                            <div className="absolute inset-x-0 bottom-0 p-7 md:p-12 lg:p-16">
-                                <div className="flex max-w-5xl flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
-                                    <div>
-                                        <div className="flex items-center gap-4">
-                                            <span className="h-px w-8 bg-[#E56A2E]" />
-                                            <p className="text-[9px] font-semibold uppercase tracking-[0.4em] text-white/75">
-                                                Ride The Atlas / Ski touring Morocco
-                                            </p>
-                                        </div>
-                                        <h2 className="mt-6 text-4xl font-semibold uppercase leading-[0.88] tracking-[-0.055em] sm:text-5xl md:text-6xl lg:text-7xl">
-                                            Find your line
-                                            <br />
-                                            through winter.
-                                        </h2>
-                                    </div>
-                                    <p className="max-w-xs text-[9px] uppercase leading-6 tracking-[0.25em] text-white/55 lg:pb-2">
-                                        Ski touring.
-                                        <br />
-                                        High routes &amp; couloirs.
-                                        <br />
-                                        Moroccan Atlas.
-                                    </p>
-                                </div>
+                    <div className="relative mx-auto flex min-h-[480px] max-w-7xl items-end overflow-hidden p-7 md:min-h-[600px] md:p-14">
+                        <Image src="/images/ski/skiers-on-toubkal-summit.jpeg" alt="Skiers on a summit in the Moroccan High Atlas" fill sizes="100vw" className="object-cover" />
+                        <div className="absolute inset-0 bg-black/35" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/20 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                        <div className="relative z-10 flex w-full flex-col justify-between gap-8 md:flex-row md:items-end">
+                            <div>
+                                <p className="text-[9px] font-semibold uppercase tracking-[0.35em] text-[#E56A2E]">Ride The Atlas / Ski touring Morocco</p>
+                                <h2 className="mt-6 font-serif text-5xl leading-[0.9] sm:text-6xl md:text-7xl">Find your line<br />through winter.</h2>
                             </div>
-                        </div>
-
-                        <div className="grid border-x border-b border-white/15 md:grid-cols-[1fr_auto]">
-                            <div className="flex items-center px-6 py-7 md:px-9">
-                                <p className="max-w-xl text-xs leading-6 text-white/50 md:text-sm md:leading-7">
-                                    Interested in a ski touring journey in the Moroccan
-                                    Atlas? Get in touch and let&apos;s talk mountains.
-                                </p>
-                            </div>
-                            <Link
-                                href="/contact"
-                                className="group flex items-center justify-between gap-10 border-t border-white/15 px-6 py-6 text-[9px] font-semibold uppercase tracking-[0.3em] text-white transition-all duration-300 hover:bg-[#E56A2E] hover:text-black md:border-l md:border-t-0 md:px-9"
-                            >
-                                <span>Start a conversation</span>
-                                <span className="text-lg transition-transform group-hover:translate-x-1">
-                                    →
-                                </span>
-                            </Link>
+                            <Link href="/contact" className="inline-flex items-center justify-between gap-12 border border-white/60 px-6 py-5 text-[9px] font-semibold uppercase tracking-[0.22em] transition hover:border-[#E56A2E] hover:bg-[#E56A2E] hover:text-black">Start a conversation <span>→</span></Link>
                         </div>
                     </div>
                 </section>
             </main>
-
             <SiteFooter />
         </>
     );
