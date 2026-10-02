@@ -493,7 +493,7 @@ export default function SaghroMountainsPage() {
                                     <div className="relative mt-2 aspect-[4/3] overflow-hidden bg-[#DED5C5] md:mt-0">
                                         <Image
                                             src={`${imagePath}/${item.image}`}
-                                            alt={item.imageAlt ?? item.title}
+                                            alt={item.imageAlt}
                                             fill
                                             sizes="(max-width: 768px) 100vw, 30vw"
                                             className="object-cover transition duration-700 hover:scale-[1.03]"
