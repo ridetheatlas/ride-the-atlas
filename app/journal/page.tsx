@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "@/components/site-footer";
 import SiteHeader from "@/components/site-header";
+import type { ReactNode } from "react";
 
 export const metadata = {
     title: "The Atlas Journal | Ride The Atlas",
@@ -80,11 +81,11 @@ const allStories: Story[] = [
 ];
 
 function Eyebrow({
-    children,
-    dark = false,
+  children,
+  dark = false,
 }: {
-    children: string;
-    dark?: boolean;
+  children: ReactNode;
+  dark?: boolean;
 }) {
     return (
         <div
