@@ -12,6 +12,17 @@ const navigation = [
   { label: "Contact", href: "/contact" },
 ];
 
+const socialLinks = [
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/ridetheatlas/",
+  },
+  {
+    label: "YouTube",
+    href: "https://www.youtube.com/@RideTheAtlas",
+  },
+];
+
 export default function SiteFooter() {
   return (
     <footer className="bg-black text-white">
@@ -20,9 +31,7 @@ export default function SiteFooter() {
         {/* BRAND STATEMENT */}
 
         <div className="border-b border-white/10 py-20 md:py-28 lg:py-32">
-
           <div className="mx-auto max-w-7xl">
-
             <p
               className="text-[9px] font-semibold uppercase tracking-[0.4em]"
               style={{ color: accent }}
@@ -35,21 +44,17 @@ export default function SiteFooter() {
               <br />
               mountains.
             </h2>
-
           </div>
-
         </div>
 
         {/* MAIN FOOTER */}
 
         <div className="mx-auto max-w-7xl py-16 md:py-20 lg:py-24">
-
-          <div className="grid gap-16 lg:grid-cols-[1.5fr_0.8fr_1fr]">
+          <div className="grid gap-16 lg:grid-cols-[1.35fr_0.8fr_1fr]">
 
             {/* BRAND */}
 
             <div>
-
               <Link
                 href="/"
                 aria-label="Ride The Atlas"
@@ -67,12 +72,42 @@ export default function SiteFooter() {
                 By bike. By ski.
               </p>
 
+              {/* SOCIAL */}
+
+              <div className="mt-10">
+                <p
+                  className="text-[9px] font-semibold uppercase tracking-[0.35em]"
+                  style={{ color: accent }}
+                >
+                  Follow the Atlas
+                </p>
+
+                <div className="mt-5 flex flex-wrap gap-x-7 gap-y-3">
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center gap-3 text-[9px] font-semibold uppercase tracking-[0.22em] text-white/50 transition-colors duration-300 hover:text-white"
+                    >
+                      <span
+                        className="h-px w-0 transition-all duration-300 group-hover:w-4"
+                        style={{
+                          backgroundColor: accent,
+                        }}
+                      />
+
+                      {social.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
 
             {/* EXPLORE */}
 
             <div>
-
               <p
                 className="text-[9px] font-semibold uppercase tracking-[0.35em]"
                 style={{ color: accent }}
@@ -81,7 +116,6 @@ export default function SiteFooter() {
               </p>
 
               <nav className="mt-6 flex flex-col gap-4">
-
                 {navigation.map((item) => (
                   <Link
                     key={item.href}
@@ -98,15 +132,12 @@ export default function SiteFooter() {
                     {item.label}
                   </Link>
                 ))}
-
               </nav>
-
             </div>
 
             {/* CONTACT */}
 
             <div>
-
               <p
                 className="text-[9px] font-semibold uppercase tracking-[0.35em]"
                 style={{ color: accent }}
@@ -128,15 +159,12 @@ export default function SiteFooter() {
                   →
                 </span>
               </Link>
-
             </div>
-
           </div>
 
           {/* FOOTER BASELINE */}
 
           <div className="mt-20 flex flex-col gap-4 border-t border-white/10 pt-6 text-[8px] font-medium uppercase tracking-[0.25em] text-white/30 md:flex-row md:items-center md:justify-between">
-
             <p>
               © {new Date().getFullYear()} Ride The Atlas
             </p>
@@ -148,11 +176,8 @@ export default function SiteFooter() {
             <p>
               By Bike · By Ski
             </p>
-
           </div>
-
         </div>
-
       </div>
     </footer>
   );
