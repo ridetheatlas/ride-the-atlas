@@ -5,9 +5,41 @@ import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 
 export const metadata: Metadata = {
-    title: "6-Day Mountain Biking Eastern High Atlas | Ride The Atlas",
+    title: "6-Day Mountain Biking Tour in Morocco's High Atlas",
+
     description:
-        "A six-day mountain biking journey through Morocco's High Atlas, riding the Imnane and Azzaden valleys, Kik Plateau and trails around Amezmiz.",
+        "Explore Morocco's High Atlas on a six-day mountain biking journey through the Imnane and Azzaden valleys, Kik Plateau and surrounding mountain villages, with stays in Marrakech and the Atlas.",
+
+    alternates: {
+        canonical:
+            "/mountain-biking/6-day-mountain-biking-eastern-high-atlas-morocco",
+    },
+
+    openGraph: {
+        title: "6-Day High Atlas Mountain Biking Tour | Ride The Atlas",
+        description:
+            "Discover six days of mountain biking in Morocco's High Atlas, linking Imlil, the Azzaden Valley, Ouirgane, the Kik Plateau and the Ourika Valley.",
+        url: "/mountain-biking/6-day-mountain-biking-eastern-high-atlas-morocco",
+        siteName: "Ride The Atlas",
+        locale: "en_US",
+        type: "article",
+        images: [
+            {
+                url: "/images/mtb/easter-high-atlas-mtb-6-days/amezmiz-region-group-bikers.jpeg",
+                alt: "Mountain bikers riding together in Morocco's High Atlas",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "6-Day High Atlas Mountain Biking Tour | Ride The Atlas",
+        description:
+            "Ride through the Imnane and Azzaden valleys, Kik Plateau and mountain landscapes of Morocco's High Atlas.",
+        images: [
+            "/images/mtb/easter-high-atlas-mtb-6-days/amezmiz-region-group-bikers.jpeg",
+        ],
+    },
 };
 
 export default function SixDayEasternHighAtlasPage() {

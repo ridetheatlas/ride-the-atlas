@@ -1,8 +1,46 @@
-
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
+
+export const metadata: Metadata = {
+    title: "4-Day Eastern High Atlas Mountain Biking Tour | Morocco",
+
+    description:
+        "Ride the Kik Plateau, Imenane Valley and Ourika Valley on a four-day mountain biking journey through Morocco's High Atlas, with mountain passes, traditional villages and local guesthouses.",
+
+    alternates: {
+        canonical:
+            "/mountain-biking/4-day-mountain-biking-eastern-high-atlas-morocco",
+    },
+
+    openGraph: {
+        title: "4-Day Eastern High Atlas Mountain Biking Tour | Ride The Atlas",
+        description:
+            "Explore a four-day mountain biking journey through Morocco's High Atlas, linking the Kik Plateau, Imenane Valley, Ourika Valley and traditional mountain villages.",
+        url: "/mountain-biking/4-day-mountain-biking-eastern-high-atlas-morocco",
+        siteName: "Ride The Atlas",
+        locale: "en_US",
+        type: "article",
+        images: [
+            {
+                url: "/images/mtb/4-day-eastern-high-atlas/amezmiz-region-group-bikers.jpeg",
+                alt: "Mountain bikers exploring the landscapes of Morocco's Atlas Mountains",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "4-Day Eastern High Atlas Mountain Biking Tour | Ride The Atlas",
+        description:
+            "Discover four days of mountain biking across the Kik Plateau, Imenane Valley and Ourika Valley in Morocco.",
+        images: [
+            "/images/mtb/4-day-eastern-high-atlas/amezmiz-region-group-bikers.jpeg",
+        ],
+    },
+};
 
 const imagePath =
     "/images/mtb/4-day-eastern-high-atlas/";
@@ -169,12 +207,6 @@ const tripLinks = [
     ["Practical information", "#practical"],
     ["FAQ", "#faq"],
 ];
-
-export const metadata = {
-    title: "4-Day Eastern High Atlas Mountain Biking Tour | Ride The Atlas",
-    description:
-        "Ride the Kik Plateau, Imenane Valley and Ourika Valley on a four-day mountain biking journey through Morocco’s High Atlas.",
-};
 
 export default function FourDayEasternHighAtlasPage() {
     return (

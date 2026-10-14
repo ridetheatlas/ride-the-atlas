@@ -5,30 +5,49 @@ import SiteFooter from "@/components/site-footer";
 import SiteHeader from "@/components/site-header";
 
 export const metadata: Metadata = {
-    title: "A Journey Into the High Atlas | Ride The Atlas",
+    title: "A Journey Into the High Atlas | Morocco Mountain Biking",
     description:
-        "Discover mountain biking in Morocco's High Atlas — dramatic landscapes, remote trails, mountain villages and the rhythm of riding through the Atlas.",
+        "Discover mountain biking in Morocco's High Atlas, from remote singletrack and dramatic mountain landscapes to traditional villages and multi-day riding adventures.",
+
     keywords: [
         "High Atlas mountain biking",
         "mountain biking Morocco",
-        "Morocco mountain bike",
+        "Morocco mountain bike tours",
         "Atlas Mountains MTB",
-        "High Atlas MTB",
-        "mountain biking Marrakech",
+        "High Atlas MTB trails",
+        "mountain biking near Marrakech",
+        "mountain biking in the Moroccan Atlas",
+        "Eastern High Atlas mountain biking",
         "Ride The Atlas",
     ],
+
+    alternates: {
+        canonical: "https://ridetheatlas.com/journal/high-atlas",
+    },
+
     openGraph: {
-        title: "A Journey Into the High Atlas | Ride The Atlas",
+        type: "article",
+        url: "https://ridetheatlas.com/journal/high-atlas",
+        siteName: "Ride The Atlas",
+        title: "A Journey Into the High Atlas | Morocco Mountain Biking",
         description:
-            "Discover the landscapes, trails and mountain character behind mountain biking in Morocco's High Atlas.",
+            "Explore the landscapes, mountain trails and villages that make mountain biking in Morocco's High Atlas a journey beyond the ordinary.",
         images: [
             {
                 url: "/images/mtb/group-bikers-picture.jpeg",
                 width: 1600,
                 height: 1000,
-                alt: "Mountain bikers exploring the High Atlas",
+                alt: "Mountain bikers exploring the High Atlas in Morocco",
             },
         ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "A Journey Into the High Atlas | Morocco Mountain Biking",
+        description:
+            "Discover Morocco's High Atlas through remote trails, mountain landscapes and villages on a mountain-biking journey.",
+        images: ["/images/mtb/group-bikers-picture.jpeg"],
     },
 };
 

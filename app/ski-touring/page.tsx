@@ -2,6 +2,56 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "@/components/site-footer";
 import SiteHeader from "@/components/site-header";
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+    title: "Ski Touring in Morocco | High Atlas Ski Adventures",
+
+    description:
+        "Discover ski touring in Morocco's High Atlas with Ride The Atlas. Explore Toubkal, Tazaghart, Tacheddirt and Aksoual through high mountain traverses, couloirs and guided winter expeditions.",
+
+    keywords: [
+        "ski touring Morocco",
+        "ski touring in Morocco",
+        "High Atlas ski touring",
+        "Atlas Mountains ski touring",
+        "Toubkal ski touring",
+        "Tazaghart ski touring",
+        "Tacheddirt ski touring",
+        "Aksoual ski touring",
+        "ski mountaineering Morocco",
+        "Morocco winter adventures",
+        "guided ski touring Morocco",
+        "Ride The Atlas",
+    ],
+
+    alternates: {
+        canonical: "https://ridetheatlas.com/ski-touring",
+    },
+
+    openGraph: {
+        title: "Ski Touring in Morocco | High Atlas Ski Adventures",
+        description:
+            "Explore ski touring in Morocco's High Atlas, from Toubkal and Tazaghart to Tacheddirt and Aksoual. Discover high mountain passes, couloirs and winter expeditions with Ride The Atlas.",
+        url: "https://ridetheatlas.com/ski-touring",
+        siteName: "Ride The Atlas",
+        locale: "en_US",
+        type: "website",
+        images: [
+            {
+                url: "/images/ski/radouane-ski-descent-tizi-mazik.jpeg",
+                alt: "Ski touring descent in Morocco's High Atlas Mountains",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "Ski Touring in Morocco | High Atlas Ski Adventures",
+        description:
+            "Discover ski touring routes, high mountain traverses and winter expeditions in Morocco's High Atlas.",
+        images: ["/images/ski/radouane-ski-descent-tizi-mazik.jpeg"],
+    },
+};
 
 const sections = [
     ["The terrain", "#terrain"],

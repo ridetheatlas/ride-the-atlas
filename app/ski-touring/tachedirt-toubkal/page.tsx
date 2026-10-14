@@ -1,12 +1,44 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 
-export const metadata = {
-    title: "Tacheddirt & Toubkal Ski Touring | 8-Day High Atlas Expedition",
+export const metadata: Metadata = {
+    title: "Tacheddirt & Toubkal Ski Touring | 8-Day Morocco Expedition",
+
     description:
-        "An 8-day ski touring expedition in Morocco’s High Atlas, linking Tizi Likemt and Bouignouane with Mount Toubkal and Akioud.",
+        "Explore an 8-day ski touring expedition in Morocco's High Atlas, from Tizi Likemt and Bouignouane to Mount Toubkal and Akioud. Discover the itinerary and enquire about conditions-led mountain travel.",
+
+    alternates: {
+        canonical: "/ski-touring/tachedirt-toubkal",
+    },
+
+    openGraph: {
+        title: "Tacheddirt & Toubkal Ski Touring | Ride The Atlas",
+        description:
+            "An eight-day ski touring expedition through the Tacheddirt Valley and Toubkal Massif, with objectives including Bouignouane, Mount Toubkal and Akioud.",
+        url: "/ski-touring/tachedirt-toubkal",
+        siteName: "Ride The Atlas",
+        locale: "en_US",
+        type: "article",
+        images: [
+            {
+                url: "/images/ski/tachedirt-toubkal/tizi-likemt-picture-group-toubkal-tachedirt-trip.jpeg",
+                alt: "Ski touring group in the Tizi Likemt area of Morocco's High Atlas",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "Tacheddirt & Toubkal Ski Touring | Ride The Atlas",
+        description:
+            "An eight-day ski touring expedition from the Tacheddirt Valley to Morocco's high Toubkal Massif.",
+        images: [
+            "/images/ski/tachedirt-toubkal/tizi-likemt-picture-group-toubkal-tachedirt-trip.jpeg",
+        ],
+    },
 };
 
 const imagePath = "/images/ski/tachedirt-toubkal";

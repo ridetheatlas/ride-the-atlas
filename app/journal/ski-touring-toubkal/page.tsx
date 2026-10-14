@@ -2,25 +2,52 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "@/components/site-footer";
 import SiteHeader from "@/components/site-header";
+import type { Metadata } from "next";
 
-export const metadata = {
-    title: "Ski Touring on Toubkal | Ride The Atlas",
+export const metadata: Metadata = {
+    title: "Ski Touring on Toubkal | Morocco Winter Adventures",
     description:
-        "A winter journey into the High Atlas on skis. Discover what ski touring Mount Toubkal feels like, from the first climb above the valleys to the summit and the descent.",
+        "Discover ski touring on Mount Toubkal in Morocco's High Atlas, from snow-covered valleys and high mountain climbs to summit views at 4,167 metres and winter ski descents.",
+
     keywords: [
         "Toubkal ski touring",
         "ski touring Toubkal",
         "ski touring Morocco",
         "ski touring High Atlas",
-        "ski touring Atlas Mountains",
-        "Toubkal winter",
+        "Atlas Mountains ski touring",
+        "Mount Toubkal winter",
         "ski mountaineering Morocco",
         "skiing Toubkal",
-        "winter High Atlas",
-        "Morocco ski touring",
+        "Morocco winter adventures",
+        "High Atlas ski touring",
+        "Ride The Atlas",
     ],
+
     alternates: {
-        canonical: "/journal/ski-touring-toubkal",
+        canonical: "https://ridetheatlas.com/journal/ski-touring-toubkal",
+    },
+
+    openGraph: {
+        type: "article",
+        url: "https://ridetheatlas.com/journal/ski-touring-toubkal",
+        siteName: "Ride The Atlas",
+        title: "Ski Touring on Toubkal | Morocco Winter Adventures",
+        description:
+            "Follow a winter journey into Morocco's High Atlas, exploring ski touring terrain, the climb towards Toubkal's 4,167-metre summit and the descent through the snow-covered mountains.",
+        images: [
+            {
+                url: "/images/ski/skiers-on-toubkal-summit.jpeg",
+                alt: "Skiers on the summit of Mount Toubkal in the Moroccan High Atlas",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "Ski Touring on Toubkal | Morocco Winter Adventures",
+        description:
+            "Discover winter in the High Atlas through ski touring, summit climbs and descents on Mount Toubkal, North Africa's highest peak.",
+        images: ["/images/ski/skiers-on-toubkal-summit.jpeg"],
     },
 };
 

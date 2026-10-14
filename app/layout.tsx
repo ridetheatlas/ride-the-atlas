@@ -34,6 +34,22 @@ export const metadata: Metadata = {
     siteName: "Ride The Atlas",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/images/general/ride-the-atlas-bike-ski-high-atlas.jpeg",
+        alt: "Ride The Atlas — mountain biking and ski touring in Morocco",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Ride The Atlas — By Ski. By Bike.",
+    description:
+      "Ski touring and mountain biking adventures across the Moroccan Atlas.",
+    images: [
+      "/images/general/ride-the-atlas-bike-ski-high-atlas.jpeg",
+    ],
   },
 
   robots: {
@@ -52,7 +68,10 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children} <WhatsAppButton /></body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <WhatsAppButton />
+      </body>
     </html>
   );
 }

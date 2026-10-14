@@ -2,9 +2,44 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Gravel Biking in Morocco | Atlas & Essaouira Tours",
+
+    description:
+        "Discover gravel biking in Morocco with Ride The Atlas. Explore challenging gravel tours through the Atlas Mountains, remote valleys and mountain passes, or ride from Marrakech to Essaouira on the Atlantic coast.",
+
+    alternates: {
+        canonical: "/gravel-biking-morocco",
+    },
+
+    openGraph: {
+        title: "Gravel Biking in Morocco | Ride The Atlas",
+        description:
+            "Explore Morocco by gravel bike with Ride The Atlas. Discover Atlas Mountains gravel routes, remote landscapes and a journey from Marrakech to Essaouira.",
+        url: "/gravel-biking-morocco",
+        siteName: "Ride The Atlas",
+        locale: "en_US",
+        type: "website",
+        images: [
+            {
+                url: "/images/gravel-biking/hero-image.jpg",
+                alt: "Gravel biking through the landscapes of Morocco",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "Gravel Biking in Morocco | Ride The Atlas",
+        description:
+            "Discover gravel tours through Morocco's Atlas Mountains and from Marrakech to Essaouira.",
+        images: ["/images/gravel-biking/hero-image.jpg"],
+    },
+};
 
 const images = "/images/gravel-biking/";
-
 const photoStory = [
     {
         src: `${images}gravel-bike-morocco1.jpeg`,
@@ -130,12 +165,6 @@ const faqs = [
             "Bike arrangements depend on the trip. Contact us before booking to confirm whether you should bring your own bike or whether a rental option is available.",
     },
 ];
-
-export const metadata = {
-    title: "Gravel Biking Morocco | Atlas & Essaouira Tours | Ride The Atlas",
-    description:
-        "Explore Morocco by gravel bike with Ride The Atlas. Ride the High Atlas, climb Tizi n’Tichka or Tizi n’Test, and journey from Marrakech to Essaouira.",
-};
 
 export default function GravelBikingMoroccoPage() {
     return (
@@ -353,8 +382,8 @@ export default function GravelBikingMoroccoPage() {
                                 >
                                     <div
                                         className={`relative ${index === 0
-                                                ? "aspect-[4/3] h-full min-h-[360px]"
-                                                : "aspect-[4/3]"
+                                            ? "aspect-[4/3] h-full min-h-[360px]"
+                                            : "aspect-[4/3]"
                                             }`}
                                     >
                                         <Image

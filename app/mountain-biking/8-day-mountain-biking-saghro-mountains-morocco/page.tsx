@@ -4,9 +4,39 @@ import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 
 export const metadata = {
-    title: "8-Day Saghro Mountains Mountain Biking Tour | Morocco",
+    title: "8-Day Saghro Mountains Mountain Biking Tour in Morocco",
     description:
-        "Ride an 8-day mountain biking route through Morocco’s Saghro Mountains, Draa Valley and southern Atlas, with volcanic landscapes, Berber villages and short or long ride options.",
+        "Explore Morocco’s Saghro Mountains on an 8-day mountain biking journey through volcanic landscapes, remote Berber villages, mountain passes and the Draa Valley, with short and long ride options.",
+
+    alternates: {
+        canonical:
+            "https://ridetheatlas.com/mountain-biking/8-day-mountain-biking-saghro-mountains-morocco",
+    },
+
+    openGraph: {
+        type: "website",
+        url: "https://ridetheatlas.com/mountain-biking/8-day-mountain-biking-saghro-mountains-morocco",
+        siteName: "Ride The Atlas",
+        title: "8-Day Saghro Mountains Mountain Biking Tour in Morocco",
+        description:
+            "Ride through southern Morocco’s volcanic Saghro Mountains, remote valleys and palm-filled oases on an eight-day off-road mountain biking journey.",
+        images: [
+            {
+                url: "/images/mtb/saghro-mountains/saghro-volcanic-mountains.jpg",
+                alt: "Volcanic mountain landscape in Morocco’s Saghro range",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "8-Day Saghro Mountains Mountain Biking Tour in Morocco",
+        description:
+            "Discover the Saghro Mountains and Draa Valley on an eight-day mountain biking journey with short and long route options.",
+        images: [
+            "/images/mtb/saghro-mountains/saghro-volcanic-mountains.jpg",
+        ],
+    },
 };
 
 const imagePath = "/images/mtb/saghro-mountains";

@@ -2,27 +2,52 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "@/components/site-footer";
 import SiteHeader from "@/components/site-header";
+import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
-export const metadata = {
-    title: "Finding the Singletrack of the Atlas | Ride The Atlas",
+export const metadata: Metadata = {
+    title: "Finding the Singletrack of the Atlas | Morocco MTB",
     description:
-        "Discover mountain biking in the Atlas Mountains of Morocco, from technical singletrack and remote valleys to ancient paths connecting villages across the High Atlas.",
+        "Discover mountain biking in Morocco's Atlas Mountains, from technical singletrack and remote valleys to ancient paths connecting villages across the High Atlas.",
+
     keywords: [
         "Atlas Mountains mountain biking",
-        "mountain biking in the Atlas Mountains",
         "mountain biking Morocco",
-        "Atlas Mountains MTB",
         "Morocco mountain bike trails",
-        "High Atlas mountain biking",
         "Atlas Mountains singletrack",
-        "MTB Morocco",
-        "mountain biking in Morocco",
+        "High Atlas mountain biking",
         "High Atlas MTB trails",
+        "technical mountain biking Morocco",
         "Moroccan Atlas cycling",
+        "MTB Morocco",
+        "Ride The Atlas",
     ],
+
     alternates: {
-        canonical: "/journal/atlas-singletrack",
+        canonical: "https://ridetheatlas.com/journal/atlas-singletrack",
+    },
+
+    openGraph: {
+        type: "article",
+        url: "https://ridetheatlas.com/journal/atlas-singletrack",
+        siteName: "Ride The Atlas",
+        title: "Finding the Singletrack of the Atlas | Morocco MTB",
+        description:
+            "Follow the natural mountain trails of Morocco's High Atlas, exploring technical terrain, remote valleys and ancient paths between mountain villages.",
+        images: [
+            {
+                url: "/images/mtb/singletrack-two-riders.jpeg",
+                alt: "Two mountain bikers riding singletrack through Morocco's Atlas Mountains",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "Finding the Singletrack of the Atlas | Morocco MTB",
+        description:
+            "Explore natural singletrack, technical trails and remote mountain landscapes in Morocco's High Atlas.",
+        images: ["/images/mtb/singletrack-two-riders.jpeg"],
     },
 };
 

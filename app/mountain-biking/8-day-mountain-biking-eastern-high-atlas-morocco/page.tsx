@@ -6,10 +6,41 @@ import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 
 export const metadata: Metadata = {
-    title:
-        "8-Day Mountain Biking Eastern High Atlas & Toubkal | Ride The Atlas",
+    title: "8-Day Mountain Biking Tour in Morocco | Eastern High Atlas",
     description:
-        "An 8-day mountain biking journey through Morocco's Eastern High Atlas and Toubkal Massif, riding mountain passes, Berber villages, remote valleys and Atlas singletrack.",
+        "Explore Morocco's Eastern High Atlas on an 8-day mountain biking tour through mountain passes, Berber villages, remote valleys and singletrack, from Oukaimden to Ouirgane and Amezmiz.",
+
+    alternates: {
+        canonical:
+            "https://ridetheatlas.com/mountain-biking/8-day-mountain-biking-eastern-high-atlas-morocco",
+    },
+
+    openGraph: {
+        type: "website",
+        url: "https://ridetheatlas.com/mountain-biking/8-day-mountain-biking-eastern-high-atlas-morocco",
+        siteName: "Ride The Atlas",
+        title: "8-Day Mountain Biking Tour in Morocco | Ride The Atlas",
+        description:
+            "Ride the Eastern High Atlas and Toubkal region on an eight-day mountain biking journey across high passes, remote valleys and Atlas singletrack.",
+        images: [
+            {
+                url: "/images/mtb/bikers-riding-on-ridge.jpeg",
+                width: 1600,
+                height: 1000,
+                alt: "Mountain bikers riding through the Eastern High Atlas of Morocco",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "8-Day Mountain Biking Tour in Morocco | Ride The Atlas",
+        description:
+            "Eight days of mountain biking through Morocco's Eastern High Atlas, with high passes, valley trails and singletrack descents.",
+        images: [
+            "/images/mtb/bikers-riding-on-ridge.jpeg",
+        ],
+    },
 };
 
 export default function EasternHighAtlasPage() {

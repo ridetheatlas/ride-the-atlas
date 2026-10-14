@@ -2,11 +2,39 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "@/components/site-footer";
 import SiteHeader from "@/components/site-header";
+import type { Metadata } from "next";
 
-export const metadata = {
-    title: "About Ride The Atlas | Mountain Biking & Ski Touring in Morocco",
+export const metadata: Metadata = {
+    title: "About Ride The Atlas | Our Story in Morocco",
     description:
-        "Discover Ride The Atlas: a mountain project rooted in Morocco, exploring the High Atlas by mountain bike and on skis.",
+        "Discover the story behind Ride The Atlas, a Morocco-based mountain project exploring the Atlas Mountains through mountain biking, gravel cycling and ski touring.",
+
+    alternates: {
+        canonical: "https://ridetheatlas.com/about",
+    },
+
+    openGraph: {
+        type: "website",
+        url: "https://ridetheatlas.com/about",
+        siteName: "Ride The Atlas",
+        title: "About Ride The Atlas | Our Story in Morocco",
+        description:
+            "Meet the project behind Ride The Atlas and discover a personal connection to Morocco's mountains, from High Atlas trails to winter ski tours.",
+        images: [
+            {
+                url: "/images/about/radouane-brothers-on-bikes.jpeg",
+                alt: "Radouane and his brother mountain biking in the Moroccan Atlas",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "About Ride The Atlas | Our Story in Morocco",
+        description:
+            "The story behind Ride The Atlas: exploring Morocco's mountains by mountain bike, gravel bike and skis.",
+        images: ["/images/about/radouane-brothers-on-bikes.jpeg"],
+    },
 };
 
 function Eyebrow({

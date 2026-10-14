@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
@@ -5,10 +6,41 @@ import type { ReactNode } from "react";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 
-export const metadata = {
-    title: "Tazaghart & Toubkal High Route | 8-Day Ski Touring Expedition",
+export const metadata: Metadata = {
+    title: "Tazaghart & Toubkal Ski Touring | 8-Day High Atlas Expedition",
+
     description:
-        "An eight-day ski touring expedition from Tazaghart Refuge to the Toubkal Massif, linking high couloirs, mountain refuges and the summit of Toubkal.",
+        "Explore an eight-day ski touring expedition in Morocco's High Atlas, linking the Tazaghart plateau, steep ski couloirs, Tizi n'Tadat, Ras n'Ouanoukrim and the 4,167 m summit of Toubkal.",
+
+    alternates: {
+        canonical: "/ski-touring/tazaghart-toubkal-high-route",
+    },
+
+    openGraph: {
+        title: "Tazaghart & Toubkal Ski Touring | Ride The Atlas",
+        description:
+            "Discover an eight-day ski touring expedition across the Moroccan High Atlas, from Tazaghart's steep couloirs to Ras n'Ouanoukrim and the summit of Toubkal.",
+        url: "/ski-touring/tazaghart-toubkal-high-route",
+        siteName: "Ride The Atlas",
+        locale: "en_US",
+        type: "article",
+        images: [
+            {
+                url: "/images/ski/tazaghart-toubkal/radouane-above-couloir-toubkal.jpeg",
+                alt: "Ski touring above a couloir in Morocco's Toubkal Massif",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "Tazaghart & Toubkal Ski Touring | Ride The Atlas",
+        description:
+            "An eight-day High Atlas ski touring expedition linking Tazaghart's couloirs, high mountain traverses and Toubkal.",
+        images: [
+            "/images/ski/tazaghart-toubkal/radouane-above-couloir-toubkal.jpeg",
+        ],
+    },
 };
 
 const imagePath = "/images/ski/tazaghart-toubkal";

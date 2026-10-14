@@ -8,16 +8,48 @@ import SiteFooter from "@/components/site-footer";
 const images = "/images/gravel-biking/";
 
 export const metadata: Metadata = {
-    title: "Atlas Mountains Gravel Tour in Morocco | Ride The Atlas",
+    title: "Atlas Mountains Gravel Cycling Tour in Morocco",
     description:
-        "Explore Morocco on a challenging 7-day Atlas Mountains gravel tour from Marrakesh. Ride Tizi n’Tichka, Ait Benhaddou, Imlil and the Agafay landscape.",
+        "Ride a challenging 7-day gravel cycling tour through Morocco’s Atlas Mountains, from Marrakesh across Tizi n’Tichka and Ait Benhaddou to Imlil and Agafay.",
+
     keywords: [
         "Atlas Mountains gravel tour",
         "gravel biking Morocco",
-        "Morocco gravel cycling",
+        "gravel cycling Morocco",
+        "Morocco gravel bike tour",
         "High Atlas cycling tour",
-        "Marrakesh gravel bike tour",
+        "Marrakesh gravel cycling",
+        "gravel adventure Morocco",
+        "Ride The Atlas",
     ],
+
+    alternates: {
+        canonical:
+            "https://ridetheatlas.com/gravel-biking-morocco/atlas-mountains-gravel-tour",
+    },
+
+    openGraph: {
+        type: "website",
+        url: "https://ridetheatlas.com/gravel-biking-morocco/atlas-mountains-gravel-tour",
+        siteName: "Ride The Atlas",
+        title: "Atlas Mountains Gravel Cycling Tour in Morocco",
+        description:
+            "Discover Morocco by gravel bike on a challenging 7-day journey through Atlas Mountain passes, traditional villages, Ait Benhaddou and the Agafay landscape.",
+        images: [
+            {
+                url: "/images/gravel-biking/hero-image.jpg",
+                alt: "Gravel biking adventure through the Atlas Mountains in Morocco",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "Atlas Mountains Gravel Cycling Tour in Morocco",
+        description:
+            "Seven days of gravel riding across Morocco’s Atlas Mountains, mountain passes, historic villages and the Agafay landscape.",
+        images: ["/images/gravel-biking/hero-image.jpg"],
+    },
 };
 
 const tourFacts = [
@@ -484,14 +516,14 @@ export default function AtlasMountainsGravelTourPage() {
                                 <figure
                                     key={photo.src}
                                     className={`group relative overflow-hidden bg-[#20231F] ${index === 0
-                                            ? "aspect-[4/5] sm:row-span-2 lg:col-span-5"
-                                            : index === 1
-                                                ? "aspect-[5/3] lg:col-span-7"
-                                                : index === 2
+                                        ? "aspect-[4/5] sm:row-span-2 lg:col-span-5"
+                                        : index === 1
+                                            ? "aspect-[5/3] lg:col-span-7"
+                                            : index === 2
+                                                ? "aspect-[5/3] lg:col-span-4"
+                                                : index === 3
                                                     ? "aspect-[5/3] lg:col-span-4"
-                                                    : index === 3
-                                                        ? "aspect-[5/3] lg:col-span-4"
-                                                        : "aspect-[5/3] lg:col-span-4"
+                                                    : "aspect-[5/3] lg:col-span-4"
                                         }`}
                                 >
                                     <Image

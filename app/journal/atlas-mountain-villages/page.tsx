@@ -2,27 +2,56 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "@/components/site-footer";
 import SiteHeader from "@/components/site-header";
+import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
-export const metadata = {
-    title: "Beyond the Trail: Riding Through Mountain Villages | Ride The Atlas",
+export const metadata: Metadata = {
+    title: "Beyond the Trail: Mountain Villages of Morocco",
     description:
-        "Discover mountain biking through the villages and valleys of Morocco's High Atlas, where trails connect mountain landscapes, local communities and generations of mountain life.",
+        "Discover mountain biking through Morocco's High Atlas villages and valleys, where ancient paths connect local communities, agricultural terraces and dramatic mountain landscapes.",
+
     keywords: [
         "mountain biking Morocco",
         "Atlas Mountains mountain biking",
         "High Atlas mountain biking",
-        "mountain biking through Moroccan villages",
+        "mountain biking Moroccan villages",
+        "mountain biking in Morocco",
+        "High Atlas villages",
         "Morocco MTB",
         "Atlas Mountains MTB",
-        "mountain bike Morocco",
-        "High Atlas villages",
         "cycling in the Atlas Mountains",
         "Moroccan Atlas cycling",
-        "mountain biking in Morocco",
+        "Ride The Atlas",
     ],
+
     alternates: {
-        canonical: "/journal/atlas-mountain-villages",
+        canonical:
+            "https://ridetheatlas.com/journal/atlas-mountain-villages",
+    },
+
+    openGraph: {
+        type: "article",
+        url: "https://ridetheatlas.com/journal/atlas-mountain-villages",
+        siteName: "Ride The Atlas",
+        title: "Beyond the Trail: Mountain Villages of Morocco",
+        description:
+            "Explore the human side of mountain biking in Morocco's High Atlas, following trails through valleys, villages and landscapes shaped by generations of mountain life.",
+        images: [
+            {
+                url: "/images/mtb/two-riders-green-landcape-singletrack.jpeg",
+                alt: "Mountain bikers riding through the green landscapes of Morocco's High Atlas",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "Beyond the Trail: Mountain Villages of Morocco",
+        description:
+            "Discover the villages, valleys and mountain landscapes that make riding in Morocco's High Atlas more than a trail experience.",
+        images: [
+            "/images/mtb/two-riders-green-landcape-singletrack.jpeg",
+        ],
     },
 };
 
@@ -35,9 +64,8 @@ function Eyebrow({
 }) {
     return (
         <div
-            className={`flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.24em] ${
-                dark ? "text-[#292D28]/55" : "text-[#F3EBDD]/55"
-            }`}
+            className={`flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.24em] ${dark ? "text-[#292D28]/55" : "text-[#F3EBDD]/55"
+                }`}
         >
             <span className="h-px w-8 bg-[#E56A2E]" />
             {children}
@@ -59,9 +87,8 @@ function SectionTitle({
             <Eyebrow dark={dark}>{eyebrow}</Eyebrow>
 
             <h2
-                className={`mt-6 max-w-4xl font-serif text-4xl leading-[0.98] tracking-[-0.045em] md:text-6xl lg:text-7xl ${
-                    dark ? "text-[#292D28]" : "text-[#F3EBDD]"
-                }`}
+                className={`mt-6 max-w-4xl font-serif text-4xl leading-[0.98] tracking-[-0.045em] md:text-6xl lg:text-7xl ${dark ? "text-[#292D28]" : "text-[#F3EBDD]"
+                    }`}
             >
                 {children}
             </h2>

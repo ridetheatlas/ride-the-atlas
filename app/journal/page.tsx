@@ -3,11 +3,38 @@ import Link from "next/link";
 import SiteFooter from "@/components/site-footer";
 import SiteHeader from "@/components/site-header";
 import type { ReactNode } from "react";
-
-export const metadata = {
-    title: "The Atlas Journal | Ride The Atlas",
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+    title: "The Atlas Journal | Morocco Mountain Stories",
     description:
-        "Stories, field notes and mountain perspectives from the Moroccan Atlas — from high-altitude ski touring to remote mountain-bike trails.",
+        "Read stories from Morocco's Atlas Mountains, featuring mountain biking trails, High Atlas villages, ski touring on Toubkal and winter adventures around Mgoun.",
+
+    alternates: {
+        canonical: "https://ridetheatlas.com/journal",
+    },
+
+    openGraph: {
+        type: "website",
+        url: "https://ridetheatlas.com/journal",
+        siteName: "Ride The Atlas",
+        title: "The Atlas Journal | Morocco Mountain Stories",
+        description:
+            "Explore mountain biking, remote trails, Atlas villages and ski touring through stories and field notes from Morocco's High Atlas.",
+        images: [
+            {
+                url: "/images/general/atlas-mountains.jpeg",
+                alt: "Mountain landscape in the Moroccan Atlas",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "The Atlas Journal | Morocco Mountain Stories",
+        description:
+            "Field notes and stories about mountain biking, Atlas villages and ski touring in Morocco.",
+        images: ["/images/general/atlas-mountains.jpeg"],
+    },
 };
 
 type Story = {
@@ -81,11 +108,11 @@ const allStories: Story[] = [
 ];
 
 function Eyebrow({
-  children,
-  dark = false,
+    children,
+    dark = false,
 }: {
-  children: ReactNode;
-  dark?: boolean;
+    children: ReactNode;
+    dark?: boolean;
 }) {
     return (
         <div

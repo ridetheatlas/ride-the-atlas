@@ -8,17 +8,49 @@ import SiteFooter from "@/components/site-footer";
 const images = "/images/gravel-biking/";
 
 export const metadata: Metadata = {
-    title: "Marrakech to Essaouira Gravel Tour | Ride The Atlas",
+    title: "Marrakech to Essaouira Gravel Cycling Tour",
     description:
-        "Ride a 7-day, 520 km gravel tour from Marrakech towards Essaouira, crossing the Agafay landscape, High Atlas and Atlantic coast of Morocco.",
+        "Ride a 7-day, 520 km gravel cycling tour from Marrakech to Essaouira via Agafay, the High Atlas, Tizi n’Test and Morocco’s Atlantic coast.",
+
     keywords: [
         "Marrakech to Essaouira gravel tour",
-        "Morocco gravel biking",
+        "gravel biking Morocco",
         "gravel cycling Morocco",
+        "Morocco gravel bike tour",
         "Tizi n’Test cycling",
         "Essaouira cycling tour",
-        "Atlas Mountains gravel bike",
+        "Atlas Mountains gravel cycling",
+        "Atlantic coast gravel tour Morocco",
+        "Ride The Atlas",
     ],
+
+    alternates: {
+        canonical:
+            "https://ridetheatlas.com/gravel-biking-morocco/marrakech-to-essaouira-gravel-tour",
+    },
+
+    openGraph: {
+        type: "website",
+        url: "https://ridetheatlas.com/gravel-biking-morocco/marrakech-to-essaouira-gravel-tour",
+        siteName: "Ride The Atlas",
+        title: "Marrakech to Essaouira Gravel Cycling Tour",
+        description:
+            "Discover Morocco by gravel bike on a challenging seven-day journey from Agafay and the High Atlas over Tizi n’Test to the Atlantic coast and Essaouira.",
+        images: [
+            {
+                url: "/images/gravel-biking/hero-image.jpg",
+                alt: "Gravel biking adventure in Morocco on the route towards Essaouira and the Atlantic coast",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "Marrakech to Essaouira Gravel Cycling Tour",
+        description:
+            "Seven days of gravel riding from Morocco’s Atlas Mountains towards the Atlantic coast, finishing in Essaouira.",
+        images: ["/images/gravel-biking/hero-image.jpg"],
+    },
 };
 
 const facts = [
@@ -485,10 +517,10 @@ export default function MarrakechEssaouiraGravelTourPage() {
                                 <figure
                                     key={photo.src}
                                     className={`group relative overflow-hidden bg-[#20231F] ${index === 0
-                                            ? "aspect-[4/5] sm:row-span-2 lg:col-span-5"
-                                            : index === 1
-                                                ? "aspect-[5/3] lg:col-span-7"
-                                                : "aspect-[5/3] lg:col-span-4"
+                                        ? "aspect-[4/5] sm:row-span-2 lg:col-span-5"
+                                        : index === 1
+                                            ? "aspect-[5/3] lg:col-span-7"
+                                            : "aspect-[5/3] lg:col-span-4"
                                         }`}
                                 >
                                     <Image

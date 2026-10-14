@@ -5,13 +5,38 @@ import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 
 export const metadata: Metadata = {
-    title: "8-Day Happy Valley Mountain Biking Tour Morocco | Ride The Atlas",
-    description: "Ride five days through Morocco’s Central High Atlas on an 8-day mountain biking tour in the M’Goun region, from Demnate and Aït Bouguemez to Zawyat Ahansal and Bin El Ouidane.",
+    title: "8-Day Happy Valley Mountain Biking Tour in Morocco",
+    description:
+        "Ride Morocco’s Central High Atlas on an 8-day mountain biking tour through the Happy Valley, Aït Bouguemez, Zawyat Ahansal and Bin El Ouidane, with five days on the bike.",
+
+    alternates: {
+        canonical:
+            "https://ridetheatlas.com/mountain-biking/8-day-mountain-biking-happy-valley-morocco",
+    },
+
     openGraph: {
-        title: "8-Day Happy Valley Mountain Biking Tour | Ride The Atlas",
-        description: "Five days of mountain biking across the Central High Atlas, linking the Happy Valley, Zawyat Ahansal and Bin El Ouidane.",
-        images: [{ url: "/images/mtb/happy-valley/rider-happey-valley-singletrack.jpg", alt: "Mountain biker riding a singletrack in Morocco’s Happy Valley" }],
         type: "website",
+        url: "https://ridetheatlas.com/mountain-biking/8-day-mountain-biking-happy-valley-morocco",
+        siteName: "Ride The Atlas",
+        title: "8-Day Happy Valley Mountain Biking Tour in Morocco",
+        description:
+            "Explore the Central High Atlas on five days of mountain biking through the Happy Valley, remote Berber villages, high mountain passes and the M’Goun region.",
+        images: [
+            {
+                url: "/images/mtb/happy-valley/rider-happey-valley-singletrack.jpg",
+                alt: "Mountain biker riding a singletrack in Morocco’s Happy Valley",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "8-Day Happy Valley Mountain Biking Tour in Morocco",
+        description:
+            "Five days of mountain biking across Morocco’s Central High Atlas, from Aït Bouguemez and Zawyat Ahansal to Bin El Ouidane.",
+        images: [
+            "/images/mtb/happy-valley/rider-happey-valley-singletrack.jpg",
+        ],
     },
 };
 

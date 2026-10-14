@@ -2,6 +2,43 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "@/components/site-footer";
 import SiteHeader from "@/components/site-header";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Mountain Biking in Morocco's Atlas Mountains",
+
+    description:
+        "Discover mountain biking in Morocco's Atlas Mountains with Ride The Atlas. Explore multi-day MTB and eMTB journeys through the High Atlas, remote valleys, mountain passes and traditional villages.",
+
+    alternates: {
+        canonical: "https://ridetheatlas.com/mountain-biking",
+    },
+
+    openGraph: {
+        title: "Mountain Biking in Morocco's Atlas Mountains",
+        description:
+            "Explore multi-day mountain biking and eMTB adventures across Morocco's High Atlas, from remote valleys and mountain passes to traditional villages.",
+        url: "https://ridetheatlas.com/mountain-biking",
+        siteName: "Ride The Atlas",
+        locale: "en_US",
+        type: "website",
+        images: [
+            {
+                url: "/images/mtb/bikers-riding-on-ridge.jpeg",
+                alt: "Mountain bikers riding across a ridge in Morocco's Atlas Mountains",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "Mountain Biking in Morocco's Atlas Mountains",
+        description:
+            "Discover multi-day mountain biking and eMTB journeys through Morocco's High Atlas.",
+        images: ["/images/mtb/bikers-riding-on-ridge.jpeg"],
+    },
+};
+
 
 const trips = [
     {

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
@@ -5,10 +6,41 @@ import type { ReactNode } from "react";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
 
-export const metadata = {
-    title: "Tacheddirt Ski Touring | 6-Day High Atlas Journey",
+export const metadata: Metadata = {
+    title: "Tacheddirt Ski Touring | 6-Day Morocco Expedition",
+
     description:
-        "A six-day ski touring journey through the Tacheddirt Valley and the high mountain terrain of Morocco’s High Atlas.",
+        "Discover a six-day ski touring journey in Morocco's High Atlas, exploring Tizi Likemt, Tizi n'Tigourzatine, Iguenouane and the Aksoual area near Tacheddirt.",
+
+    alternates: {
+        canonical: "/ski-touring/tacheddirt-ski-touring",
+    },
+
+    openGraph: {
+        title: "Tacheddirt Ski Touring | Ride The Atlas",
+        description:
+            "Explore a six-day ski touring journey through the Tacheddirt Valley in Morocco's High Atlas, with mountain objectives selected according to snow, weather and conditions.",
+        url: "/ski-touring/tacheddirt-ski-touring",
+        siteName: "Ride The Atlas",
+        locale: "en_US",
+        type: "article",
+        images: [
+            {
+                url: "/images/ski/tachedirt-skiing/bouignouane-summit-skiers.jpeg",
+                alt: "Skiers on a summit in Morocco's High Atlas",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "Tacheddirt Ski Touring | Ride The Atlas",
+        description:
+            "A six-day ski touring journey exploring the Tacheddirt Valley and surrounding High Atlas mountains.",
+        images: [
+            "/images/ski/tachedirt-skiing/bouignouane-summit-skiers.jpeg",
+        ],
+    },
 };
 
 const imagePath = "/images/ski/tachedirt-skiing";

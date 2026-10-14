@@ -2,6 +2,44 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "@/components/site-footer";
 import SiteHeader from "@/components/site-header";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Mountain Biking, Gravel & Ski Touring in Morocco",
+
+  description:
+    "Explore Morocco's Atlas Mountains by mountain bike, gravel bike and ski touring. Discover High Atlas adventures, remote trails and mountain journeys with Ride The Atlas.",
+
+  alternates: {
+    canonical: "/",
+  },
+
+  openGraph: {
+    title: "Mountain Biking, Gravel & Ski Touring in Morocco | Ride The Atlas",
+    description:
+      "Discover Morocco's Atlas Mountains through mountain biking, gravel biking and ski touring. Explore our journeys and stories from the High Atlas.",
+    url: "/",
+    siteName: "Ride The Atlas",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/images/mtb/group-bikers-picture.jpeg",
+        width: 1600,
+        height: 1000,
+        alt: "Mountain bikers exploring the High Atlas in Morocco",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Mountain Biking, Gravel & Ski Touring in Morocco | Ride The Atlas",
+    description:
+      "Explore Morocco's Atlas Mountains by bike and ski with Ride The Atlas.",
+    images: ["/images/mtb/group-bikers-picture.jpeg"],
+  },
+};
 
 
 export default function Home() {
@@ -812,7 +850,7 @@ export default function Home() {
 
               {/* MOUNTAIN BIKING STORY */}
 
-              <Link href="/journal" className="group block">
+              <Link href="/journal/atlas-singletrack" className="group block">
 
                 <article className="h-full">
 
@@ -897,7 +935,7 @@ export default function Home() {
 
               {/* SKI TOURING STORY */}
 
-              <Link href="/journal" className="group block">
+              <Link href="/journal/ski-touring-toubkal" className="group block">
 
                 <article className="h-full">
 

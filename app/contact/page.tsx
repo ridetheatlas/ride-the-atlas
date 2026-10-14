@@ -3,13 +3,40 @@ import Link from "next/link";
 import SiteFooter from "@/components/site-footer";
 import SiteHeader from "@/components/site-header";
 import ContactForm from "@/components/contact-form";
+import type { Metadata } from "next";
 
-export const metadata = {
-    title: "Contact Ride The Atlas | Plan Your Morocco Mountain Adventure",
+export const metadata: Metadata = {
+    title: "Contact Ride The Atlas | Plan Your Morocco Adventure",
     description:
-        "Contact Ride The Atlas to enquire about mountain biking, ski touring and mountain adventures in the Moroccan Atlas.",
-};
+        "Get in touch with Ride The Atlas to plan a mountain biking, gravel biking or ski touring adventure in Morocco's Atlas Mountains.",
 
+    alternates: {
+        canonical: "https://ridetheatlas.com/contact",
+    },
+
+    openGraph: {
+        type: "website",
+        url: "https://ridetheatlas.com/contact",
+        siteName: "Ride The Atlas",
+        title: "Contact Ride The Atlas | Plan Your Morocco Adventure",
+        description:
+            "Tell us about your plans for mountain biking, gravel cycling or ski touring in Morocco. Start planning your next Atlas Mountains adventure.",
+        images: [
+            {
+                url: "/images/mtb/bikers-riding-on-ridge.jpeg",
+                alt: "Mountain bikers riding along a high ridge in the Moroccan Atlas",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "Contact Ride The Atlas | Plan Your Morocco Adventure",
+        description:
+            "Plan a mountain biking, gravel biking or ski touring adventure in Morocco. Get in touch with Ride The Atlas.",
+        images: ["/images/mtb/bikers-riding-on-ridge.jpeg"],
+    },
+};
 const email = "ridetheatlas@gmail.com";
 const whatsappNumber = "212771245210";
 const whatsappMessage = encodeURIComponent(

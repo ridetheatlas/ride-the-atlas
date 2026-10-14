@@ -2,25 +2,52 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "@/components/site-footer";
 import SiteHeader from "@/components/site-header";
-
-export const metadata = {
-    title: "Ski Touring in Mgoun | Ride The Atlas",
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+    title: "Ski Touring in Mgoun | Morocco Winter Adventures",
     description:
-        "A winter journey into the Mgoun massif of Morocco's High Atlas, following remote valleys, high snowfields and long mountain descents in the eastern Atlas.",
+        "Explore ski touring in Morocco's Mgoun massif, with remote High Atlas valleys, high snowfields, winter ascents and rewarding descents through a quieter mountain landscape.",
+
     keywords: [
         "ski touring Mgoun",
         "Mgoun ski touring",
         "ski touring Morocco",
         "ski touring High Atlas",
-        "ski touring Atlas Mountains",
+        "Atlas Mountains ski touring",
         "Mount Mgoun winter",
-        "Mgoun winter",
+        "Mgoun massif ski touring",
         "ski mountaineering Morocco",
-        "skiing Mgoun",
-        "Morocco ski touring",
+        "ski touring eastern High Atlas",
+        "Morocco winter adventures",
+        "High Atlas ski touring",
+        "Ride The Atlas",
     ],
+
     alternates: {
-        canonical: "/journal/ski-touring-mgoun",
+        canonical: "https://ridetheatlas.com/journal/ski-touring-mgoun",
+    },
+
+    openGraph: {
+        type: "article",
+        url: "https://ridetheatlas.com/journal/ski-touring-mgoun",
+        siteName: "Ride The Atlas",
+        title: "Ski Touring in Mgoun | Morocco Winter Adventures",
+        description:
+            "Discover the quieter side of winter in Morocco's High Atlas, following remote valleys, exploring high mountain terrain and skiing through the Mgoun massif.",
+        images: [
+            {
+                url: "/images/ski/ski-descent-bouignouane.jpeg",
+                alt: "Skier descending through the winter mountains of Morocco's High Atlas",
+            },
+        ],
+    },
+
+    twitter: {
+        card: "summary_large_image",
+        title: "Ski Touring in Mgoun | Morocco Winter Adventures",
+        description:
+            "Explore remote valleys, high snowfields and winter ski descents in Morocco's Mgoun massif.",
+        images: ["/images/ski/ski-descent-bouignouane.jpeg"],
     },
 };
 
